@@ -9,7 +9,6 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string"
@@ -28,7 +27,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }

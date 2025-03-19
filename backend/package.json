@@ -1,5 +1,5 @@
 {
-  "name": "ddl-backend",
+  "name": "backend",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -35,6 +35,6 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "b6664213-2601-4741-a418-479a8f5b6bfb"
+    "uuid": "56e70e77-383d-4cef-9660-79fc9e1898c9"
   }
 }
