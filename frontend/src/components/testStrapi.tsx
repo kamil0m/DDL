@@ -8,10 +8,10 @@ export default function TestStrapi() {
 
     useEffect(() => {
 
-      fetch(`https://wealthy-wealth-e452827a91.strapiapp.com/api/events`,  // Needs to be replaced with AXIOS
+      fetch(`https://ddl-2imf.onrender.com/api/events`,  // Needs to be replaced with AXIOS
         {
           headers: {
-            Authorization: '669a03c917bdc3f4c75929aa9ccc15504024248ebf1e496ece1f7487a545976ec4d3623657e66bf61e92bbf6453cfcd5503dd2c1488d2f377d4eff54f43ed2fcf1d46fe2f6ed88e539c7be9fbe8c1fddbdb8ca4e17ab1e0cb910db19d3e79ecc650f6774ce4ceb83cdf5b966d04b7f0ced02e82305e6257ca3d048060fc825f7'
+            Authorization: '4b81d36a4b4ca5ec3c41c9510db66e81ae2edae7f6691c61791497f9e5707b812f29f23eb2e28c87a17d2b8bd9e3ce71137803a9b6cd62b7a896e363f7fb5b714bf111cb30aded8a7f84c3894badba9383c070a9b2b24f50128b7c39ee214b6a775df2f594e29a638be8a6a33efb953c6c86df56c0717dbf092ae48628c2840e'
           }
         }
       ).then(resp => {
@@ -30,6 +30,9 @@ export default function TestStrapi() {
 return (
   <>
     <h1>TestStrapi</h1>
+    <p className="underline decoration-double">
+      Hello world!
+    </p>
     <h2>Wydarzenia na grupie Dzien Dobry Lille:</h2>
     {wydarzenia.map((wydarzenie) => {
       return (
