@@ -8,10 +8,10 @@ export default function TestStrapi() {
 
     useEffect(() => {
 
-      fetch(`https://ddl-2imf.onrender.com/api/events`,  // Needs to be replaced with AXIOS
+      fetch(`http://localhost:1337/api/events`,  // Needs to be replaced with AXIOS
         {
           headers: {
-            Authorization: '4b81d36a4b4ca5ec3c41c9510db66e81ae2edae7f6691c61791497f9e5707b812f29f23eb2e28c87a17d2b8bd9e3ce71137803a9b6cd62b7a896e363f7fb5b714bf111cb30aded8a7f84c3894badba9383c070a9b2b24f50128b7c39ee214b6a775df2f594e29a638be8a6a33efb953c6c86df56c0717dbf092ae48628c2840e'
+            Authorization: '0e4458cef98026b2fa191e5822ae9e7e9a87903444a8f1ec2d6e5b352a4da6a0e70a7631270e37e2074fd9e18571956c37cea343089471ca2eac3dafee384036d33c9a9b9159dfc81efb06aef103d14a2f802f12c0b725223bad5e9c6e607fc88a5d4b856b3f178d6f153390c717157c13be76efc8c2e0e9b65fe211ef9aaba6'
           }
         }
       ).then(resp => {

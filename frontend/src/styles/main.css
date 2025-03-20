@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+@import './generic/_normalize.css';
+@import './generic/_reset.css';
+
+p {
+    color: red;
+}
