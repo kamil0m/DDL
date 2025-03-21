@@ -3,6 +3,4 @@
 @import './generic/_normalize.css';
 @import './generic/_reset.css';
 
-p {
-    color: red;
-}
+@import './content/about.css';

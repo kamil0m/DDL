@@ -1,10 +1,12 @@
 import TestStrapi from './components/testStrapi'
+import AboutUs from './components/AboutUs'
 
 function App() {
 
   return (
     <>
-    <TestStrapi />
+    < AboutUs />
+    < TestStrapi />
     </>
   )
 }
