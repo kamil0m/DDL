@@ -1,2 +1,6 @@
 @import 'tailwindcss';
 @import './content/about.css';
+
+@theme {
+    /* --color-slate-900: #FF5A09; exemple of overriding a color */
+}

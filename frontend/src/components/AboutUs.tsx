@@ -9,9 +9,11 @@ export default function AboutUs() {
   if (error) return <p>Error!</p>;
 
   return (
-  <div className="flex flex-col h-auto bg-linear-to-t from-sky-500 to-indigo-500">
-    < Card content={data.data[0]} />
-    < Card content={data.data[1]} />
+  <div className="flex flex-col h-full bg-linear-to-t from-sky-500 to-indigo-500">
+    <div className="container flex-col mx-auto">
+      < Card content={data.data[0]} />
+      < Card content={data.data[1]} />
+    </div>
   </div>
   
 )}
