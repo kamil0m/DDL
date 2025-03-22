@@ -1,0 +1,70 @@
+{
+    "id": 3,
+    "documentId": "bc98yhq1tovjjdni184bjx53",
+    "title": "About Us",
+    "Content": [
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "Dzień Dobry Lille",
+                    "bold": true
+                },
+                {
+                    "type": "text",
+                    "text": " to stowarzyszenie skierowane do Polonii w północnej Francji oraz naszych francuskich przyjaciół. Tworzymy przestrzeń, w której Polacy w Lille i okolicach mogą się wspierać, wymieniać doświadczeniami oraz budować silną, zintegrowaną społeczność."
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "Na naszej stronie "
+                },
+                {
+                    "type": "text",
+                    "text": "Polacy w Lille i Métropole – Dzień Dobry Lille ",
+                    "underline": true
+                },
+                {
+                    "type": "text",
+                    "text": "znajdziecie aktualne informacje o życiu Polonii, lokalnych wydarzeniach oraz polskich inicjatywach w regionie. Informujemy o nowościach w biblioteczce w Malince, polecamy polskie atrakcje turystyczne – również te mniej znane – oraz dzielimy się inspiracjami kulinarnymi, zarówno tradycyjnymi, jak i nowoczesnymi przepisami."
+                }
+            ]
+        },
+        {
+            "type": "heading",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "Lille to dynamiczna metropolia"
+                }
+            ],
+            "level": 1
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "Lille to dynamiczna metropolia licząca ponad milion mieszkańców, położona przy granicy z Belgią. W całej aglomeracji mieszka wielu Polaków oraz osób o polskich korzeniach. Nasza grupa powstała, aby każdy mógł znaleźć wsparcie, zadać pytanie i w razie potrzeby otrzymać pomoc. "
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": ""
+                }
+            ]
+        }
+    ],
+    "createdAt": "2025-03-22T14:02:52.247Z",
+    "updatedAt": "2025-03-22T14:03:51.880Z",
+    "publishedAt": "2025-03-22T14:03:51.885Z"
+}
