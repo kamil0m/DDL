@@ -1,12 +1,18 @@
-import TestStrapi from './components/testStrapi'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./route/Home";
+import About from "./route/About";
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <>
-    <TestStrapi />
-    </>
-  )
-}
+    <main className="p-6">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </main>
 
-export default App
+  );
+};
+
+export default App;

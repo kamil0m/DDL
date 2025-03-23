@@ -1,8 +1,8 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @import './generic/_normalize.css';
-@import './generic/_reset.css';
+/* @import './generic/_reset.css'; */
 
-p {
-    color: red;
+html {
+    scroll-behavior: smooth;
 }
