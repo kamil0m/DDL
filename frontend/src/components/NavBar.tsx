@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import logo from "../styles/images/logo.jpg"
+import logo from "../styles/images/logo.jpg";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const NavbarLinks = [
-        { id: 1, name: "Home", link: "#home" },
-        { id: 2, name: "O nas", link: "#about" },
-        { id: 3, name: "Wydarzenia", link: "#events" },
-        { id: 4, name: "Dołącz do nas", link: "#joinus" },
+        { id: 1, name: "Home", link: "/" },
+        { id: 2, name: "O nas", link: "/about", dropdown: true },
+        { id: 3, name: "Wydarzenia", link: "/events" },
+        { id: 4, name: "Dołącz do nas", link: "/joinus" },
     ];
 
     useEffect(() => {
@@ -51,15 +52,54 @@ export default function Navbar() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center space-x-7">
-                    {NavbarLinks.map((link) => (
-                        <a
-                            key={link.id}
-                            href={link.link}
-                            className="hover:text-gray-200 text-lg"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                    {NavbarLinks.map((link) =>
+                        link.dropdown ? (
+                            <div
+                                key={link.id}
+                                className="relative"
+                                onMouseEnter={() => setIsDropdownOpen(true)}
+                                onMouseLeave={() => setIsDropdownOpen(false)}
+                            >
+                                <a
+                                    href={link.link}
+                                    className="hover:text-gray-200 text-lg cursor-pointer"
+                                >
+                                    {link.name}
+                                </a>
+                                {/* Dropdown Menu */}
+                                {isDropdownOpen && (
+                                    <div className="absolute top-8 left-0 bg-blue-900 text-white p-4 space-y-2 rounded-lg">
+                                        <a
+                                            href="/about/#goals"
+                                            className="block hover:text-gray-200 text-lg"
+                                        >
+                                            Cele
+                                        </a>
+                                        <a
+                                            href="/about/#history"
+                                            className="block hover:text-gray-200 text-lg"
+                                        >
+                                            Historia
+                                        </a>
+                                        <a
+                                            href="/about/#people"
+                                            className="block hover:text-gray-200 text-lg"
+                                        >
+                                            Ludzie
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <a
+                                key={link.id}
+                                href={link.link}
+                                className="hover:text-gray-200 text-lg"
+                            >
+                                {link.name}
+                            </a>
+                        )
+                    )}
                     <a
                         href="#contact"
                         className="inline-flex text-white border-2 py-2 px-6 focus:outline-none hover:bg-blue-800 rounded-full text-lg"
@@ -68,6 +108,7 @@ export default function Navbar() {
                     </a>
                 </nav>
             </div>
+
             {/* Mobile Navigation */}
             <div
                 className={`${isOpen ? "block" : "hidden"

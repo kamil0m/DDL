@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
-@import './generic/_normalize.css';
+/* @import './generic/_normalize.css'; */
 /* @import './generic/_reset.css'; */
 
 html {
     scroll-behavior: smooth;
+}
+
+main {
+    padding: 0;
 }
