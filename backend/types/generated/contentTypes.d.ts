@@ -369,6 +369,58 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
+  collectionName: 'abouts';
+  info: {
+    displayName: 'About';
+    pluralName: 'abouts';
+    singularName: 'about';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'Blogs';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
@@ -935,6 +987,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about.about': ApiAboutAbout;
+      'api::blog.blog': ApiBlogBlog;
       'api::event.event': ApiEventEvent;
       'api::post.post': ApiPostPost;
       'plugin::content-releases.release': PluginContentReleasesRelease;

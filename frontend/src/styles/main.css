@@ -1,8 +1,6 @@
 @import 'tailwindcss';
+@import './content/about.css';
 
-@import './generic/_normalize.css';
-@import './generic/_reset.css';
-
-p {
-    color: red;
+@theme {
+    /* --color-slate-900: #FF5A09; exemple of overriding a color */
 }
