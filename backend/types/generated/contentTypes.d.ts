@@ -424,7 +424,8 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
-    displayName: 'event';
+    description: '';
+    displayName: 'Event';
     pluralName: 'events';
     singularName: 'event';
   };
@@ -432,17 +433,17 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    date: Schema.Attribute.Date;
-    description: Schema.Attribute.Blocks;
+    Date: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
-    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    name: Schema.Attribute.String;
+    Media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

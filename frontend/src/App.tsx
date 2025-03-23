@@ -1,12 +1,11 @@
-import TestStrapi from './components/testStrapi'
-import AboutUs from './components/AboutUs'
+import AboutUs from './pages/AboutUs';
+import Events from './pages/Events';
 
 function App() {
 
   return (
     <>
-    < AboutUs />
-    {/* < TestStrapi /> */}
+    < Events />
     </>
   )
 }
