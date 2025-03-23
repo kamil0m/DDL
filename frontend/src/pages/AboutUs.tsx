@@ -1,5 +1,5 @@
 import useFetch from '../hooks/useFetch';
-import Card from '../components/card';
+import Card from '../components/Card';
 
 export default function AboutUs() {
 

@@ -1,11 +1,5 @@
-import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
-
-interface CardProps {
-    content: {
-        Title: string;
-        Content: BlocksContent;
-    };
-}
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import CardProps from '../models/interfaces/CardProps.tsx';
 
 export default function Card(props: CardProps) {
 
