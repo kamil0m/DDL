@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 @import './content/about.css';
 
-@theme {
+/* @theme {
     /* --color-slate-900: #FF5A09; exemple of overriding a color */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    padding: 0;
 }
