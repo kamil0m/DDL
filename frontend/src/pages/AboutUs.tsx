@@ -1,7 +1,7 @@
 import useFetch from '../hooks/useFetch';
 import Card from '../components/Card';
-import homebackground from "../styles/images/homebackground.png";
 import Navbar from '../components/NavBar';
+import homebackground from "../styles/images/homebackground.png";
 
 export default function AboutUs() {
 

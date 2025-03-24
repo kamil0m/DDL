@@ -1,6 +1,7 @@
 import useFetch from '../hooks/useFetch';
 import CardEvent from '../components/CardEvents';
 import Navbar from '../components/NavBar';
+import homebackground from "../styles/images/homebackground.png";
 
 export default function Events() {
 
@@ -17,9 +18,15 @@ export default function Events() {
 
     return (
         <>
-            <Navbar />
-            <div className="flex flex-col h-full bg-linear-to-t from-sky-500 to-indigo-500">
-                <div className="container flex-col mx-auto">
+            <div className="relative z-50">
+                <Navbar />
+            </div>
+            <div className="relative flex flex-col min-h-screen">
+                <div
+                    className="absolute inset-0 bg-fixed bg-center bg-cover before:content-[''] before:absolute before:inset-0 before:bg-white/50"
+                    style={{ backgroundImage: `url(${homebackground})` }}
+                ></div>
+                <div className="relative container mx-auto max-w-screen-lg pt-40 pb-16 text-white">
                     <h2 className="card__title text-center width-full text-slate-900 text-2xl font-bold">Nadchodzace wydarzenia:</h2>
                     {futureEvents.map((event) => (
                         < CardEvent key={event.id} content={event} />
