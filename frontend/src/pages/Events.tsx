@@ -18,12 +18,12 @@ export default function Events() {
     <div className="flex flex-col h-full bg-linear-to-t from-sky-500 to-indigo-500">
         <div className="container flex-col mx-auto">
             <h2 className="card__title text-center width-full text-slate-900 text-2xl font-bold">Nadchodzace wydarzenia:</h2>
-            {futureEvents.map((event, index) => (
-                < CardEvent key={index} content={event} />
+            {futureEvents.map((event) => (
+                < CardEvent key={event.id} content={event} />
             ))}
             <h2 className="card__title text-center width-full text-slate-900 text-2xl font-bold">Minione wydarzenia:</h2>
-            {pastEvents.map((event, index) => (
-                < CardEvent key={index} content={event} />
+            {pastEvents.map((event) => (
+                < CardEvent key={event.id} content={event} />
             ))}
         </div>
     </div>
