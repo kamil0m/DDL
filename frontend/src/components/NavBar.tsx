@@ -6,6 +6,7 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     const NavbarLinks = [
@@ -31,6 +32,14 @@ export default function Navbar() {
         };
     }, []);
 
+    const handleMobileDropdownClick = () => {
+        if (isMobileDropdownOpen) {
+            window.location.href = "/about";
+        } else {
+            setIsMobileDropdownOpen(true);
+        }
+    };
+
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
         document.body.classList.toggle("dark", !isDarkMode);
@@ -46,7 +55,7 @@ export default function Navbar() {
             {/* LOGO outside navigation */}
             <div className="absolute top-5 left-1/16 transform -translate-x-1/2">
                 <a href="/">
-                    <img src={logo} alt="Logo" className="h-30 w-auto" />
+                    <img src={logo} alt="Logo" className="h-30 w-auto hidden sm:block" />
                 </a>
             </div>
 
@@ -157,14 +166,57 @@ export default function Navbar() {
                 </button>
                 {/* Mobile Navigation */}
                 {NavbarLinks.map((link) => (
-                    <a
-                        key={link.id}
-                        href={link.link}
-                        className="text-lg text-white hover:text-gray-200"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        {link.name}
-                    </a>
+                    link.dropdown ? (
+                        <div key={link.id} className="text-lg text-white">
+                            <button
+                                className="hover:text-gray-200"
+                                onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+                            >
+                                {link.name}
+                            </button>
+                            {isMobileDropdownOpen && (
+                                <div className="mt-2 space-y-2">
+                                    <a
+                                        href="/about"
+                                        className="block hover:text-gray-200 text-sm ml-4 font-semibold"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        O nas
+                                    </a>
+                                    <a
+                                        href="/about/#goals"
+                                        className="block hover:text-gray-200 text-sm ml-4"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        Cele
+                                    </a>
+                                    <a
+                                        href="/about/#history"
+                                        className="block hover:text-gray-200 text-sm ml-4"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        Historia
+                                    </a>
+                                    <a
+                                        href="/about/#people"
+                                        className="block hover:text-gray-200 text-sm ml-4"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        Ludzie
+                                    </a>
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <a
+                            key={link.id}
+                            href={link.link}
+                            className="text-lg text-white hover:text-gray-200"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {link.name}
+                        </a>
+                    )
                 ))}
                 {/* Contact */}
                 <a
@@ -174,6 +226,21 @@ export default function Navbar() {
                 >
                     Kontakt
                 </a>
+
+                {/* Facebook Link */}
+                <a
+                    href="https://www.facebook.com/p/Dzien-dobry-Lille-Bonjour-Lille-61559848594019/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-gray-200 mt-4 flex items-center space-x-2"
+                >
+                    <FiFacebook className="w-6 h-6" />
+                </a>
+
+                {/* FR/PL Button */}
+                <button className="text-white hover:text-gray-200 mt-4">
+                    FR/PL
+                </button>
             </div>
         </header>
     );
