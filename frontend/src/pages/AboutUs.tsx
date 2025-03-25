@@ -17,6 +17,8 @@ export default function AboutUs() {
       </div>
       <div className="relative flex flex-col min-h-screen">
         <div
+          //className="absolute inset-0 bg-fixed bg-center bg-cover"
+
           className="absolute inset-0 bg-fixed bg-center bg-cover before:content-[''] before:absolute before:inset-0 before:bg-black/50"
           style={{ backgroundImage: `url(${homebackground})` }}
         ></div>

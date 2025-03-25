@@ -11,7 +11,7 @@ export default function Navbar() {
 
     const NavbarLinks = [
         { id: 1, name: "Home", link: "/" },
-        { id: 2, name: "O nas", link: "/about", dropdown: true },
+        { id: 2, name: "Poznaj nas", link: "/about", dropdown: true },
         { id: 3, name: "Wydarzenia", link: "/events" },
         { id: 4, name: "Dołącz do nas", link: "/joinus" },
         { id: 5, name: "Kontakt", link: "/contact" },
@@ -118,12 +118,7 @@ export default function Navbar() {
                             </a>
                         )
                     )}
-                    <a
-                        href="/contact"
-                        className="inline-flex text-white border-2 py-2 px-6 focus:outline-none hover:bg-blue-800 rounded-full text-lg"
-                    >
-                        Kontakt
-                    </a>
+
 
                     {/* Facebook Icon */}
                     <a
@@ -178,7 +173,7 @@ export default function Navbar() {
                                 <div className="mt-2 space-y-2">
                                     <a
                                         href="/about"
-                                        className="block hover:text-gray-200 text-sm ml-4 font-semibold"
+                                        className="block hover:text-gray-200 text-sm ml-4"
                                         onClick={() => setIsOpen(false)}
                                     >
                                         O nas
