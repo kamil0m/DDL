@@ -14,7 +14,7 @@ export default function AboutUs() {
       <div
         //className="absolute inset-0 bg-fixed bg-center bg-cover"
 
-        className="absolute inset-0 bg-fixed bg-center bg-cover before:content-[''] before:absolute before:inset-0 before:bg-black/50"
+        className="absolute inset-0 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url(${homebackground})` }}
       ></div>
       <div className="relative container mx-auto max-w-screen-lg pt-40 pb-16 text-white">
