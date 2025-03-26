@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 @import './content/about.css';
 
-/*@theme: {
-    /* --color-slate-900: #FF5A09; exemple of overriding a color
-}*/
+@theme: {
+    --color-red-700: rgba(195,14,26,1);
+}
 
 html {
     scroll-behavior: smooth;
