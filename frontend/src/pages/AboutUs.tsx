@@ -17,15 +17,7 @@ export default function AboutUs() {
       ></div>
       <div className="relative container mx-auto max-w-screen-lg pt-40 pb-16 text-white">
         < Card content={data.data[1]} />
-        < Card content={data.data[1]} />
-        < Card content={data.data[1]} />
-        < Card content={data.data[1]} />
-        < Card content={data.data[1]} />
         <div id="goals">< Card content={data.data[0]} /></div>
-        < Card content={data.data[0]} />
-        < Card content={data.data[0]} />
-        < Card content={data.data[0]} />
-
       </div>
     </div>
   )
