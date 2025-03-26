@@ -1,6 +1,5 @@
 import useFetch from '../hooks/useFetch';
 import Card from '../components/Card';
-import homebackground from "../styles/images/homebackground.png";
 
 export default function AboutUs() {
 
@@ -11,23 +10,11 @@ export default function AboutUs() {
 
   return (
     <div className="relative flex flex-col min-h-screen">
-      <div
-        //className="absolute inset-0 bg-fixed bg-center bg-cover"
-
-        className="absolute inset-0 bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: `url(${homebackground})` }}
-      ></div>
       <div className="relative container mx-auto max-w-screen-lg pt-40 pb-16 text-white">
         < Card content={data.data[1]} />
-        < Card content={data.data[1]} />
-        < Card content={data.data[1]} />
-        < Card content={data.data[1]} />
-        < Card content={data.data[1]} />
-        <div id="goals">< Card content={data.data[0]} /></div>
-        < Card content={data.data[0]} />
-        < Card content={data.data[0]} />
-        < Card content={data.data[0]} />
-
+      <div id="goals">
+          < Card content={data.data[0]} />
+        </div>
       </div>
     </div>
   )
