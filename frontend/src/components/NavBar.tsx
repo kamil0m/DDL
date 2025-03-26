@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiFacebook, FiSun, FiMoon } from "react-icons/fi";
 import logo from "../styles/images/logo.jpg";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const NavbarLinks = [
         { id: 1, name: "Home", link: "/" },
-        { id: 2, name: "O nas", link: "/about", dropdown: true },
+        { id: 2, name: "Poznaj nas", link: "/about", dropdown: true },
         { id: 3, name: "Wydarzenia", link: "/events" },
         { id: 4, name: "Dołącz do nas", link: "/joinus" },
+        { id: 5, name: "Kontakt", link: "/contact" },
     ];
 
     useEffect(() => {
@@ -29,6 +32,19 @@ export default function Navbar() {
         };
     }, []);
 
+    const handleMobileDropdownClick = () => {
+        if (isMobileDropdownOpen) {
+            window.location.href = "/about";
+        } else {
+            setIsMobileDropdownOpen(true);
+        }
+    };
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+        document.body.classList.toggle("dark", !isDarkMode);
+    };
+
     return (
         <header
             className={`fixed top-0 left-0 w-full z-30 text-white transition duration-300 ${isScrolled ? "shadow-lg backdrop-blur-lg" : "bg-transparent"
@@ -36,12 +52,14 @@ export default function Navbar() {
             data-aos="fade-up"
             data-aos-delay="300"
         >
-            <div className="container mx-auto flex items-center justify-between p-5">
-                {/* LOGO */}
-                <a href="#home">
+            {/* LOGO outside navigation */}
+            <div className="absolute top-5 left-1/16 transform -translate-x-1/2">
+                <a href="/">
                     <img src={logo} alt="Logo" className="h-30 w-auto hidden sm:block" />
                 </a>
+            </div>
 
+            <div className="container mx-auto flex items-center justify-between p-5">
                 {/* Mobile Menu Toggle */}
                 <button
                     className="md:hidden focus:outline-none"
@@ -51,7 +69,7 @@ export default function Navbar() {
                 </button>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center space-x-7">
+                <nav className="hidden md:flex items-center space-x-7 ml-auto">
                     {NavbarLinks.map((link) =>
                         link.dropdown ? (
                             <div
@@ -100,12 +118,32 @@ export default function Navbar() {
                             </a>
                         )
                     )}
+
+
+                    {/* Facebook Icon */}
                     <a
-                        href="/contact"
-                        className="inline-flex text-white border-2 py-2 px-6 focus:outline-none hover:bg-blue-800 rounded-full text-lg"
+                        href="https://www.facebook.com/p/Dzien-dobry-Lille-Bonjour-Lille-61559848594019/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-gray-200"
                     >
-                        Contact
+                        <FiFacebook className="w-6 h-6" />
                     </a>
+
+                    {/* Dark/Light Mode Toggle */}
+                    <button
+                        onClick={toggleDarkMode}
+                        className="text-white hover:text-gray-200"
+                    >
+                        {isDarkMode ? <FiSun className="w-6 h-6" /> : <FiMoon className="w-6 h-6" />}
+                    </button>
+
+                    {/* FR/PL Button */}
+                    <button
+                        className="text-white hover:text-gray-200"
+                    >
+                        FR/PL
+                    </button>
                 </nav>
             </div>
 
@@ -123,23 +161,81 @@ export default function Navbar() {
                 </button>
                 {/* Mobile Navigation */}
                 {NavbarLinks.map((link) => (
-                    <a
-                        key={link.id}
-                        href={link.link}
-                        className="text-lg text-white hover:text-gray-200"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        {link.name}
-                    </a>
+                    link.dropdown ? (
+                        <div key={link.id} className="text-lg text-white">
+                            <button
+                                className="hover:text-gray-200"
+                                onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+                            >
+                                {link.name}
+                            </button>
+                            {isMobileDropdownOpen && (
+                                <div className="mt-2 space-y-2">
+                                    <a
+                                        href="/about"
+                                        className="block hover:text-gray-200 text-sm ml-4"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        O nas
+                                    </a>
+                                    <a
+                                        href="/about/#goals"
+                                        className="block hover:text-gray-200 text-sm ml-4"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        Cele
+                                    </a>
+                                    <a
+                                        href="/about/#history"
+                                        className="block hover:text-gray-200 text-sm ml-4"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        Historia
+                                    </a>
+                                    <a
+                                        href="/about/#people"
+                                        className="block hover:text-gray-200 text-sm ml-4"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        Ludzie
+                                    </a>
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <a
+                            key={link.id}
+                            href={link.link}
+                            className="text-lg text-white hover:text-gray-200"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {link.name}
+                        </a>
+                    )
                 ))}
                 {/* Contact */}
                 <a
-                    href="#contact"
+                    href="/contact"
                     className="inline-flex text-white border-2 py-2 px-6 focus:outline-none hover:bg-[#1d3c91] rounded-full text-lg"
                     onClick={() => setIsOpen(false)}
                 >
-                    Contact
+                    Kontakt
                 </a>
+
+                {/* Facebook Link */}
+                <a
+                    href="https://www.facebook.com/p/Dzien-dobry-Lille-Bonjour-Lille-61559848594019/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-gray-200 mt-4 flex items-center space-x-2"
+                >
+                    <FiFacebook className="w-6 h-6" />
+                </a>
+
+                {/* FR/PL Button */}
+                <button className="text-white hover:text-gray-200 mt-4">
+                    FR/PL
+                </button>
             </div>
         </header>
     );
