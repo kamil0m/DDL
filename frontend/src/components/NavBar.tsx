@@ -80,7 +80,7 @@ export default function Navbar() {
                             >
                                 <a
                                     href={link.link}
-                                    className="hover:text-gray-200 text-lg cursor-pointer"
+                                    className="pb-5 hover:text-gray-200 text-lg cursor-pointer"
                                 >
                                     {link.name}
                                 </a>
