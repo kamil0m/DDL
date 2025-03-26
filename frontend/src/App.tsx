@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Events from './pages/Events';
-import Mainlayout from "./layouts/mainlayout";
+import Mainlayout from "./layouts/Mainlayout";
 
 const App: React.FC = () => {
   return (

@@ -12,8 +12,6 @@ export default function AboutUs() {
   return (
     <div className="relative flex flex-col min-h-screen">
       <div
-        //className="absolute inset-0 bg-fixed bg-center bg-cover"
-
         className="absolute inset-0 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url(${homebackground})` }}
       ></div>
