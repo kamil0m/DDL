@@ -21,9 +21,9 @@ const Home: React.FC = () => {
                 <p className="text-2xl font-semibold md:text-xl mb-6 pt-2 pb-4 z-10">
                     "Your inspiring motto goes here." <br />Stowarzyszenie <span className="text-red-700">Polaków</span> w Lille
                 </p>
-                <div className="animate-pulse">
+                <div >
                     <Link to="/about">
-                        <button className="px-8 py-4 text-xl bg-red-700 text-white rounded-lg hover:bg-red-800 transition ease-in-out duration-300">
+                        <button className="z-30 px-8 py-4 text-xl bg-red-700 text-white rounded-lg hover:bg-red-800 transition ease-in-out duration-300 animate-pulse hover:animate-none">
                             Dowiedz się więcej
                         </button>
                     </Link>
