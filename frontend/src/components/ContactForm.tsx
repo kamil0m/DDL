@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import Input from "./Input";
 import FormData from "../models/interfaces/FormData";
 
@@ -11,59 +11,77 @@ export default function ContactForm() {
 
     const [status, setStatus] = useState<string>("");
 
-
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const nameInput:string = (e.currentTarget as HTMLElement).querySelector<HTMLInputElement>('#name')!.value
-        
-        const emailInput:string = (e.currentTarget as HTMLElement).querySelector<HTMLInputElement>('#email')!.value
-        
-        const messageInput:string = (e.currentTarget as HTMLElement).querySelector<HTMLTextAreaElement>('#message')!.value
+        const nameInput = (e.currentTarget as HTMLElement).querySelector<HTMLInputElement>('#name')!.value;
+        const emailInput = (e.currentTarget as HTMLElement).querySelector<HTMLInputElement>('#email')!.value;
+        const messageInput = (e.currentTarget as HTMLElement).querySelector<HTMLTextAreaElement>('#message')!.value;
 
-        setFormData({
+        const form = {
             name: nameInput,
             email: emailInput,
             message: messageInput,
-        });
+        };
 
+        setFormData(form);
         setStatus("Wysyłanie...");
 
+        try {
+            const response = await fetch('http://localhost:5000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(form),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setStatus("Wiadomość została wysłana!");
+                setFormData({
+                    name: "",
+                    email: "",
+                    message: "",
+                });
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setStatus(`Błąd: ${result.message}`);
+            }
+        } catch (error) {
+            console.error("Błąd:", error);
+            setStatus("Wystąpił błąd podczas wysyłania wiadomości.");
+        }
     };
 
     return (
         <div className="min-h-screen overflow-hidden justify-center flex items-center p-6 mt-10 relative">
-
-            {/* Contact Form */}
-            < section id="contact" className="p-8 center shadow-lg rounded-lg flex flex-col max-w-xl w-full relative outline-black/5 bg-slate-800/90" >
+            <section id="contact" className="p-8 center shadow-lg rounded-lg flex flex-col max-w-xl w-full relative outline-black/5 bg-slate-800/90">
                 <header className="mb-6">
                     <h2 className="text-4xl font-bold text-center text-white">
                         Napisz do nas!
                     </h2>
                 </header>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                    
-                    < Input
+                    <Input
                         label="Imię i nazwisko/Nazwa"
                         type="text"
                         id="name"
                         placeholder="Twoje imię i nazwisko bądź nazwa"
                     />
-
-                    < Input
+                    <Input
                         label="E-mail"
                         type="email"
                         id="email"
                         placeholder="Twój e-mail"
                     />
-
-                    < Input
+                    <Input
                         label="Wiadomość"
                         type="textarea"
                         id="message"
                         placeholder="Tutaj wpisz swoją wiadomość"
                     />
-
                     <button
                         type="submit"
                         className="w-full text-white border-2 py-2 px-6 mt-2 focus:outline-none hover:bg-[#4d6699] 
@@ -77,4 +95,5 @@ export default function ContactForm() {
         </div>
     );
 }
+
 
