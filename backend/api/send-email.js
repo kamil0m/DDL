@@ -12,7 +12,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: "smtp.mail.ovh.net", //ssl0.ovh.net
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -20,14 +22,14 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/send-email', (req, res) => {
-    const { name, email, message } = req.body;
+    const { name, title, email, message } = req.body;
 
     const mailOptions = {
         from: `"${name}" <${process.env.EMAIL_USER}>`,
         to: process.env.EMAIL_TO,
-        subject: `Wiadomość od ${name}`,
+        subject: `Wiadomość od ${name} w temacie ${title}`,
         replyTo: email,
-        text: `Imię i nazwisko/Nazwa: ${name}\nEmail: ${email}\n\nWiadomość:\n${message}`,
+        text: `Imię i nazwisko/Nazwa: ${name}\nEmail: ${email}\n\nTemat: ${title}\n\nWiadomość:\n${message}`,
     };
 
 

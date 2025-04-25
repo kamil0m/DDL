@@ -6,6 +6,7 @@ export default function ContactForm() {
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
+        title: "",
         message: "",
     });
 
@@ -15,12 +16,14 @@ export default function ContactForm() {
         e.preventDefault();
 
         const nameInput = (e.currentTarget as HTMLElement).querySelector<HTMLInputElement>('#name')!.value;
+        const titleInput = (e.currentTarget as HTMLElement).querySelector<HTMLInputElement>('#title')!.value;
         const emailInput = (e.currentTarget as HTMLElement).querySelector<HTMLInputElement>('#email')!.value;
         const messageInput = (e.currentTarget as HTMLElement).querySelector<HTMLTextAreaElement>('#message')!.value;
 
         const form = {
             name: nameInput,
             email: emailInput,
+            title: titleInput,
             message: messageInput,
         };
 
@@ -43,6 +46,7 @@ export default function ContactForm() {
                 setFormData({
                     name: "",
                     email: "",
+                    title: "",
                     message: "",
                 });
                 (e.target as HTMLFormElement).reset();
@@ -77,6 +81,12 @@ export default function ContactForm() {
                         placeholder="Twój e-mail"
                     />
                     <Input
+                        label="Temat"
+                        type="text"
+                        id="title"
+                        placeholder="Wpisz temat wiadomości"
+                    />
+                    <Input
                         label="Wiadomość"
                         type="textarea"
                         id="message"
@@ -89,7 +99,7 @@ export default function ContactForm() {
                     >
                         Wyślij
                     </button>
-                    {status && <p className="text-white mt-4">{status}</p>}
+                    {status && <p className="text-green-500 font-bold text-lg mt-4"><span className="text-green-500">✓ </span>{status}</p>}
                 </form>
             </section>
         </div>
