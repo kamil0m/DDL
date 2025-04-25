@@ -20,6 +20,8 @@
     "@strapi/provider-upload-cloudinary": "^5.11.3",
     "@strapi/strapi": "5.11.3",
     "better-sqlite3": "11.3.0",
+    "pg": "^8.15.5",
+    "pg-connection-string": "^2.8.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -32,8 +34,8 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x",
-    "npm": ">=6.0.0"
+    "node": "23.11.0",
+    "npm": "v10.9.2"
   },
   "strapi": {
     "uuid": "56e70e77-383d-4cef-9660-79fc9e1898c9"
