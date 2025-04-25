@@ -4,7 +4,7 @@ import homebackground from "../styles/images/homebackground.png";
 
 export default function Events() {
 
-    const { data, loading, error } = useFetch('http://localhost:1337/api/Events');
+    const { data, loading, error } = useFetch('Events');
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error!</p>;
