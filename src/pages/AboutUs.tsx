@@ -4,7 +4,7 @@ import homebackground from "../styles/images/homebackground.png";
 
 export default function AboutUs() {
 
-  const { data, loading, error } = useFetch('http://localhost:1337/api/Abouts');
+  const { data, loading, error } = useFetch('Abouts');
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!</p>;
