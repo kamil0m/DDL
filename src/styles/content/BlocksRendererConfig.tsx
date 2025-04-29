@@ -1,6 +1,8 @@
-// This json file allows to add Windtail classes to elements rendered with BlockRenderer
+// Allows to add Windtail classes to elements rendered with BlockRenderer
 
-export const blocks = {
+import { BlocksComponents } from '@strapi/blocks-react-renderer';
+
+export const blocks: Partial<BlocksComponents> = {
   heading: ({ children, level }: { children: React.ReactNode; level: number }) => {
     switch (level) {
       case 1:
