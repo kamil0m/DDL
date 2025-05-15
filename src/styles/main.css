@@ -1,9 +1,13 @@
 @import 'tailwindcss';
 @import './content/about.css';
 
-/* @theme {
-    /* --color-slate-900: #FF5A09; exemple of overriding a color */
-
+:root {
+    --breakpoint-tablet: 770px;
+    --breakpoint-desktop: 1200px;
+  
+    /* font-family: "Poppins", sans-serif; */
+    box-sizing: border-box;
+}
 
 html {
     scroll-behavior: smooth;
@@ -12,3 +16,42 @@ html {
 main {
     padding: 0;
 }
+
+@theme {
+    --color-accent: rgba(194, 0, 22, 1);
+    --color-main: rgba(17, 50, 128, 1);
+
+    --breakpoint-*: initial;
+    --breakpoint-tablet: 770px;
+    --breakpoint-desktop: 1200px;
+
+    --spacing: 4px;
+
+    /* --font-display: "Poppins", sans-serif; */
+}
+
+
+
+@layer components {
+
+    .bg-photo {
+      @apply bg-fixed bg-center bg-cover;
+    }
+  
+    .button {
+      @apply inline-flex items-center justify-center rounded-full text-xl uppercase min-w-35 h-10 tablet:text-sm tablet:min-w-45;
+    }
+  
+    .button-accent {
+      @apply bg-accent border-2 border-accent text-white active:text-black active:bg-main;
+    }
+  
+    .button-transparent {
+      @apply border-black border active:bg-accent active:border-accent active:text-white
+    }
+  
+    .card {
+      @apply shadow-2xl p-6;
+    }
+  
+  }
