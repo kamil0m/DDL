@@ -1,3 +1,9 @@
+// const nodemailer = require('nodemailer');
+// const dotenv = require('dotenv');
+// const cors = require('cors');
+// const bodyParser = require('body-parser');
+// const express = require('express');
+
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import cors from "cors";

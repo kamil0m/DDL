@@ -1,6 +1,5 @@
 import useFetch from '../hooks/useFetch';
 import NewCard from '../components/NewCard';
-import homebackground from "../styles/images/homebackground.png";
 
 export default function JoinUs() {
 
@@ -11,21 +10,19 @@ export default function JoinUs() {
 
 
   return (
-    <div className="relative flex flex-col min-h-screen">
+      <div className="relative flex flex-col min-h-screen">
 
-      <div
-        className="absolute inset-0 bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: `url(${homebackground})` }}
-      />
+        <div className="relative container mx-auto max-w-screen-lg pt-40 pb-16 text-white">
 
-      <div className="relative container mx-auto max-w-screen-lg pt-40 pb-16 text-white">
+          < NewCard content={data.data["JakZostacCzlonkiem"]} />
+            <div className="flex justify-center mb-8">
+              <a href="https://www.helloasso.com/associations/dzien-dobry-lille/adhesions/adhesion" className="button button-accent">Wesprzyj nas</a>
+            </div>
+          < NewCard content={data.data["Regulamin"]} />
 
-        < NewCard content={data.data["JakZostacCzlonkiem"]} />
-        < NewCard content={data.data["Regulamin"]} />
+        </div>
 
       </div>
-
-    </div>
   )
 }
 

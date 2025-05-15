@@ -62,14 +62,14 @@ export default function Navbar() {
             <div className="container mx-auto flex items-center justify-between p-5">
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden focus:outline-none"
+                    className="tablet:hidden focus:outline-none"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     <FiMenu className="w-8 h-8 text-white" />
                 </button>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center space-x-7 ml-auto">
+                <nav className="hidden tablet:flex items-center space-x-7 ml-auto">
                     {NavbarLinks.map((link) =>
                         link.dropdown ? (
                             <div
@@ -150,7 +150,7 @@ export default function Navbar() {
             {/* Mobile Navigation */}
             <div
                 className={`${isOpen ? "block" : "hidden"
-                    } md:hidden bg-blue-900 absolute top-0 left-0 w-full h-screen flex flex-col items-center justify-center space-y-8 pt-16`}
+                    } tablet:hidden bg-blue-900 absolute top-0 left-0 w-full h-screen flex flex-col items-center justify-center space-y-8 pt-16`}
             >
                 {/* Close Button */}
                 <button
