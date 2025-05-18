@@ -1,13 +1,20 @@
+import Header from '../components/Header';
 import {
-    Outlet
+  Outlet
 } from 'react-router-dom';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/NavBarOld';
 
 export default function mainlayout() {
   return (
-    <>
-        <NavBar />
-        <Outlet />
-    </>
+    <div className="flex flex-col min-h-dvh w-full items-center">
+
+      <div className="container">
+      <Header/>
+
+      <Outlet/>
+      </div>
+      {/* <Footer/> */}
+
+    </div>
   )
 }

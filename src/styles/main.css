@@ -1,9 +1,13 @@
-@import 'tailwindcss';
-@import './content/about.css';
+@import "tailwindcss";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
 
-/* @theme {
-    /* --color-slate-900: #FF5A09; exemple of overriding a color */
+:root {
 
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
 
 html {
     scroll-behavior: smooth;
@@ -11,4 +15,73 @@ html {
 
 main {
     padding: 0;
+}
+
+
+
+
+@layer base {
+  h1 {
+    @apply text-5xl font-bold
+  }
+/* 
+  h2 {
+    @apply text-4xl font-bold
+  }
+
+  h3 {
+    @apply text-2xl font-semibold
+  }
+
+  h4 {
+    @apply text-xl font-semibold
+  }
+
+  h5 {
+    @apply text-sm font-semibold
+  } */
+}
+
+@theme {
+    /* --breakpoint-*: initial;
+    --breakpoint-tablet: 770px;
+    --breakpoint-desktop: 1200px; */
+
+    --spacing: 4px;
+
+    --font-display: "Roboto", sans-serif;
+
+    --color-main: rgba(243, 233, 227, 1);
+    --color-accent: rgba(0, 25, 179, 1);
+    --color-green: rgba(0, 163, 86, 1);
+    --color-orange: rgba(252, 147, 40, 1);
+    --color-blue: rgba(0, 159, 211, 1);
+    --color-red: rgba(255, 60, 55, 1);
+    --color-grey: rgba(234, 234, 234, 1);
+    --color-white: rgba(255, 255, 255, 1);
+  	
+}
+
+@layer components {
+
+    .badge {
+        @apply inline-flex items-center justify-center;
+    }
+
+    .button {
+        @apply inline-flex items-center justify-center rounded-lg px-8 py-6;
+    }
+
+    .button-accent {
+        @apply bg-accent text-white;
+    }
+
+    .button-transparent {
+        @apply border-black border-3 active:bg-accent active:border-accent active:text-white;
+    }
+
+    .card {
+        @apply shadow-2xl p-6;
+    }
+
 }
