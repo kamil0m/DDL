@@ -1,0 +1,40 @@
+{
+    "nav": {
+        "home": "Strona główna",
+        "about": "Poznaj nas",
+        "events": "Wydarzenia",
+        "joinus": "Dołącz do nas",
+        "contact": "Kontakt",
+        "goals": "Cele",
+        "history": "Historia",
+        "people": "Ludzie"
+    },
+    "contact": {
+        "title": "Napisz do nas!"
+    },
+    "form": {
+        "name": {
+            "label": "Imię i nazwisko/Nazwa",
+            "placeholder": "Twoje imię i nazwisko bądź nazwa"
+        },
+        "email": {
+            "label": "E-mail",
+            "placeholder": "Twój e-mail"
+        },
+        "title": {
+            "label": "Temat",
+            "placeholder": "Wpisz temat wiadomości"
+        },
+        "message": {
+            "label": "Wiadomość",
+            "placeholder": "Tutaj wpisz swoją wiadomość"
+        },
+        "submit": "Wyślij",
+        "status": {
+            "sending": "Wysyłanie...",
+            "success": "Wiadomość została wysłana!",
+            "error": "Wystąpił błąd podczas wysyłania wiadomości.",
+            "apiError": "Błąd: {{message}}"
+        }
+    }
+}

@@ -1,8 +1,11 @@
 import { useState, FormEvent } from "react";
+import { useTranslation } from "react-i18next";
 import Input from "./Input";
 import FormData from "../models/interfaces/FormData";
 
 export default function ContactForm() {
+    const { t } = useTranslation();
+
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -28,7 +31,7 @@ export default function ContactForm() {
         };
 
         setFormData(form);
-        setStatus("Wysyłanie...");
+        setStatus(t("form.status.sending"));
 
         try {
             const response = await fetch('http://localhost:5000/send-email', {
@@ -42,7 +45,7 @@ export default function ContactForm() {
             const result = await response.json();
 
             if (response.ok) {
-                setStatus("Wiadomość została wysłana!");
+                setStatus(t("form.status.success"));
                 setFormData({
                     name: "",
                     email: "",
@@ -51,11 +54,11 @@ export default function ContactForm() {
                 });
                 (e.target as HTMLFormElement).reset();
             } else {
-                setStatus(`Błąd: ${result.message}`);
+                setStatus(t("form.status.apiError", { message: result.message }));
             }
         } catch (error) {
             console.error("Błąd:", error);
-            setStatus("Wystąpił błąd podczas wysyłania wiadomości.");
+            setStatus(t("form.status.error"));
         }
     };
 
@@ -64,46 +67,49 @@ export default function ContactForm() {
             <section id="contact" className="p-8 center shadow-lg rounded-lg flex flex-col max-w-xl w-full relative outline-black/5 bg-slate-800/90">
                 <header className="mb-6">
                     <h2 className="text-4xl font-bold text-center text-white">
-                        Napisz do nas!
+                        {t("contact.title")}
                     </h2>
                 </header>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <Input
-                        label="Imię i nazwisko/Nazwa"
+                        label={t("form.name.label")}
                         type="text"
                         id="name"
-                        placeholder="Twoje imię i nazwisko bądź nazwa"
+                        placeholder={t("form.name.placeholder")}
                     />
                     <Input
-                        label="E-mail"
+                        label={t("form.email.label")}
                         type="email"
                         id="email"
-                        placeholder="Twój e-mail"
+                        placeholder={t("form.email.placeholder")}
                     />
                     <Input
-                        label="Temat"
+                        label={t("form.title.label")}
                         type="text"
                         id="title"
-                        placeholder="Wpisz temat wiadomości"
+                        placeholder={t("form.title.placeholder")}
                     />
                     <Input
-                        label="Wiadomość"
+                        label={t("form.message.label")}
                         type="textarea"
                         id="message"
-                        placeholder="Tutaj wpisz swoją wiadomość"
+                        placeholder={t("form.message.placeholder")}
                     />
                     <button
                         type="submit"
                         className="w-full text-white border-2 py-2 px-6 mt-2 focus:outline-none hover:bg-[#4d6699] 
                             hover:shadow-[0_0_40px_rgba(100,149,237,0.7)] rounded-full text-lg"
                     >
-                        Wyślij
+                        {t("form.submit")}
                     </button>
-                    {status && <p className="text-green-500 font-bold text-lg mt-4"><span className="text-green-500">✓ </span>{status}</p>}
+                    {status && (
+                        <p className="text-green-500 font-bold text-lg mt-4">
+                            <span className="text-green-500">✓ </span>{status}
+                        </p>
+                    )}
                 </form>
             </section>
         </div>
     );
 }
-
 
