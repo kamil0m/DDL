@@ -1,7 +1,12 @@
 import logo from "../assets/images/logo.jpg";
 
-export default function Logo() {
+interface LogoProps {
+    size: string;
+  }
+
+export default function Logo({ size }: LogoProps) {
+    
     return (
-        <img src={logo} alt="Logo" className="h-[4em] w-auto" />
+        <img src={logo} alt="Logo" className={size} />
     )
 }

@@ -1,7 +1,7 @@
 @import "tailwindcss";
-@import "tailwindcss/theme.css" layer(theme);
+/* @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(base);
-@import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss/utilities.css" layer(utilities); */
 
 :root {
 
@@ -17,12 +17,9 @@ main {
     padding: 0;
 }
 
-
-
-
 @layer base {
   h1 {
-    @apply text-5xl font-bold
+    @apply text-6xl font-bold;
   }
 /* 
   h2 {
@@ -53,13 +50,25 @@ main {
 
     --color-main: rgba(243, 233, 227, 1);
     --color-accent: rgba(0, 25, 179, 1);
+
     --color-green: rgba(0, 163, 86, 1);
     --color-orange: rgba(252, 147, 40, 1);
     --color-blue: rgba(0, 159, 211, 1);
     --color-red: rgba(255, 60, 55, 1);
     --color-grey: rgba(234, 234, 234, 1);
     --color-white: rgba(255, 255, 255, 1);
-  	
+
+    --text-shadow-xl: 0 135px 135px rgb(0, 0, 0 / 0.8); 
+
+    --animate-marquee: marquee 30s linear infinite;
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
 }
 
 @layer components {
@@ -69,19 +78,36 @@ main {
     }
 
     .button {
-        @apply inline-flex items-center justify-center rounded-lg px-8 py-6;
+        @apply inline-flex items-center justify-center rounded-lg;
     }
 
     .button-accent {
-        @apply bg-accent text-white;
+        @apply bg-accent text-white border-3 border-accent
+        hover:bg-transparent hover:text-accent;
     }
 
     .button-transparent {
-        @apply border-black border-3 active:bg-accent active:border-accent active:text-white;
+        @apply bg-transparent text-accent border-3 border-accent  
+        hover:bg-accent hover:text-white;
     }
 
     .card {
         @apply shadow-2xl p-6;
     }
 
+    .switch {
+        @apply relative inline-flex justify-center items-center h-[2em] aspect-square cursor-pointer text-white transition-transform duration-2000 ease-in-out;
+    }
+
+    .switch-on {
+        @apply rounded-full bg-white text-accent;
+    }
+
+
 }
+
+@layer utilities {
+    .pause {
+      animation-play-state: paused;
+    }
+ }
