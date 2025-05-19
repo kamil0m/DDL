@@ -2,6 +2,8 @@ import Logo from "./Logo"
 import { BsTelephone } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import FooterNav from "./FooterNav";
+import FooterConditions from "./FooterConditions";
 
 export default function Footer() {
   return (
@@ -25,28 +27,15 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-row gap-6">
-          <div className="flex flex-col">
-            <h5>Strony</h5>
-            <nav className="flex flex-col mt-10 gap-4">
-              <NavLink to="/" className="hover:text-black">Strona główna</NavLink>
-              <NavLink to="/events" className="hover:text-black">Wydarzenia</NavLink>
-              <NavLink to="/about" className="hover:text-black">O nas</NavLink>
-            </nav>
-          </div>
-          <div className="flex flex-col">
-            <h5>Warunki</h5>
-            <nav className="flex flex-col mt-10 gap-4">
-              <NavLink to="/" className="hover:text-black">RGPD</NavLink>
-              <NavLink to="/" className="hover:text-black">Regulamin</NavLink>
-            </nav>
-          </div>
+          < FooterNav />
+          < FooterConditions />
         </div>
 
       </div>
       <div className="flex flex-col">
         <h5>Follow Us On</h5>
         <div className="flex flex-col mt-10 gap-4">
-          <a href="/" className="button-blue w-[2rem] h-[2rem] inline-flex items-center justify-center rounded-full">
+          <a target="_blank" href="https://www.facebook.com/p/Dzien-dobry-Lille-Bonjour-Lille-61559848594019/" className="button-blue w-[2rem] h-[2rem] inline-flex items-center justify-center rounded-full">
             <FaFacebookF />
           </a>
           <p className="">© 2025 DDL</p>
