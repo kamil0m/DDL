@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex flex-row justify-end items-center gap-4">
             <LanguageToggle />
             <NavLink to="/contact" className="button button-transparent hover:button-accent px-8 py-2">Kontakt</NavLink>
-            <NavLink to="/joinus" className="button button-accent  hover:button-transparent px-8 py-2">Dołącz do nas</NavLink>
+            <NavLink to="/joinus" className="button button-accent hover:button-transparent px-8 py-2">Dołącz do nas</NavLink>
         </div>
         
     </header>

@@ -4,9 +4,8 @@
 @import "tailwindcss/utilities.css" layer(utilities); */
 
 :root {
-
-    font-family: "Roboto", sans-serif;
-    box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
 html {
@@ -49,7 +48,7 @@ main {
 
     --font-display: "Roboto", sans-serif;
 
-    --color-main: rgba(243, 233, 227, 1);
+    /* --color-main: rgba(243, 233, 227, 1); */
     --color-accent: rgba(0, 25, 179, 1);
 
     --color-green: rgba(0, 163, 86, 1);
@@ -99,10 +98,6 @@ main {
         hover:bg-accent hover:text-white;
     }
 
-    .card {
-        @apply shadow-2xl p-6;
-    }
-
     .switch {
         @apply relative inline-flex justify-center items-center h-[2em] aspect-square cursor-pointer text-white transition-transform duration-2000 ease-in-out;
     }
@@ -110,15 +105,9 @@ main {
     .switch-on {
         @apply rounded-full bg-white text-accent;
     }
-
-
 }
 
 @layer utilities {
-    .pause {
-      animation-play-state: paused;
-    }
-
     .bg-polka::before {
         content: "";
         position: absolute;

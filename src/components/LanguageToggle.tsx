@@ -10,7 +10,7 @@ export default function LanguageToggle() {
     }
 
     return (
-        <label onClick={switchLanguage} id="toggle" className="flex flex-row justify-between items-center gap-1.5 h-[2.5em] bg-accent rounded-full text-sm px-1 py-3 ">
+        <label onClick={switchLanguage} id="toggle" className="flex flex-row justify-between items-center gap-1.5 h-[2.5em] bg-accent rounded-full text-sm px-1 py-3 cursor-pointer">
             {/* ToDo : Integrate the checkbox to the multilingual handler */}
             {/* <input id="language-toggle" className="hidden" type="checkbox" /> */}
             <span className="switch switch-on">PL</span>

@@ -2,7 +2,6 @@
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Events from './pages/Events';
-// import JoinUs from './pages/JoinUs';
 import Contact from "./pages/Contact";
 import Mainlayout from "./layouts/Mainlayout";
 import {

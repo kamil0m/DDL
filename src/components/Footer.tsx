@@ -1,7 +1,6 @@
 import Logo from "./Logo"
 import { BsTelephone } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
 import FooterNav from "./FooterNav";
 import FooterConditions from "./FooterConditions";
 
