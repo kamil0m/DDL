@@ -27,7 +27,7 @@ export default function Greeting() {
                 
             <div className="flex flex-col justify-center gap-1 font-semilight">
                 <p className="whitespace-nowrap">Witamy na stronie stowarzyszenia Dzień Dobry Lille!</p>
-                <p className="whitespace-nowrap text-gray-400">Bienvenue sur le site de l'association Bonjour Lille !</p>
+                <p className="whitespace-nowrap text-darkgrey">Bienvenue sur le site de l'association Bonjour Lille !</p>
             </div>
             <NavLink to="/about" className="button button-accent px-4 py-2">Więcej informacji</NavLink>
         </div>

@@ -33,10 +33,11 @@ main {
   h4 {
     @apply text-xl font-semibold
   }
+    */
 
   h5 {
-    @apply text-sm font-semibold
-  } */
+    @apply text-xl text-black font-semibold
+  } 
 }
 
 @theme {
@@ -53,9 +54,11 @@ main {
 
     --color-green: rgba(0, 163, 86, 1);
     --color-orange: rgba(252, 147, 40, 1);
-    --color-blue: rgba(0, 159, 211, 1);
+    --color-skyblue: rgba(0, 159, 211, 1);
+    --color-blue: rgba(34, 79, 242, 1);
     --color-red: rgba(255, 60, 55, 1);
     --color-grey: rgba(234, 234, 234, 1);
+    --color-darkgrey: rgba(155, 155, 155, 1);
     --color-white: rgba(255, 255, 255, 1);
 
     --text-shadow-xl: 0 135px 135px rgb(0, 0, 0 / 0.8); 
@@ -86,6 +89,11 @@ main {
         hover:bg-transparent hover:text-accent;
     }
 
+    .button-blue {
+      @apply bg-blue text-white border-3 border-blue
+      hover:bg-transparent hover:text-blue;
+  }
+
     .button-transparent {
         @apply bg-transparent text-accent border-3 border-accent  
         hover:bg-accent hover:text-white;
@@ -109,5 +117,19 @@ main {
 @layer utilities {
     .pause {
       animation-play-state: paused;
+    }
+
+    .bg-polka::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: full;
+        height: 100px;
+        transform: translate(-50%, 50%);
+        background-color: var(--color-accent);
+        background-image: radial-gradient(circle, var(--color-accent) 1px, transparent 1px);
+        background-size: 20px 20px;
+        opacity: 0.2;
     }
  }
