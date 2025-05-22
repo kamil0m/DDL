@@ -20,15 +20,15 @@ main {
   h1 {
     @apply text-6xl font-bold;
   }
-/* 
+
   h2 {
-    @apply text-4xl font-bold
+    @apply text-xl font-bold text-blue
   }
 
   h3 {
-    @apply text-2xl font-semibold
+    @apply text-5xl font-semibold
   }
-
+/* 
   h4 {
     @apply text-xl font-semibold
   }
@@ -36,7 +36,11 @@ main {
 
   h5 {
     @apply text-xl text-black font-semibold
-  } 
+  }
+
+  p {
+    @apply text-2xl text-darkgrey font-light
+  }
 }
 
 @theme {
