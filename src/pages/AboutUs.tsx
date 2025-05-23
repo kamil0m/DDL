@@ -4,7 +4,20 @@ import homebackground from "../styles/images/homebackground.png";
 
 export default function AboutUs() {
 
-  const { data, loading, error } = useFetch('Abouts');
+  // const { data, loading, error } = useFetch('about-us-page');
+  const { data, loading, error } = useFetch('about-us-page');
+  
+  console.log(data.Cele);;
+
+
+
+  // if (data === undefined) {
+  //   return <div>Loading...</div>;
+  // } else if (data) {
+  //   console.log(data.Cele);;
+  // }
+
+  
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!</p>;
@@ -16,8 +29,8 @@ export default function AboutUs() {
         style={{ backgroundImage: `url(${homebackground})` }}
       ></div>
       <div className="relative container mx-auto max-w-screen-lg pt-40 pb-16 text-white">
-        < Card content={data.data[1]} />
-        <div id="goals">< Card content={data.data[0]} /></div>
+        < Card content={data.Cele} />
+        {/* <div id="goals">< Card content={data[0]} /></div> */}
       </div>
     </div>
   )
