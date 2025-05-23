@@ -2,13 +2,15 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className="flex flex-row justify-center items-between mt-40">
+    <section className="flex flex-row justify-center items-between mt-40 gap-6">
         <div className="flex flex-row items-center w-1/2 gap-8">
             <div className="flex flex-col gap-8">
                 <div className="h-[320px] w-[270px] bg-slate-500 rounded-lg"></div>
                 <div className="h-[320px] w-[270px] bg-slate-500 rounded-lg"></div>
             </div>
-            <div className="h-[400px] w-[270px] bg-slate-500 rounded-lg"></div>
+            <div className="bg-polka-br-red">
+                <div className="relative h-[400px] w-[270px] z-index-30 rounded-lg bg-slate-500"></div>
+            </div>
         </div>
         <div className="flex flex-col justify-center w-1/2 gap-6">
             <h2>About us</h2>
@@ -18,7 +20,7 @@ export default function About() {
             <a href="" className="button button-blue size-fit px-6 py-3 text-xl font-light">Join us on Facebook !</a>
 
         </div>
-    </div>
+    </section>
   )
 
 }
