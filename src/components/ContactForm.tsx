@@ -12,6 +12,7 @@ export default function ContactForm() {
 
     const [status, setStatus] = useState<string>("");
 
+
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -99,7 +100,17 @@ export default function ContactForm() {
                     >
                         Wyślij
                     </button>
-                    {status && <p className="text-green-500 font-bold text-lg mt-4"><span className="text-green-500">✓ </span>{status}</p>}
+                    {status && (<p className={`font-bold text-lg mt-4 ${status === "Wiadomość została wysłana!" ? "text-green-500" :
+                        status === "Wysyłanie..." ? "text-white" :
+                            "text-red-500"}`}>
+                        {status === "Wiadomość została wysłana!"
+                            ? `✓ ${status}`
+                            : status.startsWith("Błąd:") || status === "Wystąpił błąd podczas wysyłania wiadomości."
+                                ? `✗ ${status}`
+                                : status
+                        }
+                    </p>
+                    )}
                 </form>
             </section>
         </div>
