@@ -4,134 +4,135 @@
 @import "tailwindcss/utilities.css" layer(utilities); */
 
 :root {
-  font-family: "Roboto", sans-serif;
-  box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 main {
-  padding: 0;
+    padding: 0;
 }
 
 @layer base {
-  h1 {
-    @apply text-6xl font-bold;
-  }
+    h1 {
+        @apply text-6xl font-bold;
+    }
 
-  h2 {
-    @apply text-xl font-bold text-blue
-  }
+    h2 {
+        @apply text-xl font-bold text-blue
+    }
 
-  h3 {
-    @apply text-5xl font-semibold
-  }
-/* 
+    h3 {
+        @apply text-5xl font-semibold
+    }
+
+    /* 
   h4 {
     @apply text-xl font-semibold
   }
     */
 
-  h5 {
-    @apply text-xl text-black font-semibold
-  }
+    h5 {
+        @apply text-xl text-black font-semibold
+    }
 
-  p {
-    @apply text-2xl text-darkgrey font-light
-  }
+    p {
+        @apply text-2xl text-darkgrey font-light
+    }
 }
 
 @theme {
-  /* --breakpoint-*: initial;
+    /* --breakpoint-*: initial;
   --breakpoint-tablet: 770px;
   --breakpoint-desktop: 1200px; */
 
-  --spacing: 4px;
+    --spacing: 4px;
 
-  --font-display: "Roboto", sans-serif;
+    --font-display: "Roboto", sans-serif;
 
-  /* --color-main: rgba(243, 233, 227, 1); */
-  --color-accent: rgba(0, 25, 179, 1);
+    /* --color-main: rgba(243, 233, 227, 1); */
+    --color-accent: rgba(0, 25, 179, 1);
 
-  --color-green: rgba(0, 163, 86, 1);
-  --color-orange: rgba(252, 147, 40, 1);
-  --color-skyblue: rgba(0, 159, 211, 1);
-  --color-blue: rgba(34, 79, 242, 1);
-  --color-red: rgba(255, 60, 55, 1);
-  --color-grey: rgba(234, 234, 234, 1);
-  --color-darkgrey: rgba(155, 155, 155, 1);
-  --color-white: rgba(255, 255, 255, 1);
+    --color-green: rgba(0, 163, 86, 1);
+    --color-orange: rgba(252, 147, 40, 1);
+    --color-skyblue: rgba(0, 159, 211, 1);
+    --color-blue: rgba(34, 79, 242, 1);
+    --color-red: rgba(255, 60, 55, 1);
+    --color-grey: rgba(234, 234, 234, 1);
+    --color-darkgrey: rgba(155, 155, 155, 1);
+    --color-white: rgba(255, 255, 255, 1);
 
-  --text-shadow-xl: 0 135px 135px rgb(0, 0, 0 / 0.8); 
+    --text-shadow-xl: 0 135px 135px rgb(0, 0, 0 / 0.8);
 
-  --animate-marquee: marquee 30s linear infinite;
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
+    --animate-marquee: marquee 30s linear infinite;
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
     }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
 }
 
 @layer components {
 
-  .badge {
-    @apply inline-flex items-center justify-center;
-  }
+    .badge {
+        @apply inline-flex items-center justify-center;
+    }
 
-  .button {
-    @apply inline-flex items-center justify-center rounded-lg;
-  }
+    .button {
+        @apply inline-flex items-center justify-center rounded-lg;
+    }
 
-  .button-accent {
-    @apply bg-accent text-white border-3 border-accent
-    hover:bg-transparent hover:text-accent;
-  }
+    .button-accent {
+        @apply bg-accent text-white border-3 border-accent hover:bg-transparent hover:text-accent;
+    }
 
-  .button-blue {
-    @apply bg-blue text-white border-3 border-blue
-    hover:bg-transparent hover:text-blue;
-  }
+    .button-blue {
+        @apply bg-blue text-white border-3 border-blue hover:bg-transparent hover:text-blue;
+    }
 
-  .button-transparent {
-    @apply bg-transparent text-accent border-3 border-accent  
-    hover:bg-accent hover:text-white;
-  }
+    .button-transparent {
+        @apply bg-transparent text-accent border-3 border-accent hover:bg-accent hover:text-white;
+    }
 
-  .switch {
-    @apply relative inline-flex justify-center items-center h-[2em] aspect-square cursor-pointer text-white transition-transform duration-2000 ease-in-out;
-  }
+    .switch {
+        @apply relative inline-flex justify-center items-center h-[2em] aspect-square cursor-pointer text-white transition-transform duration-2000 ease-in-out;
+    }
 
-  .switch-on {
-    @apply rounded-full bg-white text-accent;
-  }
+    .switch-on {
+        @apply rounded-full bg-white text-accent;
+    }
 }
 
 @layer utilities {
-  .bg-polka-br-red {
-  position: relative;
-  z-index: 10;
+    .bg-polka-br-red {
+        position: relative;
+        z-index: 10;
+    }
+
+    .bg-polka-br-red::before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        right: 0;
+        width: 150px;
+        height: 130px;
+        transform: translate(30%, 30%);
+        background-image: radial-gradient(circle, var(--color-red) 3px, transparent 0px);
+        background-position: right 0 bottom 0;
+        background-repeat: round;
+        background-size: 21px 21px;
+    }
+
+
+
+
 }
-  .bg-polka-br-red::before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-    right: 0;
-    width: 150px;
-    height: 130px;
-    transform: translate(30%, 30%);
-    background-image: radial-gradient(circle, var(--color-red) 3px, transparent 0px);
-    background-position: right 0 bottom 0;
-    background-repeat: round;
-    background-size: 21px 21px;
-  }
-
-  
-
-
- }
