@@ -9,7 +9,6 @@ export default function ContactSection() {
                 <h2>Contact Us</h2>
                 <h3>Get In Touch With Us</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad id fugit pariatur dicta inventore, consequuntur error sequi deleniti earum, eveniet quidem maxime distinctio.</p>
-
                 <div className="flex flex-col gap-6">
                     <div className="flex items-center gap-4">
                         <div className="bg-zinc-200 p-5 rounded-lg">

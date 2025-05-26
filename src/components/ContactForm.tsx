@@ -60,46 +60,46 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="min-h-screen overflow-hidden justify-center flex items-center p-6 mt-10 relative">
-            <section id="contact" className="p-8 center shadow-lg rounded-lg flex flex-col max-w-xl w-full relative outline-black/5 bg-slate-800/90">
-                <header className="mb-6">
-                    <h2 className="text-4xl font-bold text-center text-white">
-                        Napisz do nas!
-                    </h2>
-                </header>
+        <div className=" flex justify-center items-center p-12 relative overflow-hidden">
+            <div className="bg-polka-bl-green" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600 rounded-tr-full z-0" />
+            <div className="bg-polka-br-green top-1/6 right-0" />
+            <section id="contact" className="relative z-10 bg-white shadow-xl rounded-xl p-8 max-w-md w-full">
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <Input
-                        label="Imię i nazwisko/Nazwa"
                         type="text"
                         id="name"
-                        placeholder="Twoje imię i nazwisko bądź nazwa"
+                        placeholder="Your Name"
+
                     />
                     <Input
-                        label="E-mail"
                         type="email"
                         id="email"
-                        placeholder="Twój e-mail"
+                        placeholder="Your Email"
                     />
                     <Input
-                        label="Temat"
                         type="text"
-                        id="title"
-                        placeholder="Wpisz temat wiadomości"
+                        id="phone"
+                        placeholder="Your Phone"
+
                     />
-                    <Input
-                        label="Wiadomość"
-                        type="textarea"
+                    <textarea
                         id="message"
-                        placeholder="Tutaj wpisz swoją wiadomość"
+                        placeholder="Your Message"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 h-32 resize-none"
                     />
                     <button
                         type="submit"
-                        className="w-full text-white border-2 py-2 px-6 mt-2 focus:outline-none hover:bg-[#4d6699] 
-                            hover:shadow-[0_0_40px_rgba(100,149,237,0.7)] rounded-full text-lg"
+                        className="w-full bg-blue-600 text-white py-3 rounded-md font-medium hover:bg-blue-700 transition"
                     >
-                        Wyślij
+                        Send Message
                     </button>
-                    {status && <p className="text-green-500 font-bold text-lg mt-4"><span className="text-green-500">✓ </span>{status}</p>}
+                    {status && (
+                        <p className="text-green-500 font-bold text-lg mt-4">
+                            <span className="text-green-500">✓ </span>
+                            {status}
+                        </p>
+                    )}
                 </form>
             </section>
         </div>

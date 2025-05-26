@@ -17,11 +17,11 @@ export default function Input({ label, type, id, placeholder, value, onChange }:
         onBlur: handleBlur,
         placeholder,
         required: true,
-        className: "w-full px-4 py-2 text-white bg-gray-600 rounded-lg focus:outline-none",
+        className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600",
     };
 
     return (
-        <label htmlFor={id} className="flex relative flex-col text-white font-medium mb-2">
+        <label htmlFor={id} className="flex relative flex-col font-medium mb-2">
             {label}
             {type !== "textarea" ? (
                 <input type={type} {...commonProps} />

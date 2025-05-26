@@ -132,7 +132,45 @@ main {
         background-size: 21px 21px;
     }
 
+    .bg-polka-bl-green {
+        position: relative;
+        z-index: 10;
+    }
 
+    .bg-polka-bl-green::before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        left: 0;
+        width: 150px;
+        height: 130px;
+        transform: translate(-30%, 230%);
+        background-image: radial-gradient(circle, rgba(0, 200, 130, 0.5) 3px, transparent 0px);
+        background-position: bottom left;
+        background-repeat: round;
+        background-size: 21px 21px;
+        pointer-events: none;
+    }
 
+    .bg-polka-br-green {
+        position: relative;
+        z-index: 10;
+    }
 
+    .bg-polka-br-green::before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        left: 0;
+        width: 165px;
+        height: 130px;
+        transform: translate(250%, -30%);
+        background-image: radial-gradient(circle, rgba(0, 200, 130, 0.5) 3px, transparent 0px);
+        background-position: right 0 bottom 0;
+        background-repeat: round;
+        background-size: 21px 21px;
+        pointer-events: none;
+    }
 }
