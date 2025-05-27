@@ -67,7 +67,7 @@ export default function ContactForm() {
     return (
         <div className=" flex justify-center items-center p-12 relative overflow-hidden">
             <div className="bg-polka-bl-green" />
-            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600 rounded-tr-full z-0" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-blue rounded-tr-full z-0" />
             <div className="bg-polka-br-green top-1/6 right-0" />
             <section id="contact" className="relative z-10 bg-white shadow-xl rounded-xl p-8 max-w-full w-lg">
 
@@ -101,7 +101,6 @@ export default function ContactForm() {
                     />
                     <button
                         type="submit"
-                        // className="w-full bg-blue-600 text-white py-4 rounded-md font-medium hover:bg-blue-700 transition mt-4"
                         className="button button-blue size-fit px-6 py-3 text-xl font-light w-full"
 
                     >

@@ -146,7 +146,7 @@ main {
         width: 150px;
         height: 130px;
         transform: translate(-30%, 250%);
-        background-image: radial-gradient(circle, rgba(0, 200, 130, 0.5) 3px, transparent 0px);
+        background-image: radial-gradient(circle, var(--color-green) 3px, transparent 0px);
         background-position: bottom left;
         background-repeat: round;
         background-size: 21px 21px;
@@ -167,7 +167,7 @@ main {
         width: 165px;
         height: 130px;
         transform: translate(250%, -60%);
-        background-image: radial-gradient(circle, rgba(0, 200, 130, 0.5) 3px, transparent 0px);
+        background-image: radial-gradient(circle, var(--color-green) 3px, transparent 0px);
         background-position: right 0 bottom 0;
         background-repeat: round;
         background-size: 21px 21px;

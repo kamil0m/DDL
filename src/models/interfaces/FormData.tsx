@@ -3,5 +3,5 @@ export default interface FormData {
     email: string;
     title: string;
     message: string;
-    pohne: string;
+    phone: string;
 }
