@@ -4,20 +4,9 @@ import homebackground from "../styles/images/homebackground.png";
 
 export default function AboutUs() {
 
-  // const { data, loading, error } = useFetch('about-us-page');
   const { data, loading, error } = useFetch('about-us-page');
   
-  console.log(data.Cele);;
-
-
-
-  // if (data === undefined) {
-  //   return <div>Loading...</div>;
-  // } else if (data) {
-  //   console.log(data.Cele);;
-  // }
-
-  
+  console.log(data.Cele);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!</p>;
