@@ -101,7 +101,7 @@ export default function ContactForm() {
                     />
                     <button
                         type="submit"
-                        className="button button-blue size-fit px-6 py-3 text-xl font-light w-full"
+                        className="button button-blue size-fit px-6 py-3 text-xl font-light w-full mt-2"
 
                     >
                         Send Message
