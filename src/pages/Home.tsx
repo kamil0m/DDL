@@ -3,6 +3,7 @@ import Greeting from "../components/Greeting";
 import InfoBar from "../components/InfoBar";
 import About from "../components/About";
 import ContactSection from "../components/ContactSection";
+import News from "../components/News";
 
 const Home: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
 
                 <div className="container">
                     < Greeting />
+                    < News />
                     < About />
                     < ContactSection />
                 </div>
