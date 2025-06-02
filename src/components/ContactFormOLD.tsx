@@ -6,7 +6,6 @@ export default function ContactForm() {
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
-        phone: "",
         title: "",
         message: "",
     });
@@ -20,15 +19,12 @@ export default function ContactForm() {
         const titleInput = (e.currentTarget as HTMLElement).querySelector<HTMLInputElement>('#title')!.value;
         const emailInput = (e.currentTarget as HTMLElement).querySelector<HTMLInputElement>('#email')!.value;
         const messageInput = (e.currentTarget as HTMLElement).querySelector<HTMLTextAreaElement>('#message')!.value;
-        const phoneInput = (e.currentTarget as HTMLElement).querySelector<HTMLTextAreaElement>('#phone')!.value;
-
 
         const form = {
             name: nameInput,
             email: emailInput,
             title: titleInput,
             message: messageInput,
-            phone: phoneInput,
         };
 
         setFormData(form);
@@ -52,7 +48,6 @@ export default function ContactForm() {
                     email: "",
                     title: "",
                     message: "",
-                    phone: "",
                 });
                 (e.target as HTMLFormElement).reset();
             } else {
@@ -65,58 +60,46 @@ export default function ContactForm() {
     };
 
     return (
-        <div className=" flex justify-center items-center p-12 relative overflow-hidden">
-            <div className="bg-polka-bl-green" />
-            <div className="absolute top-0 right-0 w-24 h-24 bg-blue rounded-tr-full z-0" />
-            <div className="bg-polka-br-green top-1/6 right-0" />
-            <section id="contact" className="relative z-10 bg-white shadow-xl rounded-xl p-8 max-w-full w-lg">
-
+        <div className="min-h-screen overflow-hidden justify-center flex items-center p-6 mt-10 relative">
+            <section id="contact" className="p-8 center shadow-lg rounded-lg flex flex-col max-w-xl w-full relative outline-black/5 bg-slate-800/90">
+                <header className="mb-6">
+                    <h2 className="text-4xl font-bold text-center text-white">
+                        Napisz do nas!
+                    </h2>
+                </header>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <Input
+                        label="Imię i nazwisko/Nazwa"
                         type="text"
                         id="name"
-                        placeholder="Your Name"
-
+                        placeholder="Twoje imię i nazwisko bądź nazwa"
                     />
                     <Input
+                        label="E-mail"
                         type="email"
                         id="email"
-                        placeholder="Your Email"
+                        placeholder="Twój e-mail"
                     />
                     <Input
+                        label="Temat"
                         type="text"
                         id="title"
-                        placeholder="Title"
+                        placeholder="Wpisz temat wiadomości"
                     />
                     <Input
-                        type="text"
-                        id="phone"
-                        placeholder="Your Phone"
-
-                    />
-                    <Input
+                        label="Wiadomość"
                         type="textarea"
                         id="message"
-                        placeholder="Your Message"
+                        placeholder="Tutaj wpisz swoją wiadomość"
                     />
                     <button
                         type="submit"
-                        className="button button-blue size-fit px-6 py-3 text-xl font-light w-full mt-2"
-
+                        className="w-full text-white border-2 py-2 px-6 mt-2 focus:outline-none hover:bg-[#4d6699] 
+                            hover:shadow-[0_0_40px_rgba(100,149,237,0.7)] rounded-full text-lg"
                     >
-                        Send Message
+                        Wyślij
                     </button>
-                    {status && (<p className={`font-bold text-lg mt-4 ${status === "Wiadomość została wysłana!" ? "text-green" :
-                        status === "Wysyłanie..." ? "text-white" :
-                            "text-red"}`}>
-                        {status === "Wiadomość została wysłana!"
-                            ? `✓ ${status}`
-                            : status.startsWith("Błąd:") || status === "Wystąpił błąd podczas wysyłania wiadomości."
-                                ? `✗ ${status}`
-                                : status
-                        }
-                    </p>
-                    )}
+                    {status && <p className="text-green-500 font-bold text-lg mt-4"><span className="text-green-500">✓ </span>{status}</p>}
                 </form>
             </section>
         </div>

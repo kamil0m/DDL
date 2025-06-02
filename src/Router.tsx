@@ -1,25 +1,28 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Events from './pages/Events';
 import Contact from "./pages/Contact";
 import Mainlayout from "./layouts/Mainlayout";
+import {
+  BrowserRouter,
+  Route, 
+  Routes 
+} from "react-router-dom";
 
-const App: React.FC = () => {
+export default function Router(){
   return (
-
-    <main className="p-6">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Mainlayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/joinus" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
-    </main>
+    </BrowserRouter>
   );
 };
 
-export default App;
