@@ -15,8 +15,8 @@ export default function ContactSection() {
                             <BiLogoFacebookCircle className="text-blue-600 text-4xl" />
                         </div>
                         <div>
-                            <p className="font-semibold underline text-black">Facebook Group</p>
-                            <p>Join us on Facebook !</p>
+                            <p className="font-semibold underline text-black text-xl">Facebook Group</p>
+                            <p className="text-xl">Join us on Facebook !</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -24,8 +24,8 @@ export default function ContactSection() {
                             <BiLogoFacebookCircle className="text-blue-600 text-4xl" />
                         </div>
                         <div>
-                            <p className="font-semibold underline text-black">Facebook Page</p>
-                            <p>Stay informed of our latest event and next meet ups !</p>
+                            <p className="font-semibold underline text-black text-xl">Facebook Page</p>
+                            <p className="text-xl">Stay informed of our latest event and next meet ups !</p>
                         </div>
                     </div>
 
@@ -34,8 +34,8 @@ export default function ContactSection() {
                             <FiDownload className="text-blue-600 text-3xl" />
                         </div>
                         <div>
-                            <p className="font-semibold text-black">Download your Lille Guide below</p>
-                            <a href="#" className="underline text-2xl text-darkgrey font-light">Click here to get your guide</a>
+                            <p className="font-semibold text-black text-xl">Download your Lille Guide below</p>
+                            <a href="#" className="underline text-xl text-darkgrey font-light">Click here to get your guide</a>
                         </div>
                     </div>
                 </div>
