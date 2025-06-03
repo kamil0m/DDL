@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function News() {
     const newsItems = [
         {
@@ -7,7 +9,7 @@ export default function News() {
             dateLabel: 'Published today',
             title: 'Event or informations title',
             eventDate: '12/04/2025',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         },
         {
             image: 'src/styles/images/news-1.jpg',
@@ -16,7 +18,7 @@ export default function News() {
             dateLabel: '12/04/2025',
             title: 'Event or informations title',
             eventDate: '12/04/2025',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         },
         {
             image: 'src/styles/images/news-1.jpg',
@@ -25,9 +27,22 @@ export default function News() {
             dateLabel: '10/04/2025',
             title: 'Event or informations title',
             eventDate: '12/04/2025',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
         },
     ];
+
+    const [expandedIndexes, setExpandedIndexes] = useState([]);
+
+    const toggleDescription = (index) => {
+        setExpandedIndexes((prev) =>
+            prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+        );
+    };
+
+    const truncate = (text, length = 100) => {
+        return text.length > length ? text.substring(0, length) + '...' : text;
+    };
+
     return (
         <section className="flex flex-col items-center mt-40 gap-6">
             <div className="text-center">
@@ -72,8 +87,17 @@ export default function News() {
                         <div className="flex flex-col gap-1">
                             <h3 className="text-lg font-semibold">{item.title}</h3>
                             <p className="text-sm text-gray-600">Event date: {item.eventDate}</p>
-                            <p className="text-sm text-gray-600">{item.description}</p>
-                            <a href="#" className="text-blue-600 underline text-sm mt-1">see more</a>
+                            <p className="text-sm text-gray-600">
+                                {expandedIndexes.includes(index)
+                                    ? item.description
+                                    : truncate(item.description, 100)}
+                            </p>
+                            <button
+                                onClick={() => toggleDescription(index)}
+                                className="text-blue-600 underline text-sm mt-1 self-start"
+                            >
+                                {expandedIndexes.includes(index) ? 'see less' : 'see more'}
+                            </button>
                         </div>
                     </div>
                 ))}
