@@ -51,7 +51,7 @@ export default function News() {
             </div>
             <div className="flex flex-row justify-between items-center gap-8 mt-8">
                 {newsItems.map((item, index) => (
-                    <div key={index} className="w-[500px] h-[450px] flex flex-col gap-4">
+                    <div key={index} className="w-[500px] h-[750px] flex flex-col gap-4">
 
                         <div className="relative rounded-lg overflow-hidden shadow-md">
                             <img src={item.image} alt="News" className="w-full h-full object-cover" />
@@ -59,7 +59,7 @@ export default function News() {
                                 {item.tags.map((tag, i) => (
                                     <span
                                         key={i}
-                                        className="bg-blue-700 text-white text-xs font-semibold px-2 py-1 rounded"
+                                        className="bg-blue text-white text-l font-semibold px-2 py-1 rounded"
                                     >
                                         ★ {tag}
                                     </span>
@@ -67,34 +67,36 @@ export default function News() {
                             </div>
                         </div>
 
-                        <div className="flex flex-row flex-wrap items-center gap-2 text-sm text-gray-500">
-                            {item.badges.map((badge, i) => (
-                                <span
-                                    key={i}
-                                    className={`px-2 py-1 text-xs rounded font-medium ${badge.includes('Published')
-                                        ? 'bg-green-200 text-green-800'
-                                        : badge === 'New'
-                                            ? 'bg-sky-200 text-sky-800'
-                                            : 'bg-yellow-300 text-yellow-800'
-                                        }`}
-                                >
-                                    {badge}
-                                </span>
-                            ))}
-                            <span>{item.dateLabel}</span>
+                        <div className="flex justify-between items-center w-full text-l text-gray-500 flex-wrap gap-2">
+                            <div className="flex flex-wrap items-center gap-2">
+                                {item.badges.map((badge, i) => (
+                                    <span
+                                        key={i}
+                                        className={`px-2 py-1 text-l rounded font-medium ${badge.includes('Published')
+                                            ? 'bg-green text-white'
+                                            : badge === 'New'
+                                                ? 'bg-skyblue text-white'
+                                                : 'bg-orange text-white'
+                                            }`}
+                                    >
+                                        {badge}
+                                    </span>
+                                ))}
+                            </div>
+                            <span className="ml-auto text-xl">{item.dateLabel}</span>
                         </div>
 
-                        <div className="flex flex-col gap-1">
-                            <h3 className="text-lg font-semibold">{item.title}</h3>
-                            <p className="text-sm text-gray-600">Event date: {item.eventDate}</p>
-                            <p className="text-sm text-gray-600">
+                        <div className="flex flex-col gap-4">
+                            <h4>{item.title}</h4>
+                            <p>Event date: {item.eventDate}</p>
+                            <p>
                                 {expandedIndexes.includes(index)
                                     ? item.description
                                     : truncate(item.description, 100)}
                             </p>
                             <button
                                 onClick={() => toggleDescription(index)}
-                                className="text-blue-600 underline text-sm mt-1 self-start"
+                                className="underline text-2xl text-darkgrey mt-1 self-start"
                             >
                                 {expandedIndexes.includes(index) ? 'see less' : 'see more'}
                             </button>

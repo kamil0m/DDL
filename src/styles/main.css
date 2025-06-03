@@ -29,11 +29,11 @@ main {
         @apply text-5xl font-semibold
     }
 
-    /* 
-  h4 {
-    @apply text-xl font-semibold
-  }
-    */
+
+    h4 {
+        @apply text-3xl text-black font-semibold
+    }
+
 
     h5 {
         @apply text-xl text-black font-semibold
