@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Newspaper } from 'lucide-react';
+
 
 export default function News() {
     const newsItems = [
@@ -55,13 +57,19 @@ export default function News() {
 
                         <div className="relative rounded-lg overflow-hidden shadow-md">
                             <img src={item.image} alt="News" className="w-full h-full object-cover" />
-                            <div className="absolute top-2 left-2">
+                            <div className="absolute top-2 left-2 flex flex-col gap-1">
                                 {item.tags.map((tag, i) => (
                                     <span
                                         key={i}
-                                        className="bg-blue text-white text-l font-semibold px-2 py-1 rounded"
+                                        className={`flex items-center gap-1 text-l font-semibold px-2 py-1 rounded ${tag.includes('Event')
+                                            ? 'bg-blue text-white'
+                                            : tag === 'News'
+                                                ? 'bg-white text-blue'
+                                                : 'bg-skyblue text-white'
+                                            }
+                                            `}
                                     >
-                                        ★ {tag}
+                                        {tag === 'News' ? <Newspaper size={16} /> : '★'} {tag}
                                     </span>
                                 ))}
                             </div>
