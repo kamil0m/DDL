@@ -29,18 +29,18 @@ main {
         @apply text-5xl font-semibold
     }
 
-    /* 
-  h4 {
-    @apply text-xl font-semibold
-  }
-    */
+        
+    h4 {
+        @apply text-2xl font-semibold text-accent
+    }
+    
 
     h5 {
         @apply text-xl text-black font-semibold
     }
 
     p {
-        @apply text-2xl text-darkgrey font-light
+        @apply text-darkgrey font-light
     }
 }
 
