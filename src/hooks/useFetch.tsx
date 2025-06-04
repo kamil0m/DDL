@@ -11,7 +11,6 @@ const useFetch = (urlExtention: string) => {
 
             try {
                 const url = "https://ddlille-9b0a6ce9f6c7.herokuapp.com/api/" + urlExtention;
-                console.log(url);
                 const res = await fetch(url);
                 const json = await res.json();
 
