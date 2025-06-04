@@ -7,7 +7,7 @@ import FooterConditions from "./FooterConditions";
 export default function Footer() {
   return (
     <div className="container flex flex-row justify-between h-[300px] my-20 text-darkgrey text-lg font-light bg-dots">
-      <div className="flex flex-row max-w-1/2 gap-6">
+      <div className="flex flex-row max-w-1/2 gap-15">
 
         <div className="flex flex-col justify-between max-w-1/2 gap-6">
           < Logo size="h-[8rem] w-auto" />
