@@ -15,7 +15,7 @@ export default function Header() {
     <header className="container flex flex-row justify-between items-center w-full py-4 text-xl">
 
       <div className="flex flex-row items-center gap-10">
-        < Logo size="h-[4rem] w-[4rem]" />
+        < Logo size="h-[4rem] w-auto" />
         < NavBar />
         < SearchBar />
       </div>

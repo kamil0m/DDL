@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="flex flex-row max-w-1/2 gap-6">
 
         <div className="flex flex-col justify-between max-w-1/2 gap-6">
-          < Logo size="h-[8rem] w-[8rem]" />
+          < Logo size="h-[8rem] w-auto" />
           <p className="">
             Sed ut perspiciatis undmnis is iste
             natus error sit amet voluptatem
