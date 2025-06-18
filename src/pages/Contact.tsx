@@ -1,4 +1,4 @@
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../components/ContactForm_old';
 import homebackground from "../styles/images/homebackground.png";
 
 export default function Contact() {
