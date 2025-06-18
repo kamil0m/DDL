@@ -32,7 +32,7 @@ export default function Greeting() {
                 <div className="flex flex-col justify-center gap-1 font-semilight">
                     <p className="whitespace-nowrap">{t("greetings.greetings")}</p>
                 </div>
-                <NavLink to="/about" className="button button-accent px-4 py-2">Więcej informacji</NavLink>
+                <NavLink to="/about" className="button button-accent px-4 py-2">{t("greetings.more")}</NavLink>
             </div>
 
         </div>

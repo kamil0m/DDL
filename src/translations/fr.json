@@ -9,6 +9,11 @@
         ",contact": "Contact"
     },
     "greetings": {
-        "greetings": "Bienvenue sur le site de l'association Bonjour Lille !"
+        "greetings": "Bienvenue sur le site de l'association Bonjour Lille !",
+        "more": ""
+    },
+    "about": {
+        "title": "",
+        "button": ""
     }
 }

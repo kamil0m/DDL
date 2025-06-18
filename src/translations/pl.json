@@ -9,6 +9,56 @@
         "contact": "Kontakt"
     },
     "greetings": {
-        "greetings": "Witamy na stronie stowarzyszenia Dzień Dobry Lille!"
+        "greetings": "Witamy na stronie stowarzyszenia Dzień Dobry Lille!",
+        "more": "Więcej informacji"
+    },
+    "about": {
+        "title": "O nas",
+        "button": "Dołącz do nas na Facebooku!"
+    },
+    "news": {},
+    "contact": {
+        "title": "Kontakt",
+        "facebookgroup": "Grupa na Facebooku",
+        "facebookgroupjoin": "Dołącz do grupy na Facebooku!",
+        "facebookpage": "Facebook",
+        "facebookpageinfo": "Bądź na bieżąco z naszymi najnowszymi wydarzeniami i kolejnymi spotkaniami!",
+        "lilleguide": "Pobierz poniżej nasz przewodnik po Lille",
+        "lilleguidedownload": "Kliknij tutaj, aby pobrać przewodnik",
+        "form": {
+            "name": {
+                "placeholder": "Imię i nazwisko"
+            },
+            "email": {
+                "placeholder": "Adres e-mail"
+            },
+            "title": {
+                "placeholder": "Tytuł wiadomości"
+            },
+            "phone": {
+                "placeholder": "Numer telefonu"
+            },
+            "message": {
+                "placeholder": "Treść wiadomości"
+            },
+            "submit": "Wyślij wiadomość",
+            "status": {
+                "sending": "Wysyłanie...",
+                "success": "Wiadomość została wysłana!",
+                "error": "Wystąpił błąd podczas wysyłania wiadomości.",
+                "apiError": "Błąd: {{message}}"
+            }
+        }
+    },
+    "footer": {
+        "followus": "Śledź nas na:",
+        "copyrights": "© 2025 DDL",
+        "pages": "Strony",
+        "mainpage": "Strona główna",
+        "events": "Wydarzenia",
+        "aboutus": "O nas",
+        "conditions": "Warunki",
+        "GDPR": "Polityka prywatności",
+        "statute": "Regulamin"
     }
 }
