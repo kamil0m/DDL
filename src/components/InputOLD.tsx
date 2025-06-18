@@ -17,7 +17,7 @@ export default function Input({ label, type, id, placeholder, value, onChange }:
         onBlur: handleBlur,
         placeholder,
         required: true,
-        className: "w-full px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 my-1.5",
+        className: "w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600",
     };
 
     return (
@@ -26,9 +26,9 @@ export default function Input({ label, type, id, placeholder, value, onChange }:
             {type !== "textarea" ? (
                 <input type={type} {...commonProps} />
             ) : (
-                <textarea {...commonProps} className={`${commonProps.className} h-32 resize-none mb-3`} />
+                <textarea {...commonProps} className={`${commonProps.className} h-40`} />
             )}
-            <span className="absolute bottom-1 translate-y-full w-full text-center text-red-500 text-xs italic">
+            <span className="absolute bottom-0 translate-y-full w-full text-center text-red-500 text-xs italic">
                 {errorMessage}
             </span>
         </label>
