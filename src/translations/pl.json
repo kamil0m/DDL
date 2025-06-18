@@ -2,7 +2,9 @@
     "nav": {
         "home": "Strona główna",
         "about": "O nas",
-        "events": "Wydarzenia",
+        "events": "Wydarzenia"
+    },
+    "header": {
         "joinus": "Dołącz do nas",
         "contact": "Kontakt"
     }
