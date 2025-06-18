@@ -6,6 +6,9 @@
     },
     "header": {
         "joinus": "Rejoignez-nous",
-        "contact": "Contact"
+        ",contact": "Contact"
+    },
+    "greetings": {
+        "greetings": "Bienvenue sur le site de l'association Bonjour Lille !"
     }
 }

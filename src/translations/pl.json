@@ -7,5 +7,8 @@
     "header": {
         "joinus": "Dołącz do nas",
         "contact": "Kontakt"
+    },
+    "greetings": {
+        "greetings": "Witamy na stronie stowarzyszenia Dzień Dobry Lille!"
     }
 }
