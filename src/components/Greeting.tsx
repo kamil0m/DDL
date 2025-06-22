@@ -1,6 +1,7 @@
 import homebackground from "../styles/images/homebackground.png";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 
 
 export default function Greeting() {
@@ -29,8 +30,15 @@ export default function Greeting() {
             text-center text-black bg-white rounded-2xl shadow-lg"
             >
 
-                <div className="flex flex-col justify-center gap-1 font-semilight">
+                {/* <div className="flex flex-col justify-center gap-1 font-semilight">
                     <p className="whitespace-nowrap">{t("greetings.greetings")}</p>
+                </div> */}
+                <div className="flex flex-col justify-center gap-1 font-semilight">
+                    <p className="whitespace-nowrap">
+                        <Trans i18nKey="greetings.greetings">
+                            Bienvenue sur la page de l'association « <i>Bonjour Lille !</i> »
+                        </Trans>
+                    </p>
                 </div>
                 <NavLink to="/about" className="button button-accent px-4 py-2">{t("greetings.more")}</NavLink>
             </div>
