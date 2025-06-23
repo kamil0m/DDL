@@ -10,14 +10,14 @@ export default function AboutUs() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error!</p>;
 
-  console.log(data.Motto[0].children[0].text);
+  // console.log(data.Motto[0].children[0].text);
   const motto = data.Motto[0].children[0].text;
 
   return (
-    <div className="flex flex-col gap-20">
-      <img src={logo} alt="logo" className="absolute h-full -translate-1/4 z-0 opacity-25"/>
+    <div className="flex flex-col gap-20 mt-20">
+      <img src={logo} alt="logo" className="absolute h-full -translate-2/7 z-0 opacity-10"/>
       <div className="container max-w-3/5 mx-auto px-4 z-10">
-        <section className="flex flex-col gap-5">
+        <section className="flex flex-col">
           <h4>Historia</h4>
           <RenderRichText 
             content={data.Historia} 

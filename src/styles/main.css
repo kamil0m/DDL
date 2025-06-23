@@ -1,7 +1,4 @@
 @import "tailwindcss";
-/* @import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
-@import "tailwindcss/utilities.css" layer(utilities); */
 
 :root {
     font-family: "Roboto", sans-serif;
@@ -40,7 +37,7 @@ main {
     }
 
     p {
-        @apply text-darkgrey font-light
+        @apply text-darkgrey font-light mt-5;
     }
 }
 
@@ -62,7 +59,7 @@ main {
     --color-blue: rgba(34, 79, 242, 1);
     --color-red: rgba(255, 60, 55, 1);
     --color-grey: rgba(234, 234, 234, 1);
-    --color-darkgrey: rgba(155, 155, 155, 1);
+    --color-darkgrey: rgba(100, 100, 100, 1);
     --color-white: rgba(255, 255, 255, 1);
 
     --text-shadow-xl: 0 135px 135px rgb(0, 0, 0 / 0.8);
