@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const useFetch = (urlExtention: string) => {
     const [data, setData] = useState({});
@@ -6,23 +7,35 @@ const useFetch = (urlExtention: string) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true);
+        setLoading(true);
 
-            try {
-                const url = "https://ddlille-9b0a6ce9f6c7.herokuapp.com/api/" + urlExtention;
-                const res = await fetch(url);
-                const json = await res.json();
-
-                setData(json.data);
-                setLoading(false);
-            } catch (error) {
-                setError(error);
-                setLoading(false);
-            }
-        }
-        fetchData();
+        const url = "https://ddlille-9b0a6ce9f6c7.herokuapp.com/api/" + urlExtention;
+        axios.get(url)
+            .then(res => {setData(res.data.data)})
+            .catch(err => {setError(err)})
+            .finally(() => {setLoading(false)});
     }, [urlExtention]);
+        
+
+
+    //     const fetchData = async () => {
+    //         setLoading(true);
+
+    //         try {
+    //             const url = "https://ddlille-9b0a6ce9f6c7.herokuapp.com/api/" + urlExtention;
+    //             const res = await axios.get(url)
+
+    //             // const json = await res.json();
+
+    //             setData(res.data);
+    //             setLoading(false);
+    //         } catch (error) {
+    //             setError(error);
+    //             setLoading(false);
+    //         }
+    //     }
+    //     fetchData();
+    // }, [urlExtention]);
     return { data, loading, error };
 }
 

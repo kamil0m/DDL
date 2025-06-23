@@ -173,4 +173,45 @@ main {
         background-size: 21px 21px;
         pointer-events: none;
     }
+
+    /* Custom centered list markers */
+    .centered-list {
+        counter-reset: list-counter;
+        list-style: none;
+    }
+
+    .centered-list li {
+        counter-increment: list-counter;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .centered-list .square-markers::before {
+        content: counter(list-counter);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        margin-right: 0.75rem;
+        background-color: rgba(0, 25, 179, .1);
+        color: var(--color-accent);
+        font-weight: bold;
+        font-size: 2em;
+        border-radius: 5%;
+        flex-shrink: 0;
+    }
+
+    /* Alternative square markers */
+    .centered-list-square li::before {
+        border-radius: 0.375rem; /* rounded-md */
+    }
+
+    /* Alternative larger markers */
+    .centered-list-lg li::before {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.125rem; /* text-lg */
+    }
 }
