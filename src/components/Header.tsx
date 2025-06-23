@@ -12,13 +12,13 @@ export default function Header() {
     }
   };
   return (
-    <header className="flex justify-center z-10 bg-white w-full">
-      <div className="container flex flex-row justify-between items-center w-full py-4 text-xl">
-        <div className="flex flex-row items-center gap-10">
-          < Logo size="h-[4rem] w-[4rem]" />
-          < NavBar />
-          < SearchBar />
-        </div>
+    <header className="container flex flex-row justify-between items-center w-full py-4 text-xl">
+
+      <div className="flex flex-row items-center gap-10">
+        < Logo size="h-[4rem] w-auto" />
+        < NavBar />
+        < SearchBar />
+      </div>
 
         <div className="flex flex-row justify-end items-center gap-4">
           <LanguageToggle />
