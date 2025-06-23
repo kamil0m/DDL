@@ -4,7 +4,7 @@ import { BiLogoFacebookCircle } from "react-icons/bi";
 
 export default function ContactSection() {
     return (
-        <section className="flex flex-row justify-center items-between mt-40 gap-6">
+        <section id="contact" className="flex flex-row justify-center items-between mt-40 gap-6">
             <div className="flex flex-col justify-center w-1/2 gap-6">
 
                 <h2>Kontakt</h2>
