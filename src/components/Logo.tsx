@@ -1,4 +1,4 @@
-import logo from "../assets/images/logo.jpg";
+import logo from "../assets/images/DDL_logo_poziome.png";
 
 interface LogoProps {
     size: string;

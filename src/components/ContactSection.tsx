@@ -7,21 +7,24 @@ export default function ContactSection() {
     const { t } = useTranslation();
 
     return (
-        <section className="flex flex-row justify-center items-between mt-40 gap-6">
+        <section id="contact" className="flex flex-row justify-center items-between mt-40 gap-6">
             <div className="flex flex-col justify-center w-1/2 gap-6">
                 <h2>{t("contact.title")}</h2>
-                <h3>Get In Touch With Us</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad id fugit pariatur dicta inventore, consequuntur error sequi deleniti earum, eveniet quidem maxime distinctio.</p>
+                <h3>Skontaktuj się z nami</h3>
+                <p>Masz pytania, chcesz dowiedzieć się więcej o naszej działalności lub zaproponować współpracę? Skontaktuj się z nami za pomocą poniższego formularza – z przyjemnością odpowiemy na Twoją wiadomość. Jesteśmy otwarci na nowe pomysły, inicjatywy i wszelkie formy zaangażowania. Napisz do nas, niezależnie od tego, czy jesteś członkiem społeczności polonijnej, sympatykiem kultury polskiej, czy po prostu chcesz się z nami spotkać!</p>
                 <div className="flex flex-col gap-6">
+
+                    {/* Facebook group */}
                     <div className="flex items-center gap-4">
-                        <div className="bg-zinc-200 p-5 rounded-lg">
+                        <a href="https://www.facebook.com/groups/1403266290513975" target="_blank" className="bg-zinc-200 p-5 rounded-lg">
                             <BiLogoFacebookCircle className="text-blue-600 text-4xl" />
-                        </div>
+                        </a>
                         <div>
-                            <p className="font-semibold underline text-black text-xl">{t("contact.facebookgroup")}</p>
+                            <a href="https://www.facebook.com/groups/1403266290513975" target="_blank" className="font-semibold underline text-black text-xl">{t("contact.facebookgroup")}</a>
                             <p className="text-xl">{t("contact.facebookgroupjoin")}</p>
                         </div>
                     </div>
+                    {/* Facebook page */}
                     <div className="flex items-center gap-4">
                         <div className="bg-zinc-200 p-5 rounded-lg">
                             <BiLogoFacebookCircle className="text-blue-600 text-4xl" />
@@ -44,6 +47,7 @@ export default function ContactSection() {
                 </div>
             </div>
 
+            {/* Contact form */}
             <div className="flex flex-row items-center w-1/2 gap-8">
                 < ContactForm />
             </div>
