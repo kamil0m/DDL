@@ -75,36 +75,36 @@ export default function ContactForm() {
                     <Input
                         type="text"
                         id="name"
-                        placeholder="Your Name"
+                        placeholder="Twoje imię"
 
                     />
                     <Input
                         type="email"
                         id="email"
-                        placeholder="Your Email"
+                        placeholder="Twój email"
                     />
                     <Input
                         type="text"
                         id="title"
-                        placeholder="Title"
+                        placeholder="Tytuł"
                     />
                     <Input
                         type="text"
                         id="phone"
-                        placeholder="Your Phone"
+                        placeholder="Twój telefon"
 
                     />
                     <Input
                         type="textarea"
                         id="message"
-                        placeholder="Your Message"
+                        placeholder="Twoja wiadomość"
                     />
                     <button
                         type="submit"
                         className="button button-blue size-fit px-6 py-3 text-xl font-light w-full mt-2"
 
                     >
-                        Send Message
+                        Wyślij wiadomość
                     </button>
                     {status && (<p className={`font-bold text-lg mt-4 ${status === "Wiadomość została wysłana!" ? "text-green" :
                         status === "Wysyłanie..." ? "text-white" :

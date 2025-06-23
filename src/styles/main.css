@@ -1,7 +1,4 @@
 @import "tailwindcss";
-/* @import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
-@import "tailwindcss/utilities.css" layer(utilities); */
 
 :root {
     font-family: "Roboto", sans-serif;
@@ -29,18 +26,18 @@ main {
         @apply text-5xl font-semibold
     }
 
-    /* 
-  h4 {
-    @apply text-xl font-semibold
-  }
-    */
+        
+    h4 {
+        @apply text-2xl font-semibold text-accent
+    }
+    
 
     h5 {
         @apply text-xl text-black font-semibold
     }
 
     p {
-        @apply text-2xl text-darkgrey font-light
+        @apply text-darkgrey font-light mt-5;
     }
 }
 
@@ -62,12 +59,12 @@ main {
     --color-blue: rgba(34, 79, 242, 1);
     --color-red: rgba(255, 60, 55, 1);
     --color-grey: rgba(234, 234, 234, 1);
-    --color-darkgrey: rgba(155, 155, 155, 1);
+    --color-darkgrey: rgba(100, 100, 100, 1);
     --color-white: rgba(255, 255, 255, 1);
 
     --text-shadow-xl: 0 135px 135px rgb(0, 0, 0 / 0.8);
 
-    --animate-marquee: marquee 30s linear infinite;
+    --animate-marquee: marquee 20s linear infinite;
 
     @keyframes marquee {
         0% {
@@ -172,5 +169,46 @@ main {
         background-repeat: round;
         background-size: 21px 21px;
         pointer-events: none;
+    }
+
+    /* Custom centered list markers */
+    .centered-list {
+        counter-reset: list-counter;
+        list-style: none;
+    }
+
+    .centered-list li {
+        counter-increment: list-counter;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .centered-list .square-markers::before {
+        content: counter(list-counter);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        margin-right: 0.75rem;
+        background-color: rgba(0, 25, 179, .1);
+        color: var(--color-accent);
+        font-weight: bold;
+        font-size: 2em;
+        border-radius: 5%;
+        flex-shrink: 0;
+    }
+
+    /* Alternative square markers */
+    .centered-list-square li::before {
+        border-radius: 0.375rem; /* rounded-md */
+    }
+
+    /* Alternative larger markers */
+    .centered-list-lg li::before {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.125rem; /* text-lg */
     }
 }

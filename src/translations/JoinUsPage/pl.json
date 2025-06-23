@@ -1,0 +1,40 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "about": "Nous connaître",
+        "events": "Événements",
+        "joinus": "Rejoignez-nous",
+        "contact": "Contact",
+        "goals": "Objectifs",
+        "history": "Histoire",
+        "people": "Équipe"
+    },
+    "contact": {
+        "title": "Contactez-nous !"
+    },
+    "form": {
+        "name": {
+            "label": "Nom complet / Nom de l'entreprise",
+            "placeholder": "Votre nom complet ou entreprise"
+        },
+        "email": {
+            "label": "E-mail",
+            "placeholder": "Votre e-mail"
+        },
+        "title": {
+            "label": "Sujet",
+            "placeholder": "Entrez le sujet"
+        },
+        "message": {
+            "label": "Message",
+            "placeholder": "Écrivez votre message ici"
+        },
+        "submit": "Envoyer",
+        "status": {
+            "sending": "Envoi en cours...",
+            "success": "Message envoyé avec succès !",
+            "error": "Une erreur est survenue lors de l’envoi du message.",
+            "apiError": "Erreur : {{message}}"
+        }
+    }
+}
