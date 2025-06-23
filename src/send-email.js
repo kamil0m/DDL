@@ -47,6 +47,7 @@ app.post('/send-email', (req, res) => {
             console.log('Wiadomość wysłana: ' + info.response);
             res.status(200).send({ message: 'Wiadomość została wysłana pomyślnie!' });
         }
+
     });
 });
 app.listen(port, () => {
