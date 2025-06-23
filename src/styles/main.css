@@ -64,7 +64,7 @@ main {
 
     --text-shadow-xl: 0 135px 135px rgb(0, 0, 0 / 0.8);
 
-    --animate-marquee: marquee 30s linear infinite;
+    --animate-marquee: marquee 20s linear infinite;
 
     @keyframes marquee {
         0% {
