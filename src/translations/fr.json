@@ -6,11 +6,12 @@
     },
     "header": {
         "joinus": "Rejoignez-nous !",
-        "contact": "Contact"
+        "contact": "Contact",
+        "search": "Recherche ..."
     },
     "greetings": {
         "greetings": "Bienvenue sur la page de l'association « Dzień Dobry Lille! »",
-        "more": "Plus d'informations"
+        "more": "Plus d'infos"
     },
     "about": {
         "title": "Qui sommes-nous ?",
