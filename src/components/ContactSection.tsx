@@ -20,18 +20,18 @@ export default function ContactSection() {
                             <BiLogoFacebookCircle className="text-blue-600 text-4xl" />
                         </a>
                         <div>
-                            <a href="https://www.facebook.com/groups/1403266290513975" target="_blank" className="font-semibold underline text-black text-xl">{t("contact.facebookgroup")}</a>
-                            <p className="text-xl">{t("contact.facebookgroupjoin")}</p>
+                            <a href="https://www.facebook.com/groups/1403266290513975" target="_blank" className="font-semibold underline text-black text-xl mt-0">{t("contact.facebookgroup")}</a>
+                            <p className="text-xl mt-0">{t("contact.facebookgroupjoin")}</p>
                         </div>
                     </div>
                     {/* Facebook page */}
                     <div className="flex items-center gap-4">
-                        <div className="bg-zinc-200 p-5 rounded-lg">
+                        <a href="https://www.facebook.com/profile.php?id=61559848594019" target="_blank" className="bg-zinc-200 p-5 rounded-lg">
                             <BiLogoFacebookCircle className="text-blue-600 text-4xl" />
-                        </div>
+                        </a>
                         <div>
-                            <p className="font-semibold underline text-black text-xl">{t("contact.facebookpage")}</p>
-                            <p className="text-xl">{t("contact.facebookpageinfo")}</p>
+                            <a href="https://www.facebook.com/profile.php?id=61559848594019" target="_blank" className="font-semibold underline text-black text-xl mt-0">{t("contact.facebookpage")}</a>
+                            <p className="text-xl mt-0">{t("contact.facebookpageinfo")}</p>
                         </div>
                     </div>
 
