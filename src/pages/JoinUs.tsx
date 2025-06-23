@@ -17,7 +17,7 @@ export default function JoinUs() {
             <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-2">
                     <h4>Jak zostać członkiem?</h4>
-                    { <RenderRichText content={data.Jak_zostac_czlonkiem} pClasses="text-red" />}
+                    { <RenderRichText content={data.Jak_zostac_czlonkiem} />}
                 </div>
                 <div className="flex flex-col gap-2">
                     <h4>Dlaczego do nas dołączyć?</h4>
