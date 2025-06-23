@@ -3,7 +3,7 @@ import { Newspaper } from "lucide-react";
 import useFetch from "../hooks/useFetch";
 
 export default function News() {
-    const { data, loading, error } = useFetch("events?populate=*");
+    const { data, loading, error } = useFetch("events");
     console.log(data);
     const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
 
