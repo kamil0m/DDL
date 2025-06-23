@@ -3,14 +3,15 @@ import Logo from "./Logo";
 import NavBar from "./NavBar";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 // import SearchBar from "./SearchBar";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const { t } = useTranslation();
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    
+
     if (location.pathname === '/') {
       // Already on home page, just scroll to contact
       const contactElement = document.getElementById('contact');
@@ -37,11 +38,10 @@ export default function Header() {
           < NavBar />
           {/* < SearchBar /> */}
         </div>
-
         <div className="flex flex-row justify-end items-center gap-4">
           <LanguageToggle />
-          <button onClick={handleContactClick} className="button button-transparent hover:button-accent px-8 py-2">Kontakt</button>
-          <NavLink to="/joinus" className="button button-accent hover:button-transparent px-8 py-2">Dołącz do nas</NavLink>
+          <button onClick={handleContactClick} className="button button-transparent hover:button-accent px-8 py-2">{t("header.contact")}</button>
+          <NavLink to="/joinus" className="button button-accent hover:button-transparent px-8 py-2">{t("header.joinus")}</NavLink>
         </div>
       </div>
     </header>

@@ -1,0 +1,83 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "about": "Qui sommes-nous ?",
+        "events": "Évènements"
+    },
+    "header": {
+        "joinus": "Rejoignez-nous !",
+        "contact": "Contact",
+        "search": "Recherche ..."
+    },
+    "greetings": {
+        "greetings": "Bienvenue sur la page de l'association « Dzień Dobry Lille! »",
+        "more": "Plus d'infos"
+    },
+    "about": {
+        "title": "Qui sommes-nous ?",
+        "button": "Rejoignez-nous sur Facebook !"
+    },
+    "news": {
+        "heading": "Actualités récentes",
+        "subheading": "(tutaj należy przygotować tekst w obu językach. W projekcie w Figmie miejsce na tekst znajuduje się pod tekstem Our Recent News.)",
+        "dateLabel": "Date de l'évènement",
+        "readMore": "Plus",
+        "readLess": "Réduire",
+        "date": {
+            "today": "Publié aujourd'hui"
+        },
+        "tags": {
+            "event": "Évènement",
+            "news": "Actu"
+        },
+        "badges": {
+            "new": "Nouveau",
+            "important": "Important",
+            "published": "Publié il y a 2 jours"
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "facebookgroup": "Groupe Facebook",
+        "facebookgroupjoin": "Rejoignez-nous sur Facebook !",
+        "facebookpage": "Facebook",
+        "facebookpageinfo": "Soyez à jour avec toutes nos actus i nos prochains évènements !",
+        "lilleguide": "Télécharge le guide de Lille ci-dessous",
+        "lilleguidedownload": "Clique ici, pour télécharger le guide",
+        "form": {
+            "name": {
+                "placeholder": "Nom et prénom"
+            },
+            "email": {
+                "placeholder": "Adresse e-mail"
+            },
+            "title": {
+                "placeholder": "Objet du mail"
+            },
+            "phone": {
+                "placeholder": "Numéro de téléphone"
+            },
+            "message": {
+                "placeholder": "Contenu du mail"
+            },
+            "submit": "Envoyer le mail",
+            "status": {
+                "sending": "Envoi en cours...",
+                "success": "Le mail à été envoyé !",
+                "error": "Une erreur est survenue lors de l'envoi.",
+                "apiError": "Erreur : {{message}}"
+            }
+        }
+    },
+    "footer": {
+        "followus": "Suis-nous sur :",
+        "copyrights": "© 2025 DDL",
+        "pages": "Pages",
+        "mainpage": "Accueil",
+        "events": "Évènements",
+        "aboutus": "Qui sommes-nous ?",
+        "conditions": "Conditions",
+        "GDPR": "Politique de confidentialité",
+        "statute": "Règlement"
+    }
+}
