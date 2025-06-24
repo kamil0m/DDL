@@ -1,40 +1,7 @@
 {
-    "nav": {
-        "home": "Strona główna",
-        "about": "O nas",
-        "events": "Wydarzenia"
-    },
-    "header": {
-        "joinus": "Dołącz do nas",
-        "contact": "Kontakt",
-        "search": "Szukaj ..."
-    },
-    "greetings": {
-        "greetings": "Witamy na stronie stowarzyszenia Dzień Dobry Lille!",
-        "more": "Więcej informacji"
-    },
     "about": {
         "title": "O nas",
         "button": "Dołącz do nas na Facebooku!"
-    },
-    "news": {
-        "heading": "Najnowsze wiadomości",
-        "subheading": "(tutaj należy przygotować tekst w obu językach. W projekcie w Figmie miejsce na tekst znajuduje się pod tekstem Our Recent News.)",
-        "dateLabel": "Data wydarzenia",
-        "readMore": "czytaj więcej",
-        "readLess": "zwiń",
-        "date": {
-            "today": "Opublikowano dziś"
-        },
-        "tags": {
-            "event": "Wydarzenie",
-            "news": "Aktualność"
-        },
-        "badges": {
-            "new": "Nowe",
-            "important": "Ważne",
-            "published": "Opublikowano 2 dni temu"
-        }
     },
     "contact": {
         "title": "Kontakt",
@@ -72,12 +39,48 @@
     "footer": {
         "followus": "Śledź nas na:",
         "copyrights": "© 2025 DDL",
-        "pages": "Strony",
         "mainpage": "Strona główna",
+        "pages": "Strony",
         "events": "Wydarzenia",
         "aboutus": "O nas",
         "conditions": "Warunki",
         "GDPR": "Polityka prywatności",
         "statute": "Regulamin"
+    },
+    "greetings": {
+        "greetings": "Witamy na stronie stowarzyszenia Dzień Dobry Lille!",
+        "more": "Więcej informacji"
+    },
+    "header": {
+        "joinus": "Dołącz do nas",
+        "contact": "Kontakt",
+        "search": "Szukaj ..."
+    },
+    "joinus": {
+        "statute": "Regulamin"
+    },
+    "nav": {
+        "home": "Strona główna",
+        "about": "O nas",
+        "events": "Wydarzenia"
+    },
+    "news": {
+        "heading": "Najnowsze wiadomości",
+        "subheading": "(tutaj należy przygotować tekst w obu językach. W projekcie w Figmie miejsce na tekst znajuduje się pod tekstem Our Recent News.)",
+        "dateLabel": "Data wydarzenia",
+        "readMore": "czytaj więcej",
+        "readLess": "zwiń",
+        "date": {
+            "today": "Opublikowano dziś"
+        },
+        "tags": {
+            "event": "Wydarzenie",
+            "news": "Aktualność"
+        },
+        "badges": {
+            "new": "Nowe",
+            "important": "Ważne",
+            "published": "Opublikowano 2 dni temu"
+        }
     }
 }

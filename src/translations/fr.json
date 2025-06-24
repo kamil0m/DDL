@@ -1,40 +1,7 @@
 {
-    "nav": {
-        "home": "Accueil",
-        "about": "Qui sommes-nous ?",
-        "events": "Évènements"
-    },
-    "header": {
-        "joinus": "Rejoignez-nous !",
-        "contact": "Contact",
-        "search": "Recherche ..."
-    },
-    "greetings": {
-        "greetings": "Bienvenue sur la page de l'association « Dzień Dobry Lille! »",
-        "more": "Plus d'infos"
-    },
     "about": {
         "title": "Qui sommes-nous ?",
         "button": "Rejoignez-nous sur Facebook !"
-    },
-    "news": {
-        "heading": "Actualités récentes",
-        "subheading": "(tutaj należy przygotować tekst w obu językach. W projekcie w Figmie miejsce na tekst znajuduje się pod tekstem Our Recent News.)",
-        "dateLabel": "Date de l'évènement",
-        "readMore": "Plus",
-        "readLess": "Réduire",
-        "date": {
-            "today": "Publié aujourd'hui"
-        },
-        "tags": {
-            "event": "Évènement",
-            "news": "Actu"
-        },
-        "badges": {
-            "new": "Nouveau",
-            "important": "Important",
-            "published": "Publié il y a 2 jours"
-        }
     },
     "contact": {
         "title": "Contact",
@@ -79,5 +46,41 @@
         "conditions": "Conditions",
         "GDPR": "Politique de confidentialité",
         "statute": "Règlement"
+    },
+    "greetings": {
+        "greetings": "Bienvenue sur la page de l'association « Dzień Dobry Lille! »",
+        "more": "Plus d'infos"
+    },
+    "header": {
+        "joinus": "Rejoignez-nous !",
+        "contact": "Contact",
+        "search": "Recherche ..."
+    },
+    "joinus": {
+        "statute": "Règlement"
+    },
+    "nav": {
+        "home": "Accueil",
+        "about": "Qui sommes-nous ?",
+        "events": "Évènements"
+    },
+    "news": {
+        "heading": "Actualités récentes",
+        "subheading": "(tutaj należy przygotować tekst w obu językach. W projekcie w Figmie miejsce na tekst znajuduje się pod tekstem Our Recent News.)",
+        "dateLabel": "Date de l'évènement",
+        "readMore": "Plus",
+        "readLess": "Réduire",
+        "date": {
+            "today": "Publié aujourd'hui"
+        },
+        "tags": {
+            "event": "Évènement",
+            "news": "Actu"
+        },
+        "badges": {
+            "new": "Nouveau",
+            "important": "Important",
+            "published": "Publié il y a 2 jours"
+        }
     }
 }
