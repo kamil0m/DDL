@@ -13,6 +13,7 @@ export default function AboutUs() {
   const { data, loading, error } = useFetch(`about-us-page?locale=${currentLanguage}`);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const aboutData = data as any;
+  console.log(aboutData.Cele);
   
   if (loading) return <p>{t("admin.loading")}</p>;
   if (error) return <p>{t("admin.error")}</p>;
@@ -39,9 +40,9 @@ export default function AboutUs() {
         <section className="flex flex-col gap-4">
           <h4>{t("about.goals")}</h4>
           <RenderRichText 
-            content={aboutData.Cele} 
-            olClasses="centered-list" 
-            liClasses="square-markers"
+            content={aboutData.Cele}
+            olClasses="flex flex-col gap-3"
+            liClasses="flex items-center font-light gap-6 square-markers"
           />
           
         </section>
