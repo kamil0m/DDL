@@ -12,8 +12,7 @@ export default function Header() {
   
   const handleLanguageChange = (newLang: string) => {
     console.log('Language changed to:', newLang);
-    // You can add any additional logic here when language changes
-    // For example: analytics tracking, localStorage updates, etc.
+    // + if needed additional logic for example: localStorage updates, etc.
   };
   
   const handleContactClick = (e: React.MouseEvent) => {

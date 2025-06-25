@@ -17,9 +17,8 @@ export default function About() {
             </div>
             <div className="flex flex-col justify-center w-1/2 gap-6">
                 <h2>{t("about.title")}</h2>
-                <h3>Insert short <br />presentation text here</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less.</p>
-                <p>A domain name is one of the first steps to establishing your brand. Secure a consistent brand image with a domain name that matches your business.</p>
+                <h3>{t("about.aboutUsSubTitle")}</h3>
+                <p>{t("about.aboutUsParagraph")}</p>
                 <a href="" className="button button-blue size-fit px-6 py-3 text-xl font-light">{t("about.button")}</a>
             </div>
         </section>
