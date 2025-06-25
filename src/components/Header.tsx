@@ -9,6 +9,13 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  
+  const handleLanguageChange = (newLang: string) => {
+    console.log('Language changed to:', newLang);
+    // You can add any additional logic here when language changes
+    // For example: analytics tracking, localStorage updates, etc.
+  };
+  
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
 
@@ -21,7 +28,7 @@ export default function Header() {
     } else {
       // Navigate to home page and then scroll to contact
       navigate('/');
-      const timeoutId = setTimeout(() => {
+      setTimeout(() => {
         const contactElement = document.getElementById('contact');
         if (contactElement) {
           contactElement.scrollIntoView({ behavior: 'smooth' });
@@ -39,7 +46,7 @@ export default function Header() {
           {/* < SearchBar /> */}
         </div>
         <div className="flex flex-row justify-end items-center gap-4">
-          <LanguageToggle />
+          <LanguageToggle onLanguageChange={handleLanguageChange} />
           <button onClick={handleContactClick} className="button button-transparent hover:button-accent px-8 py-2">{t("header.contact")}</button>
           <NavLink to="/joinus" className="button button-accent hover:button-transparent px-8 py-2">{t("header.joinus")}</NavLink>
         </div>
