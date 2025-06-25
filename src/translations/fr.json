@@ -1,0 +1,96 @@
+{
+    "about": {
+        "title": "Qui sommes-nous ?",
+        "button": "Rejoignez-nous sur Facebook !",
+        "history": "Notre histoire",
+        "goals": "Nos objectifs",
+        "aboutUsSubTitle": "Ensemble, faisons vivre la langue, la culture et la communauté polonaise à Lille.",
+        "aboutUsParagraph": "L’association DDLille est un lieu de rencontres, de dialogue et de coopération pour toutes celles et ceux qui partagent un lien avec la langue et la culture polonaises. Notre objectif est de promouvoir le patrimoine polonais en France, de favoriser l’intégration des Polonais dans la région de Lille et de construire des ponts entre les cultures. Nous organisons des événements culturels, des ateliers linguistiques et des initiatives citoyennes qui rassemblent, inspirent et renforcent les liens au sein de la communauté polonaise. DDLille est un espace ouvert, diversifié et engagé – rejoignez-nous et construisons-le ensemble !"
+    },
+    "admin": {
+        "loading": "Chargement en cours...",
+        "error": "Une erreur est survenue"
+    },
+    "contact": {
+        "title": "Contact",
+        "facebookgroup": "Groupe Facebook",
+        "facebookgroupjoin": "Rejoignez-nous sur Facebook !",
+        "facebookpage": "Facebook",
+        "facebookpageinfo": "Soyez à jour avec toutes nos actus i nos prochains évènements !",
+        "lilleguide": "Télécharge le guide de Lille ci-dessous",
+        "lilleguidedownload": "Clique ici, pour télécharger le guide",
+        "form": {
+            "name": {
+                "placeholder": "Nom et prénom"
+            },
+            "email": {
+                "placeholder": "Adresse e-mail"
+            },
+            "title": {
+                "placeholder": "Objet du mail"
+            },
+            "phone": {
+                "placeholder": "Numéro de téléphone"
+            },
+            "message": {
+                "placeholder": "Contenu du mail"
+            },
+            "submit": "Envoyer le mail",
+            "status": {
+                "sending": "Envoi en cours...",
+                "success": "Le mail à été envoyé !",
+                "error": "Une erreur est survenue lors de l'envoi.",
+                "apiError": "Erreur : {{message}}"
+            }
+        }
+    },
+    "footer": {
+        "followus": "Suis-nous sur :",
+        "copyrights": "© 2025 DDL",
+        "pages": "Pages",
+        "mainpage": "Accueil",
+        "events": "Évènements",
+        "aboutus": "Qui sommes-nous ?",
+        "conditions": "Conditions",
+        "GDPR": "Politique de confidentialité",
+        "statute": "Règlement"
+    },
+    "greetings": {
+        "greetings": "Bienvenue sur la page de l'association « Dzień Dobry Lille! »",
+        "more": "Plus d'infos"
+    },
+    "header": {
+        "joinus": "Rejoignez-nous !",
+        "contact": "Contact",
+        "search": "Recherche ..."
+    },
+    "joinus": {
+        "statute": "Règlement",
+        "howToBecomeAMemeber": "Comment devenir membre ?",
+        "whyJoinUs": "Pourquoi nous rejoindre ?"
+    },
+    "nav": {
+        "home": "Accueil",
+        "about": "Qui sommes-nous ?",
+        "events": "Évènements"
+    },
+    "news": {
+        "heading": "Actualités récentes",
+        "subheading": "(tutaj należy przygotować tekst w obu językach. W projekcie w Figmie miejsce na tekst znajuduje się pod tekstem Our Recent News.)",
+        "dateLabel": "Date de l'évènement",
+        "readMore": "Plus",
+        "readLess": "Réduire",
+        "date": {
+            "today": "Publié aujourd'hui"
+        },
+        "tags": {
+            "event": "Évènement",
+            "news": "Actu"
+        },
+        "badges": {
+            "new": "Nouveau",
+            "important": "Important",
+            "published": "Publié il y a 2 jours"
+        }
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "about": {
+        "title": "O nas",
+        "button": "Dołącz do nas na Facebooku!",
+        "history": "Nasza historia",
+        "goals": "Nasze cele",
+        "aboutUsSubTitle": "Razem promujemy język, kulturę i wspólnotę polską w sercu Lille.",
+        "aboutUsParagraph": "Stowarzyszenie DDLille to miejsce spotkań, dialogu i współpracy dla wszystkich, którym bliska jest kultura i język polski. Naszym celem jest promowanie dziedzictwa polskiego we Francji, wspieranie integracji Polaków w regionie Lille oraz budowanie mostów międzykulturowych. Organizujemy wydarzenia kulturalne, warsztaty językowe i inicjatywy społeczne, które łączą ludzi, inspirują do działania i umacniają więzi w polonijnej wspólnocie. DDLille to przestrzeń otwarta, różnorodna i zaangażowana – dołącz do nas i twórz ją razem z nami!"
+    },
+    "admin": {
+        "loading": "Ładowanie...",
+        "error": "Wystąpił błąd"
+    },
+    "contact": {
+        "title": "Kontakt",
+        "facebookgroup": "Grupa na Facebooku",
+        "facebookgroupjoin": "Dołącz do grupy na Facebooku!",
+        "facebookpage": "Facebook",
+        "facebookpageinfo": "Bądź na bieżąco z naszymi najnowszymi wydarzeniami i kolejnymi spotkaniami!",
+        "lilleguide": "Pobierz poniżej nasz przewodnik po Lille",
+        "lilleguidedownload": "Kliknij tutaj, aby pobrać przewodnik",
+        "form": {
+            "name": {
+                "placeholder": "Imię i nazwisko"
+            },
+            "email": {
+                "placeholder": "Adres e-mail"
+            },
+            "title": {
+                "placeholder": "Tytuł wiadomości"
+            },
+            "phone": {
+                "placeholder": "Numer telefonu"
+            },
+            "message": {
+                "placeholder": "Treść wiadomości"
+            },
+            "submit": "Wyślij wiadomość",
+            "status": {
+                "sending": "Wysyłanie...",
+                "success": "Wiadomość została wysłana!",
+                "error": "Wystąpił błąd podczas wysyłania wiadomości.",
+                "apiError": "Błąd: {{message}}"
+            }
+        }
+    },
+    "footer": {
+        "followus": "Śledź nas na:",
+        "copyrights": "© 2025 DDL",
+        "mainpage": "Strona główna",
+        "pages": "Strony",
+        "events": "Wydarzenia",
+        "aboutus": "O nas",
+        "conditions": "Warunki",
+        "GDPR": "Polityka prywatności",
+        "statute": "Regulamin"
+    },
+    "greetings": {
+        "greetings": "Witamy na stronie stowarzyszenia Dzień Dobry Lille!",
+        "more": "Więcej informacji"
+    },
+    "header": {
+        "joinus": "Dołącz do nas",
+        "contact": "Kontakt",
+        "search": "Szukaj ..."
+    },
+    "joinus": {
+        "statute": "Regulamin",
+        "howToBecomeAMemeber": "Jak zostać członkiem?",
+        "whyJoinUs": "Dlaczego warto do nas dołączyć?"
+    },
+    "nav": {
+        "home": "Strona główna",
+        "about": "O nas",
+        "events": "Wydarzenia"
+    },
+    "news": {
+        "heading": "Najnowsze wiadomości",
+        "subheading": "(tutaj należy przygotować tekst w obu językach. W projekcie w Figmie miejsce na tekst znajuduje się pod tekstem Our Recent News.)",
+        "dateLabel": "Data wydarzenia",
+        "readMore": "czytaj więcej",
+        "readLess": "zwiń",
+        "date": {
+            "today": "Opublikowano dziś"
+        },
+        "tags": {
+            "event": "Wydarzenie",
+            "news": "Aktualność"
+        },
+        "badges": {
+            "new": "Nowe",
+            "important": "Ważne",
+            "published": "Opublikowano 2 dni temu"
+        }
+    }
+}

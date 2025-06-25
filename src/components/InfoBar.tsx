@@ -2,23 +2,19 @@ import { GrAnnounce } from "react-icons/gr";
 
 export default function InfoBar() {
   return (
-    <div className="flex flex-row items-center w-full bg-accent h-[3em] text-white gap-2 overflow-hidden group">
-        <div className="container absolute whitespace-nowrap animate-marquee flex gap-2 group-hover:[animation-play-state:paused] "
-            >
-            <span>Some very important information</span>
-            < GrAnnounce />
-            <span>Some very important information</span>
-            < GrAnnounce />
-            <span>Some very important information</span>
-            < GrAnnounce />
-            <span>Some very important information</span>
-            < GrAnnounce />
-            <span>Some very important information</span>
-            < GrAnnounce />
-            <span>Some very important information</span>
-            < GrAnnounce />
-            <span>Some very important information</span>
-            < GrAnnounce />
+    <div className="whitespace-nowrap w-full overflow-x-hidden bg-accent group">
+        <div className="flex flex-row items-center gap-4 animate-marquee h-[3em] text-xl text-white group-hover:[animation-play-state:paused] w-full">
+
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
+            < GrAnnounce className="h-6 w-6 text-white flex-shrink-0"/> <span className="h-[3em] flex items-center">Some very important information</span>
         </div>
     </div>
   )

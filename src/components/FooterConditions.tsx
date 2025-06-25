@@ -1,13 +1,16 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function FooterConditions() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col">
-        <h5>Warunki</h5>
-        <nav className="flex flex-col mt-10 gap-4">
-            <NavLink to="/" className="hover:text-black">RGPD</NavLink>
-            <NavLink to="/" className="hover:text-black">Regulamin</NavLink>
-        </nav>
+      <h5>{t("footer.conditions")}</h5>
+      <nav className="flex flex-col mt-10 gap-4">
+        <NavLink to="/" className="hover:text-black">{t("footer.GDPR")}</NavLink>
+        <NavLink to="/" className="hover:text-black">{t("footer.statute")}</NavLink>
+      </nav>
     </div>
   )
 }

@@ -1,8 +1,11 @@
 import { useState, FormEvent } from "react";
+import { useTranslation } from "react-i18next";
 import Input from "./Input";
 import FormData from "../models/interfaces/FormData";
 
 export default function ContactForm() {
+    const { t } = useTranslation();
+
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -32,7 +35,7 @@ export default function ContactForm() {
         };
 
         setFormData(form);
-        setStatus("Wysyłanie...");
+        setStatus(t("contact.form.status.sending"));
 
         try {
             const response = await fetch('http://localhost:5000/send-email', {
@@ -46,7 +49,7 @@ export default function ContactForm() {
             const result = await response.json();
 
             if (response.ok) {
-                setStatus("Wiadomość została wysłana!");
+                setStatus(t("contact.form.status.success"));
                 setFormData({
                     name: "",
                     email: "",
@@ -56,11 +59,11 @@ export default function ContactForm() {
                 });
                 (e.target as HTMLFormElement).reset();
             } else {
-                setStatus(`Błąd: ${result.message}`);
+                setStatus(t("contact.form.status.apiError", { message: result.message }));
             }
         } catch (error) {
             console.error("Błąd:", error);
-            setStatus("Wystąpił błąd podczas wysyłania wiadomości.");
+            setStatus(t("contact.form.status.error"));
         }
     };
 
@@ -75,43 +78,43 @@ export default function ContactForm() {
                     <Input
                         type="text"
                         id="name"
-                        placeholder="Your Name"
+                        placeholder={t("contact.form.name.placeholder")}
 
                     />
                     <Input
                         type="email"
                         id="email"
-                        placeholder="Your Email"
+                        placeholder={t("contact.form.email.placeholder")}
                     />
                     <Input
                         type="text"
                         id="title"
-                        placeholder="Title"
+                        placeholder={t("contact.form.title.placeholder")}
                     />
                     <Input
                         type="text"
                         id="phone"
-                        placeholder="Your Phone"
+                        placeholder={t("contact.form.phone.placeholder")}
 
                     />
                     <Input
                         type="textarea"
                         id="message"
-                        placeholder="Your Message"
+                        placeholder={t("contact.form.message.placeholder")}
                     />
                     <button
                         type="submit"
                         className="button button-blue size-fit px-6 py-3 text-xl font-light w-full mt-2"
 
                     >
-                        Send Message
+                        {t("contact.form.submit")}
                     </button>
-                    {status && (<p className={`font-bold text-lg mt-4 ${status === "Wiadomość została wysłana!" ? "text-green" :
-                        status === "Wysyłanie..." ? "text-white" :
+                    {status && (<p className={`font-bold text-lg mt-4 ${status === t("contact.form.status.success") ? "text-green" :
+                        status === t("contact.form.status.sending") ? "text-white" :
                             "text-red"}`}>
-                        {status === "Wiadomość została wysłana!"
+                        {status === t("contact.form.status.success")
                             ? `✓ ${status}`
-                            : status.startsWith("Błąd:") || status === "Wystąpił błąd podczas wysyłania wiadomości."
+                            : status.startsWith("Błąd:") || status === t("contact.form.status.error")
                                 ? `✗ ${status}`
                                 : status
                         }
@@ -122,5 +125,4 @@ export default function ContactForm() {
         </div>
     );
 }
-
 
