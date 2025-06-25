@@ -2,15 +2,16 @@ import useFetch from '../hooks/useFetch';
 import RenderRichText from '../components/RenderRichText.tsx';
 import Motto from '../components/Motto.tsx';
 import logo from '../assets/images/logo.jpg';
+import { useTranslation } from 'react-i18next';
 
 export default function AboutUs() {
 
   const { data, loading, error } = useFetch('about-us-page');
+  const { t } = useTranslation();
   
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error!</p>;
+  if (loading) return <p>{t("admin.loading")}</p>;
+  if (error) return <p>{t("admin.error")}</p>;
 
-  // console.log(data.Motto[0].children[0].text);
   const motto = data.Motto[0].children[0].text;
 
   return (
@@ -18,7 +19,7 @@ export default function AboutUs() {
       <img src={logo} alt="logo" className="absolute h-full -translate-2/7 z-0 opacity-10"/>
       <div className="container max-w-3/5 mx-auto px-4 z-10">
         <section className="flex flex-col">
-          <h4>Historia</h4>
+          <h4>{t("about.history")}</h4>
           <RenderRichText 
             content={data.Historia} 
             pClasses="text-black"
@@ -30,7 +31,7 @@ export default function AboutUs() {
 
       <div className="container max-w-3/5 mx-auto px-4 z-10">
         <section className="flex flex-col gap-4">
-          <h4>Nasze cele</h4>
+          <h4>{t("about.goals")}</h4>
           <RenderRichText 
             content={data.Cele} 
             olClasses="centered-list" 

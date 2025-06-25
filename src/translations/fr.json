@@ -1,7 +1,13 @@
 {
     "about": {
         "title": "Qui sommes-nous ?",
-        "button": "Rejoignez-nous sur Facebook !"
+        "button": "Rejoignez-nous sur Facebook !",
+        "history": "Notre histoire",
+        "goals": "Nos objectifs"
+    },
+    "admin": {
+        "loading": "Chargement en cours...",
+        "error": "Une erreur est survenue"
     },
     "contact": {
         "title": "Contact",
@@ -57,7 +63,9 @@
         "search": "Recherche ..."
     },
     "joinus": {
-        "statute": "Règlement"
+        "statute": "Règlement",
+        "howToBecomeAMemeber": "Comment devenir membre ?",
+        "whyJoinUs": "Pourquoi nous rejoindre ?"
     },
     "nav": {
         "home": "Accueil",

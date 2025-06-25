@@ -8,22 +8,22 @@ export default function JoinUs() {
 
     const { data, loading, error } = useFetch('join-us-page');
     // console.log(data);
+    const { t } = useTranslation();
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error!</p>;
 
-    const { t } = useTranslation();
 
     return (
         <div className="w-3/5">
             <section className="flex flex-col mt-20">
                 <div className="flex flex-col gap-8">
                     <div className="flex flex-col gap-2">
-                        <h4>Jak zostać członkiem?</h4>
+                        <h4>{t("joinus.howToBecomeAMemeber")}</h4>
                         {<RenderRichText content={data.Jak_zostac_czlonkiem} />}
                     </div>
                     <div className="flex flex-col gap-2">
-                        <h4>Dlaczego do nas dołączyć?</h4>
+                        <h4>{t("joinus.whyJoinUs")}</h4>
                         {<RenderRichText content={data.Dlaczego_do_nas_dolaczyc} />}
                     </div>
                     <div className="flex flex-col gap-2">

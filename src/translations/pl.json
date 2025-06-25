@@ -1,7 +1,13 @@
 {
     "about": {
         "title": "O nas",
-        "button": "Dołącz do nas na Facebooku!"
+        "button": "Dołącz do nas na Facebooku!",
+        "history": "Nasza historia",
+        "goals": "Nasze cele"
+    },
+    "admin": {
+        "loading": "Ładowanie...",
+        "error": "Wystąpił błąd"
     },
     "contact": {
         "title": "Kontakt",
@@ -57,7 +63,9 @@
         "search": "Szukaj ..."
     },
     "joinus": {
-        "statute": "Regulamin"
+        "statute": "Regulamin",
+        "howToBecomeAMemeber": "Jak zostać członkiem?",
+        "whyJoinUs": "Dlaczego warto do nas dołączyć?"
     },
     "nav": {
         "home": "Strona główna",
