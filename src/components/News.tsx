@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { Newspaper } from "lucide-react";
 import useFetch from "../hooks/useFetch";
+import useLatestCombined from "./LatestNews";
 
 export default function News() {
+    // Using the custom hook to fetch latest news and events
+    const { latest, loading, error } = useLatestCombined();
+    console.log(latest);
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Something went wrong.</div>;
+
     const { data, loading, error } = useFetch("events");
     console.log(data);
     const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
