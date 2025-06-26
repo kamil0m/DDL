@@ -10,7 +10,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import {
   BrowserRouter,
   Route, 
-  Routes 
+  Routes
 } from "react-router-dom";
 
 export default function Router(){

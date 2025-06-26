@@ -44,6 +44,9 @@
             }
         }
     },
+    "error": {
+        "general": "Une erreur est survenue"
+    },
     "footer": {
         "followus": "Suis-nous sur :",
         "copyrights": "© 2025 DDL",
