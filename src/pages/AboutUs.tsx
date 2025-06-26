@@ -29,7 +29,6 @@ export default function AboutUs() {
           <h4>{t("about.history")}</h4>
           <RenderRichText 
             content={aboutData.Historia} 
-            pClasses="text-black"
             />
         </section>
       </div>

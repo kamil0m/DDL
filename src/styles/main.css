@@ -40,7 +40,7 @@ main {
     }
 
     p {
-        @apply text-darkgrey font-light
+        @apply text-black font-light
     }
 }
 
