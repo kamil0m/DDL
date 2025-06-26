@@ -1,6 +1,7 @@
 import useFetch from '../hooks/useFetch';
-import CardEvent from '../components/CardEvents';
+// import CardEvent from '../components/CardEvents';
 import homebackground from "../styles/images/homebackground.png";
+import ErrorBoundary from '../components/ErrorBoundary.tsx';
 
 export default function Events() {
 
@@ -21,9 +22,9 @@ export default function Events() {
             ></div>
             <div className="relative container mx-auto max-w-screen-lg pt-40 pb-16 text-white">
                 <h2 className="card__title text-center width-full text-slate-900 text-2xl font-bold">Nadchodzace wydarzenia:</h2>
-                {futureEvents.map((event) => (
-                    < CardEvent key={event.id} content={event} />
-                ))}
+                    {futureEvents.map((event) => (
+                        < CardEvent key={event.id} content={event} />
+                    ))}
                 <h2 className="card__title text-center width-full text-slate-900 text-2xl font-bold">Minione wydarzenia:</h2>
                 {pastEvents.map((event) => (
                     < CardEvent key={event.id} content={event} />
