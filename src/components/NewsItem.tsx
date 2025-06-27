@@ -15,7 +15,7 @@ export default function NewsItem({ item, index, t }: NewsItemProps) {
     const truncate = (text: string, length = 100) =>
         text.length > length ? text.substring(0, length) + "..." : text;
 
-    const title = item.Tytul || "Untitled";
+    const title = item.Tytul || t("news.untitled");
     const descriptionBlocks = item.Tresc || [];
     const descriptionText = Array.isArray(descriptionBlocks)
         ? descriptionBlocks

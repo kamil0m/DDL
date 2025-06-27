@@ -93,6 +93,7 @@
             "published": "Publié il y a",
             "days": "jours"
         },
-        "nodate": ""
+        "nodate": "",
+        "untitled": ""
     }
 }

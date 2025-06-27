@@ -93,6 +93,7 @@
             "published": "Opublikowano",
             "days": "dni temu"
         },
-        "nodate": "Brak daty"
+        "nodate": "Brak daty",
+        "untitled": "Nowa wiadomość"
     }
 }
