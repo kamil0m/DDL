@@ -76,8 +76,8 @@
     },
     "news": {
         "heading": "Najnowsze wiadomości",
-        "subheading": "(tutaj należy przygotować tekst w obu językach. W projekcie w Figmie miejsce na tekst znajuduje się pod tekstem Our Recent News.)",
-        "dateLabel": "Data wydarzenia",
+        "subheading": "Bądź na bieżąco z naszymi wydarzeniami i aktualnościami. \nPoniżej możesz zapoznać się z naszymi 3 ostatnimi wydarzeniami lub aktualnościami.",
+        "dateLabel": "Data wydarzenia:",
         "readMore": "czytaj więcej",
         "readLess": "zwiń",
         "date": {
@@ -90,7 +90,9 @@
         "badges": {
             "new": "Nowe",
             "important": "Ważne",
-            "published": "Opublikowano 2 dni temu"
-        }
+            "published": "Opublikowano",
+            "days": "dni temu"
+        },
+        "nodate": "Brak daty"
     }
 }
