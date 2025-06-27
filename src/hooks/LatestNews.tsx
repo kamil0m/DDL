@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import useFetch from "../hooks/useFetch";
+import useFetch from "./useFetch";
 
 type Entry = {
     id: number;
@@ -14,8 +14,10 @@ type Entry = {
 };
 
 const useLatestCombined = () => {
-    const news = useFetch('aktualnosci');
-    const events = useFetch('events');
+
+    const news = useFetch('aktualnosci?populate=*');
+    const events = useFetch('events?populate=*');
+
 
     const [latest, setLatest] = useState<Entry[]>([]);
     const [loading, setLoading] = useState(true);
