@@ -294,13 +294,13 @@ export default function News() {
         <section className="flex flex-col items-center mt-40 px-4 gap-10">
             <div className="text-center">
                 <h3 className="mb-4">Our Recent News</h3>
-                <p className="">
+                <p className="text-xl">
                     There are many variations of passages of Lorem Ipsum available
                     <br /> but the majority have suffered alteration in some form.
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-xl w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl w-full">
                 {latest.map((item: any, index: number) => {
                     const title = item.Tytul || "Untitled";
                     const descriptionBlocks = item.Tresc || [];
@@ -373,15 +373,15 @@ export default function News() {
 
 
                                 <h4>{title}</h4>
-                                <p className="text-sm text-darkgrey">Event date: {eventDate}</p>
-                                <p className="text-sm text-darkgrey">
+                                <p className="text-l text-darkgrey">Event date: {eventDate}</p>
+                                <p className="text-l text-darkgrey">
                                     {expandedIndexes.includes(index)
                                         ? descriptionText
                                         : truncate(descriptionText, 100)}
                                 </p>
                                 <button
                                     onClick={() => toggleDescription(index)}
-                                    className="underline text-blue-600 text-sm mt-1 self-start"
+                                    className="underline text-darkgrey text-l mt-1 self-start"
                                 >
                                     {expandedIndexes.includes(index) ? "see less" : "see more"}
                                 </button>
