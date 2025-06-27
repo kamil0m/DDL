@@ -37,7 +37,7 @@ main {
     }
 
     p {
-        @apply text-darkgrey font-light mt-5;
+        @apply text-darkgrey font-light mt-5 text-xl;
     }
 }
 
@@ -65,6 +65,7 @@ main {
     --text-shadow-xl: 0 135px 135px rgb(0, 0, 0 / 0.8);
 
     --animate-marquee: marquee 20s linear infinite;
+    --animate-toggle: toggle 2s ease-in-out infinite;
 
     @keyframes marquee {
         0% {
@@ -73,6 +74,16 @@ main {
 
         100% {
             transform: translateX(-50%);
+        }
+    }
+
+    @keyframes toggle {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(100%);
         }
     }
 }
@@ -100,11 +111,7 @@ main {
     }
 
     .switch {
-        @apply relative inline-flex justify-center items-center h-[2em] aspect-square cursor-pointer text-white transition-transform duration-2000 ease-in-out;
-    }
-
-    .switch-on {
-        @apply rounded-full bg-white text-accent;
+        @apply relative flex justify-center items-center z-10 h-[2em] aspect-square cursor-pointer text-white transition-transform duration-2000 ease-in-out;
     }
 }
 
