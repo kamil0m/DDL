@@ -37,7 +37,7 @@ main {
     }
 
     p {
-        @apply text-darkgrey font-light mt-5;
+        @apply text-xl text-darkgrey font-light mt-5;
     }
 }
 

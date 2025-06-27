@@ -21,7 +21,7 @@ export default function ContactSection() {
                         </a>
                         <div>
                             <a href="https://www.facebook.com/groups/1403266290513975" target="_blank" className="font-semibold underline text-black text-xl mt-0">{t("contact.facebookgroup")}</a>
-                            <p className="text-xl mt-0">{t("contact.facebookgroupjoin")}</p>
+                            <p className="mt-0">{t("contact.facebookgroupjoin")}</p>
                         </div>
                     </div>
                     {/* Facebook page */}
@@ -31,7 +31,7 @@ export default function ContactSection() {
                         </a>
                         <div>
                             <a href="https://www.facebook.com/profile.php?id=61559848594019" target="_blank" className="font-semibold underline text-black text-xl mt-0">{t("contact.facebookpage")}</a>
-                            <p className="text-xl mt-0">{t("contact.facebookpageinfo")}</p>
+                            <p className="mt-0">{t("contact.facebookpageinfo")}</p>
                         </div>
                     </div>
 
