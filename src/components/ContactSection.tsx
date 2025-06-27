@@ -48,7 +48,7 @@ export default function ContactSection() {
             </div>
 
             {/* Contact form */}
-            <div className="flex flex-row items-center w-1/2 gap-8">
+            <div className="flex flex-row items-center justify-end w-1/2 gap-8">
                 < ContactForm />
             </div>
 
