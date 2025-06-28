@@ -68,7 +68,7 @@ export default function ContactForm() {
     };
 
     return (
-        <div className=" flex justify-center items-center p-12 relative overflow-hidden">
+        <div className="flex justify-center items-center p-12 relative overflow-hidden">
             <div className="bg-polka-bl-green" />
             <div className="absolute top-0 right-0 w-24 h-24 bg-blue rounded-tr-full z-0" />
             <div className="bg-polka-br-green top-1/6 right-0" />

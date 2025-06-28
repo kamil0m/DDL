@@ -47,6 +47,9 @@ export default function About() {
                 <h2>{t("about.title")}</h2>
                 <h3>{t("about.aboutUsSubTitle")}</h3>
                 <p>{t("about.aboutUsParagraph")}</p>
+                <NavLink to="/about" className="text-xl font-light text-darkgrey hover:text-black"> 
+                    <span className="underline">{t("about.seeMore")}</span>
+                    <span className=""> ➜</span></NavLink>
                 <a href="" className="button button-blue size-fit px-6 py-3 text-xl font-light">{t("about.button")}</a>
             </div>
         </section>
