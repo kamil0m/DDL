@@ -1,7 +1,7 @@
 
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-// import Events from './pages/Events';
+import Events from './pages/Events';
 import Contact from "./pages/Contact";
 import JoinUs from "./pages/JoinUs";
 import StylesTester from "./pages/StylesTester";
@@ -10,7 +10,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import {
   BrowserRouter,
   Route, 
-  Routes 
+  Routes
 } from "react-router-dom";
 
 export default function Router(){
@@ -21,7 +21,7 @@ export default function Router(){
           <Route path="/" element={< Mainlayout />}>
             <Route path="/" element={< Home />} />
             <Route path="/about" element={< AboutUs />} />
-            {/* <Route path="/events" element={< Events />} /> */}
+            <Route path="/events" element={< Events />} />
             <Route path="/joinus" element={< JoinUs />} />
             <Route path="/contact" element={< Contact />} />
             <Route path="/styles" element={< StylesTester />} />
