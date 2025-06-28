@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import kino from '../assets/images/IMG_8312 - Moyenne.jpeg';
 import teatr from '../assets/images/Teatr1 - Moyenne.jpeg';
+import { NavLink } from "react-router-dom";
 
 export default function About() {
     const { t } = useTranslation();
