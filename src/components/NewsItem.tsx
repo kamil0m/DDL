@@ -2,27 +2,6 @@ import { useState } from "react";
 import { HiOutlineNewspaper } from "react-icons/hi2";
 import RenderRichText from "./RenderRichText";
 
-// const truncate = (text: string, length = 100) =>
-//     text.length > length ? text.substring(0, length) + "..." : text;
-
-// const extractTextFromBlocks = (blocks: any[]): string => {
-
-//     return blocks
-//         .map((block: any) => {
-//             if (!block || !Array.isArray(block.children)) return "";
-//             return block.children.map((child: any) => child?.text || "").join(" ");
-//         })
-//         .join(" ")
-//         .trim();
-// };
-
-// const createTruncatedBlock = (text: string): any[] => [
-//     {
-//         type: 'paragraph',
-//         children: [{ text }],
-//     },
-// ];
-
 type NewsItemProps = {
     item: any;
     index: number;
