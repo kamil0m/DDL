@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* @import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities); */
 
 :root {
     font-family: "Roboto", sans-serif;
@@ -59,12 +62,12 @@ main {
     --color-blue: rgba(34, 79, 242, 1);
     --color-red: rgba(255, 60, 55, 1);
     --color-grey: rgba(234, 234, 234, 1);
-    --color-darkgrey: rgba(100, 100, 100, 1);
+    --color-darkgrey: rgba(155, 155, 155, 1);
     --color-white: rgba(255, 255, 255, 1);
 
     --text-shadow-xl: 0 135px 135px rgb(0, 0, 0 / 0.8);
 
-    --animate-marquee: marquee 20s linear infinite;
+    --animate-marquee: marquee 30s linear infinite;
 
     @keyframes marquee {
         0% {
@@ -75,6 +78,23 @@ main {
             transform: translateX(-50%);
         }
     }
+}
+
+/* Scrolling animation for images */
+@keyframes scroll-left-right {
+    0% {
+        transform: translateX(-15%);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-15%);
+    }
+}
+
+.animate-scroll-left-right {
+    animation: scroll-left-right 7s ease-in-out infinite;
 }
 
 @layer components {
@@ -105,6 +125,26 @@ main {
 
     .switch-on {
         @apply rounded-full bg-white text-accent;
+    }
+
+    .square-markers {
+        counter-increment: list-counter;
+    }
+
+    .square-markers::before {
+        content: counter(list-counter);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-accent);
+        font-weight: bold;
+        font-size: 1.5em;
+        background-color: rgba(0, 25, 179, .1);
+        width: 65px;
+        height: 65px;
+        border-radius: 6px;
+        flex-shrink: 0;
+        margin-top: 0;
     }
 }
 
