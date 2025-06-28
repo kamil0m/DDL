@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Newspaper } from "lucide-react";
+import { HiOutlineNewspaper } from "react-icons/hi2";
 
 type NewsItemProps = {
     item: any;
@@ -7,7 +7,7 @@ type NewsItemProps = {
     t: (key: string) => string;
 };
 
-export default function NewsItem({ item, index, t }: NewsItemProps) {
+export default function NewsItem({ item, t }: NewsItemProps) {
     const [expanded, setExpanded] = useState(false);
 
     const toggleDescription = () => setExpanded(prev => !prev);
@@ -15,7 +15,7 @@ export default function NewsItem({ item, index, t }: NewsItemProps) {
     const truncate = (text: string, length = 100) =>
         text.length > length ? text.substring(0, length) + "..." : text;
 
-    const title = item.Tytul || t("news.untitled");
+    const title = item.Tytul;
     const descriptionBlocks = item.Tresc || [];
     const descriptionText = Array.isArray(descriptionBlocks)
         ? descriptionBlocks
@@ -42,7 +42,7 @@ export default function NewsItem({ item, index, t }: NewsItemProps) {
                 <div className="absolute top-2 left-2 flex gap-2 flex-wrap">
                     {type === "news" && (
                         <span className="bg-white text-accent text-l font-semibold px-2 py-1 rounded">
-                            <Newspaper className="inline-block mr-1" size={16} />
+                            <HiOutlineNewspaper className="inline-block mr-1 -scale-x-100 translate-y-[-2px]" size={18} />
                             {t("news.tags.news")}
                         </span>
                     )}
@@ -94,6 +94,7 @@ export default function NewsItem({ item, index, t }: NewsItemProps) {
                     onClick={toggleDescription}
                     className="underline text-darkgrey text-xl mt-1 self-start"
                 >
+                    {/* TODO change to redirect */}
                     {expanded ? t("news.readLess") : t("news.readMore")}
                 </button>
             </div>

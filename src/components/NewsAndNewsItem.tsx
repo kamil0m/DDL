@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Newspaper } from "lucide-react";
+import { HiOutlineNewspaper } from "react-icons/hi2";
 import useLatestCombined from "../hooks/LatestNews";
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -61,7 +61,7 @@ export default function News() {
                                     <div className="absolute top-2 left-2 flex gap-2 flex-wrap">
                                         {type === "news" && (
                                             <span className="bg-white text-accent text-l font-semibold px-2 py-1 rounded">
-                                                <Newspaper className="inline-block mr-1" size={16} />
+                                                <HiOutlineNewspaper className="inline-block mr-1 -scale-x-100" size={16} />
                                                 {t("news.tags.news")}
                                             </span>
                                         )}

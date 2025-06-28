@@ -1,11 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { useLanguage } from "../contexts/LanguageContext";
 import useLatestCombined from "../hooks/LatestNews";
 import NewsItem from "./NewsItem";
 
 export default function News() {
     const { t } = useTranslation();
-    const { currentLanguage } = useLanguage();
     const { latest } = useLatestCombined();
 
     return (

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import useFetch from "./useFetch";
+import { useLanguage } from "../contexts/LanguageContext";
 
 type Entry = {
     id: number;
@@ -12,9 +13,10 @@ type Entry = {
     publishedDaysAgo?: number;
     [key: string]: any;
 };
-
+// TODO : to find a solution for filtering on server side
 const useLatestCombined = () => {
-
+    const { currentLanguage } = useLanguage(); //use Language context to get the current language
+    // TODO change * in url
     const news = useFetch('aktualnosci?populate=*');
     const events = useFetch('events?populate=*');
 
@@ -65,7 +67,7 @@ const useLatestCombined = () => {
             setLatest(sorted.slice(0, 3));
             setLoading(false);
         }
-    }, [news.data, events.data, news.loading, events.loading]);
+    }, [news.data, events.data, news.loading, events.loading]); // TODO : to find a solution for multiply rerendering 
 
     return {
         latest,

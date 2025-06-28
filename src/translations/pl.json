@@ -76,7 +76,7 @@
     },
     "news": {
         "heading": "Najnowsze wiadomości",
-        "subheading": "Bądź na bieżąco z naszymi wydarzeniami i aktualnościami. \nPoniżej możesz zapoznać się z naszymi 3 ostatnimi wydarzeniami lub aktualnościami.",
+        "subheading": "Bądź na bieżąco z naszymi wydarzeniami i aktualnościami. \nPoniżej możesz zapoznać się z naszymi 3 ostatnimi.",
         "dateLabel": "Data wydarzenia:",
         "readMore": "czytaj więcej",
         "readLess": "zwiń",
@@ -93,7 +93,6 @@
             "published": "Opublikowano",
             "days": "dni temu"
         },
-        "nodate": "Brak daty",
-        "untitled": "Nowa wiadomość"
+        "nodate": "Brak daty"
     }
 }
