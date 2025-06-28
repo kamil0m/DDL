@@ -1,5 +1,27 @@
 import { useState } from "react";
 import { HiOutlineNewspaper } from "react-icons/hi2";
+import RenderRichText from "./RenderRichText";
+
+// const truncate = (text: string, length = 100) =>
+//     text.length > length ? text.substring(0, length) + "..." : text;
+
+// const extractTextFromBlocks = (blocks: any[]): string => {
+
+//     return blocks
+//         .map((block: any) => {
+//             if (!block || !Array.isArray(block.children)) return "";
+//             return block.children.map((child: any) => child?.text || "").join(" ");
+//         })
+//         .join(" ")
+//         .trim();
+// };
+
+// const createTruncatedBlock = (text: string): any[] => [
+//     {
+//         type: 'paragraph',
+//         children: [{ text }],
+//     },
+// ];
 
 type NewsItemProps = {
     item: any;
@@ -11,12 +33,11 @@ export default function NewsItem({ item, t }: NewsItemProps) {
     const [expanded, setExpanded] = useState(false);
 
     const toggleDescription = () => setExpanded(prev => !prev);
-
     const truncate = (text: string, length = 100) =>
         text.length > length ? text.substring(0, length) + "..." : text;
 
     const title = item.Tytul;
-    const descriptionBlocks = item.Tresc || [];
+    const descriptionBlocks = item.Tresc;
     const descriptionText = Array.isArray(descriptionBlocks)
         ? descriptionBlocks
             .map((block: any) =>
@@ -24,6 +45,8 @@ export default function NewsItem({ item, t }: NewsItemProps) {
             )
             .join(" ")
         : descriptionBlocks;
+
+    const truncatedDescription = truncate(descriptionText);
 
     const image = item.Zdjecie && item.Zdjecie.length > 0
         ? item.Zdjecie[0].url
@@ -87,9 +110,14 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                         {t("news.dateLabel")} {item.Data_wydarzenia}
                     </p>
                 )}
-                <p className="text-l text-darkgrey">
-                    {expanded ? descriptionText : truncate(descriptionText, 100)}
-                </p>
+                {expanded ? (
+                    <RenderRichText
+                        content={descriptionBlocks}
+                        pClasses="text-l text-darkgrey"
+                    />
+                ) : (
+                    <p className="text-l text-darkgrey">{truncatedDescription}</p>
+                )}
                 <button
                     onClick={toggleDescription}
                     className="underline text-darkgrey text-xl mt-1 self-start"
@@ -101,3 +129,4 @@ export default function NewsItem({ item, t }: NewsItemProps) {
         </div>
     );
 }
+
