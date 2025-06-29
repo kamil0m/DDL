@@ -80,8 +80,8 @@
     },
     "news": {
         "heading": "Actualités récentes",
-        "subheading": "(tutaj należy przygotować tekst w obu językach. W projekcie w Figmie miejsce na tekst znajuduje się pod tekstem Our Recent News.)",
-        "dateLabel": "Date de l'évènement",
+        "subheading": "",
+        "dateLabel": "Date de l'évènement :",
         "readMore": "Plus",
         "readLess": "Réduire",
         "date": {
@@ -94,7 +94,9 @@
         "badges": {
             "new": "Nouveau",
             "important": "Important",
-            "published": "Publié il y a 2 jours"
-        }
+            "published": "Publié il y a",
+            "days": "jours"
+        },
+        "nodate": ""
     }
 }
