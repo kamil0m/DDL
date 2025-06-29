@@ -14,9 +14,8 @@ type Entry = {
 };
 
 const useLatestCombined = () => {
-    
-    const { data: events, loading: eventsLoading, error: eventsError } = useFetch('events?populate=*');
-    const { data: news, loading: newsLoading, error: newsError } = useFetch('aktualnosci?populate=*');
+    const { data: events, loading: eventsLoading, error: eventsError } = useFetch(`events?populate=*&sort[0]=Data_publikacji:desc&pagination[limit]=3`);
+    const { data: news, loading: newsLoading, error: newsError } = useFetch(`aktualnosci?populate=*sort[0]=Data_publikacji:desc&pagination[limit]=3`);
     const [latest, setLatest] = useState<Entry[]>([]);
 
     const loading = newsLoading || eventsLoading;
@@ -90,6 +89,8 @@ const useLatestCombined = () => {
         hasData: !!Object.keys(news).length
     };
     
+    
+
 };
 
 export default useLatestCombined;
