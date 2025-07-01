@@ -97,6 +97,10 @@
             "published": "Publié il y a",
             "days": "jours"
         },
-        "nodate": ""
+        "eventspage": {
+            "upcomingEvents": "",
+            "pastEvents": "",
+            "readArticles": ""
+        }
     }
 }

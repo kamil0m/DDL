@@ -97,6 +97,10 @@
             "published": "Opublikowano",
             "days": "dni temu"
         },
-        "nodate": "Brak daty"
+        "eventspage": {
+            "upcomingEvents": "Nadchodzące wydarzenia",
+            "pastEvents": "Minione wydarzenia",
+            "readArticles": "Przeczytaj nasze artykuły"
+        }
     }
 }
