@@ -259,4 +259,12 @@ main {
         font-size: 1.125rem;
         /* text-lg */
     }
+
+    .shortItems {
+        width: 100%;
+        max-width: 1536px;
+        /* max-w-screen-2xl */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

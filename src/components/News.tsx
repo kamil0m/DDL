@@ -8,7 +8,7 @@ export default function News() {
 
     return (
         <section className="flex flex-col justify-between items-center mt-40 gap-10">
-            <div className="w-full max-w-screen-2xl px-4">
+            <div className="shortItems">
                 <div className="text-center">
                     <h3 className="mb-4">{t("news.heading")}</h3>
                     <p className="whitespace-pre-line">{t("news.subheading")}</p>
