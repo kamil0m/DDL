@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import useNewsEvents from "../hooks/useNewsEvents";
-import NewsItem from "../components/NewsItem";
+import Carousel from "../components/CarouselItems"
 
 export default function Events() {
     const { t } = useTranslation();
@@ -12,34 +12,21 @@ export default function Events() {
                 <div className="text-left">
                     <h6 className="mb-4">{t("news.eventspage.upcomingEvents")}</h6>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                    {upcomingEvents.map((item, index) => (
-                        <NewsItem key={item.id || index} item={item} index={index} t={t} />
-                    ))}
-                </div>
+                <Carousel items={upcomingEvents} t={t} />
             </div>
+
             <div className="shortItems py-20">
                 <div className="text-left ">
                     <h6 className="mb-4">{t("news.eventspage.readArticles")}</h6>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                    {sortedNews.map((item, index) => (
-                        <NewsItem key={item.id || index} item={item} index={index} t={t} />
-                    ))}
-                </div>
+                <Carousel items={sortedNews} t={t} />
             </div>
+
             <div className="shortItems pb-15">
                 <div className="text-left">
                     <h6 className="mb-4">{t("news.eventspage.pastEvents")}</h6>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                    {pastEvents.map((item, index) => (
-                        <NewsItem key={item.id || index} item={item} index={index} t={t} />
-                    ))}
-                </div>
+                <Carousel items={pastEvents} t={t} />
             </div>
         </section>
     );
