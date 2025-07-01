@@ -95,7 +95,8 @@
             "new": "Nouveau",
             "important": "Important",
             "published": "Publié il y a",
-            "days": "jours"
+            "days": "jours",
+            "soon": ""
         },
         "eventspage": {
             "upcomingEvents": "",

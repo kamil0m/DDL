@@ -11,6 +11,7 @@ type Entry = {
     isImportant?: boolean;
     isNew?: boolean;
     publishedDaysAgo?: number;
+    isSoon?: boolean;
     [key: string]: unknown;
 };
 
@@ -61,6 +62,13 @@ const useNewsEvents = () => {
             return diff >= 0 ? diff : 0;
         };
 
+        const isSoon = (dateStr: string, daysThreshold = 7) => {
+            const eventDate = new Date(dateStr);
+            eventDate.setHours(0, 0, 0, 0);
+            const diff = (eventDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24);
+            return diff >= 0 && diff <= daysThreshold;
+        };
+
         const eventsArray = Array.isArray(events) ? events : [];
         const upcoming = eventsArray
             .filter(e => {
@@ -74,6 +82,7 @@ const useNewsEvents = () => {
                 type: "event",
                 isNew: isTodayOrYesterday(e.Data_wydarzenia),
                 publishedDaysAgo: daysAgo(e.Data_wydarzenia),
+                isSoon: isSoon(e.Data_wydarzenia),
             }))
             .sort((a, b) => new Date(a.Data_wydarzenia!).getTime() - new Date(b.Data_wydarzenia!).getTime());
 

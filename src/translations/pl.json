@@ -95,7 +95,8 @@
             "new": "Nowe",
             "important": "Ważne",
             "published": "Opublikowano",
-            "days": "dni temu"
+            "days": "dni temu",
+            "soon": "Wkrótce"
         },
         "eventspage": {
             "upcomingEvents": "Nadchodzące wydarzenia",
