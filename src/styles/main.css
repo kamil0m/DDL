@@ -120,7 +120,7 @@ main {
     }
 
     .switch {
-        @apply relative inline-flex justify-center items-center h-[2em] aspect-square cursor-pointer text-white transition-transform duration-2000 ease-in-out;
+        @apply relative inline-flex justify-center items-center h-[2em] aspect-square cursor-pointer text-white transition-transform duration-2000 ease-in-out z-10;
     }
 
     .switch-on {

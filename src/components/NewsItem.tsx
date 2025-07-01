@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HiOutlineNewspaper } from "react-icons/hi2";
 import RenderRichText from "./RenderRichText";
 
@@ -9,9 +10,32 @@ type NewsItemProps = {
 };
 
 export default function NewsItem({ item, t }: NewsItemProps) {
-    const [expanded, setExpanded] = useState(false);
+    useEffect(() => {
+        // Log the item to see its structure
+        // console.log("NewsItem:", item);
+    }, [item]);
+    const navigate = useNavigate();
+    const [isHovered, setIsHovered] = useState(false);
 
-    const toggleDescription = () => setExpanded(prev => !prev);
+    const handleReadMore = (e: React.MouseEvent) => {
+        // Prevent navigation if user is selecting text
+        const selection = window.getSelection();
+        if (selection && selection.toString().length > 0) {
+            return;
+        }
+
+        const type = item.type || "news";
+        navigate(`/${type}/${item.documentId}`);
+    };
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
     const truncate = (text: string, length = 100) =>
         text.length > length ? text.substring(0, length) + "..." : text;
 
@@ -34,7 +58,14 @@ export default function NewsItem({ item, t }: NewsItemProps) {
     const type = item.type || "news";
 
     return (
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+        <div 
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave}
+            onClick={(e) => {
+                e.stopPropagation()
+                handleReadMore(e);}
+            }
+            className="bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden flex flex-col cursor-pointer">
             <div className="relative h-75 w-full">
                 <img
                     src={image}
@@ -89,20 +120,12 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                         {t("news.dateLabel")} {item.Data_wydarzenia}
                     </p>
                 )}
-                {expanded ? (
-                    <RenderRichText
-                        content={descriptionBlocks}
-                        pClasses="text-l text-darkgrey"
-                    />
-                ) : (
-                    <p className="text-l text-darkgrey">{truncatedDescription}</p>
-                )}
+                <p className="text-l text-darkgrey">{truncatedDescription}</p>
                 <button
-                    onClick={toggleDescription}
-                    className="underline text-darkgrey text-xl mt-1 self-start"
+                    onClick={handleReadMore}
+                    className={`underline text-xl mt-1 self-start ${isHovered ? "text-black" : "text-darkgrey"} transition-colors cursor-pointer`}
                 >
-                    {/* TODO change to redirect */}
-                    {expanded ? t("news.readLess") : t("news.readMore")}
+                    {t("news.readMore")}
                 </button>
             </div>
         </div>

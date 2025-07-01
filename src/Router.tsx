@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import JoinUs from "./pages/JoinUs";
 import StylesTester from "./pages/StylesTester";
 import Mainlayout from "./layouts/Mainlayout";
+import NewsPage from './pages/NewsPage';
 import { LanguageProvider } from './contexts/LanguageContext';
 import {
   BrowserRouter,
@@ -18,13 +19,16 @@ export default function Router(){
     <BrowserRouter>
       <LanguageProvider>
         <Routes>
-          <Route path="/" element={< Mainlayout />}>
-            <Route path="/" element={< Home />} />
-            <Route path="/about" element={< AboutUs />} />
-            <Route path="/events" element={< Events />} />
-            <Route path="/joinus" element={< JoinUs />} />
-            <Route path="/contact" element={< Contact />} />
-            <Route path="/styles" element={< StylesTester />} />
+          <Route path="/" element={<Mainlayout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<AboutUs />} />
+            {/* <Route path="news" element={<News />} /> */}
+            <Route path=":type/:id" element={<NewsPage />} />
+            <Route path="events" element={<Events />} />
+            {/* <Route path=":type/:id" element={<NewsPage />} /> */}
+            <Route path="joinus" element={<JoinUs />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="styles" element={<StylesTester />} />
           </Route>
         </Routes>
       </LanguageProvider>
