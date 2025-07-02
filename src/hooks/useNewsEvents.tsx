@@ -81,7 +81,7 @@ const useNewsEvents = () => {
                 ...e,
                 type: "event",
                 isNew: isTodayOrYesterday(e.Data_wydarzenia),
-                publishedDaysAgo: daysAgo(e.Data_wydarzenia),
+                publishedDaysAgo: daysAgo(e.Data_publikacji),
                 isSoon: isSoon(e.Data_wydarzenia),
             }))
             .sort((a, b) => new Date(a.Data_wydarzenia!).getTime() - new Date(b.Data_wydarzenia!).getTime());
@@ -96,8 +96,8 @@ const useNewsEvents = () => {
             .map(e => ({
                 ...e,
                 type: "event",
-                isNew: isTodayOrYesterday(e.Data_wydarzenia),
-                publishedDaysAgo: daysAgo(e.Data_wydarzenia),
+                isNew: isTodayOrYesterday(e.Data_publikacji),
+                publishedDaysAgo: daysAgo(e.Data_publikacji),
             }))
             .sort((a, b) => new Date(b.Data_wydarzenia!).getTime() - new Date(a.Data_wydarzenia!).getTime());
 
