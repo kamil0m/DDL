@@ -76,7 +76,8 @@
     "nav": {
         "home": "Accueil",
         "about": "Qui sommes-nous ?",
-        "events": "Évènements"
+        "events": "Évènements",
+        "news": "Actualités"
     },
     "news": {
         "heading": "Actualités récentes",
