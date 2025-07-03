@@ -1,46 +1,19 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { HiOutlineNewspaper, HiArrowLeft } from "react-icons/hi2";
+import { useParams } from 'react-router-dom';
+import { HiOutlineNewspaper } from "react-icons/hi2";
 import RenderRichText from '../components/RenderRichText';
 import useFetch from '../hooks/useFetch';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../contexts/LanguageContext';
-// import { PiHouseLight } from "react-icons/pi";
-// import { NavLink } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
-import StrapiFetchedData from '../models/interfaces/StrapiFetchedData';
-import { BlocksContent } from '@strapi/blocks-react-renderer';
-// import { SlArrowRight } from "react-icons/sl";
+import { EventNews } from '../models/interfaces/EventNews';
 import BreadCrumbsNav from '../components/BreadCrumbsNav';
-
-
-
-interface ContentData extends StrapiFetchedData {
-    Tytul: string;
-    Tresc: BlocksContent;
-    Data_publikacji: string;
-    Miejsce_wydarzenia?: string;
-    Link_do_Facebook?: string;
-    Podpis?: string;
-    Data_wydarzenia?: string;
-    Zdjecie: null | { url: string }[];
-    Wazne?: boolean;
-    type?: 'news' | 'event';
-    // [key: string]: unknown;
-}
+import { ImportantBadge, SoonBadge, NewBadge, PublishedBadge } from '../components/Badges';
+import { isSoon, isNew, publishedDaysAgo } from '../components/FilteringMethods';
 
 export default function NewsPage() {
     const { id, type } = useParams<{ id: string; type: string }>();
-    // const navigate = useNavigate();
-    // const [item, setItem] = useState<NewsItem | null>(null);
     const { t } = useTranslation();
     const { currentLanguage } = useLanguage(); // Use the language context
-
-    const { data, loading, error } = useFetch(type === 'event' ? `events/${id}?populate=*&locale=${currentLanguage}` : `aktualnosci/${id}?populate=*&locale=${currentLanguage}`) as { data: ContentData, loading: boolean, error: any };
-    // const location = useLocation();
-
-
-    
+    const { data, loading, error } = useFetch(type === 'event' ? `events/${id}?populate=*&locale=${currentLanguage}` : `aktualnosci/${id}?populate=*&locale=${currentLanguage}`) as { data: EventNews, loading: boolean, error: any };
 
     if (loading) {
         return (
@@ -62,8 +35,6 @@ export default function NewsPage() {
     const image = data.Zdjecie && data.Zdjecie.length > 0
         ? data.Zdjecie[0].url
         : "/src/styles/images/logo.jpg";
-
-    const publishDate = new Date(data.Data_publikacji).toLocaleDateString("fr-FR");
 
     console.log(data);
     
@@ -94,52 +65,57 @@ export default function NewsPage() {
                     </div>
                 </div>
 
-                <div className="w-2/3 bg-white rounded-xl shadow-lg overflow-hidden p-6">
-                    
-                    {/* Main content */}
-                    <article className="flex flex-col w-full gap-9 ">
-                        
-                        {/* Type and title */}
-                        <div className="flex flex-col gap-8 text-center">
-                            <h2>{type === "event" ? t("news.tags.event") : t("news.tags.news") }</h2>
-                            <h1 className="text-center">{title}</h1>
+                {/* Main content */}
+                <div className="flex flex-col gap-9 w-2/3 bg-white rounded-xl shadow-lg overflow-hidden p-6 mb-20">
+
+                    {/* Type and title */}
+                    <div className="flex flex-col gap-8 text-center">
+                        <h2>{type === "event" ? t("news.tags.event") : t("news.tags.news") }</h2>
+                        <h1 className="text-center">{title}</h1>
+                    </div>
+
+                    {/* <div className="h-[1px] w-full bg-accent"></div> */} {/* Divider line */}
+
+                    {/* badges, meta info, buttons */}
+                    <div className="flex flex-row justify-between gap-3">
+                        <div className="flex flex-row gap-3">
+                            {data.Wazne && type === "news" && (
+                                < ImportantBadge />
+                            )}
+
+                            {isSoon(data) && type === "event" && (
+                                < SoonBadge />
+                            )}
+
+                            {isNew(data) ? (
+                                < NewBadge />
+                            ) : (
+                                < PublishedBadge daysAgo={publishedDaysAgo(data)} />
+                            )}
                         </div>
-
-                        <div className="h-[1px] w-full bg-accent"></div>
-
-                        <div className="flex items-center gap-4 text-darkgrey">
-                            <span className="text-lg">{t("news.publishedOn")} {publishDate}</span>
-                        </div>
-
-                        {/* badges, meta info, buttons */}
-                        <div className="flex flex-row">
-                            {/* {type === "event" && data.Data_wydarzenia  (
-
-                            )} */}
-                        </div>
-                        {data.Wazne && type === "news" && (
-                            <span className="bg-orange text-white font-medium px-3 py-1 rounded-lg">
-                                {t("news.badges.important")}
-                            </span>
-                        )}
-                        {/* Event date if applicable */}
-                        {data.Data_wydarzenia && (
-                            <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                                <p className="text-lg text-darkgrey">
-                                    <strong>{t("news.dateLabel")}</strong> {data.Data_wydarzenia}
-                                </p>
+                        <div className="flex flex-row text-darkgrey gap-6">
+                            {data.Podpis && (
+                                <div className="">
+                                    {data.Podpis}
+                                </div>
+                            )}
+                            <div>
+                                {t("news.badges.published")} {data.Data_publikacji && new Date(data.Data_publikacji).toLocaleDateString("fr-FR")}
                             </div>
-                        )}
-
-                        {/* Content */}
-                        <div className="prose prose-lg max-w-none">
-                            <RenderRichText
-                                content={data.Tresc}
-                                pClasses="text-lg text-gray-700 leading-relaxed mb-4"
-                            />
                         </div>
 
-                    </article>
+                        {/* TO DO : implement share and print functions here */}
+
+                    </div>
+
+                    {/* Content */}
+                    <div className="prose prose-lg max-w-none">
+                        <RenderRichText
+                            content={data.Tresc}
+                            pClasses="text-lg text-gray-700 leading-relaxed mb-4"
+                        />
+                    </div>
+
                 </div>
             </div>
         </>
