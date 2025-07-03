@@ -9,6 +9,7 @@ export default function NavBar() {
 
             <NavLink to="/" className="flex justify-center w-45 text-accent hover:text-red">{t("nav.home")}</NavLink>
             <NavLink to="/events" className="flex justify-center w-45 text-accent hover:text-red">{t("nav.events")}</NavLink>
+            <NavLink to="/news" className="flex justify-center w-45 text-accent hover:text-red">{t("nav.news")}</NavLink>
             <NavLink to="/about" className="flex justify-center w-45 text-accent hover:text-red">{t("nav.about")}</NavLink>
 
         </nav>
