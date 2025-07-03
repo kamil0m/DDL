@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import useFetch from "./useFetch";
+import { useLanguage } from '../contexts/LanguageContext';
 
 type Entry = {
     id: number;
@@ -16,8 +17,14 @@ type Entry = {
 };
 
 const useNewsEvents = () => {
-    const { data: events, loading: eventsLoading, error: eventsError } = useFetch(`events?populate=*&sort[0]=Data_wydarzenia:asc&pagination[limit]=100`);
-    const { data: news, loading: newsLoading, error: newsError } = useFetch(`aktualnosci?populate=*sort[0]=Data_publikacji:desc&pagination[limit]=100`);
+    const { currentLanguage } = useLanguage();
+    const { data: events, loading: eventsLoading, error: eventsError } = useFetch(
+        `events?populate=*&sort[0]=Data_wydarzenia:asc&pagination[limit]=100&locale=${currentLanguage}`
+    );
+
+    const { data: news, loading: newsLoading, error: newsError } = useFetch(
+        `aktualnosci?populate=*&sort[0]=Data_publikacji:desc&pagination[limit]=100&locale=${currentLanguage}`
+    );
 
     const [upcomingEvents, setUpcomingEvents] = useState<Entry[]>([]);
     const [pastEvents, setPastEvents] = useState<Entry[]>([]);
@@ -25,6 +32,12 @@ const useNewsEvents = () => {
 
     const loading = newsLoading || eventsLoading;
     const error = newsError || eventsError;
+
+    useEffect(() => {
+        setUpcomingEvents([]);
+        setPastEvents([]);
+        setSortedNews([]);
+    }, [currentLanguage]);
 
     useEffect(() => {
 
@@ -116,7 +129,7 @@ const useNewsEvents = () => {
         setUpcomingEvents(upcoming);
         setPastEvents(past);
         setSortedNews(sortedNewsItems);
-    }, [events, news]);
+    }, [events, news, currentLanguage]);
 
     return {
         upcomingEvents,
