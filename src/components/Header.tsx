@@ -44,9 +44,9 @@ export default function Header() {
           < NavBar />
           {/* < SearchBar /> */}
         </div>
-        <div className="flex flex-row justify-end items-center gap-4">
+        <div className="flex flex-row justify-between items-center min-w-[30rem]">
           <LanguageToggle onLanguageChange={handleLanguageChange} />
-          <div className="flex justify-center w-100 gap-4">
+          <div className="flex justify-end gap-4">
             <button onClick={handleContactClick} className="button button-transparent hover:button-accent px-8 py-2transition-colors duration-300 ease-out">{t("header.contact")}</button>
             <NavLink to="/joinus" className="button button-accent hover:button-transparent px-8 py-2 transition-colors duration-300 ease-out">{t("header.joinus")}</NavLink>
           </div>

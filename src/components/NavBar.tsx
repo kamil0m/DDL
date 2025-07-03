@@ -7,9 +7,9 @@ export default function NavBar() {
     return (
         <nav className="flex flex-row gap-8">
 
-            <NavLink to="/" className="flex justify-center w-45 text-accent hover:text-red">{t("nav.home")}</NavLink>
-            <NavLink to="/events" className="flex justify-center w-45 text-accent hover:text-red">{t("nav.events")}</NavLink>
-            <NavLink to="/about" className="flex justify-center w-45 text-accent hover:text-red">{t("nav.about")}</NavLink>
+            <NavLink to="/" className="flex justify-center xw-45 text-accent hover:text-red">{t("nav.home")}</NavLink>
+            <NavLink to="/events" className="flex justify-center xw-45 text-accent hover:text-red">{t("nav.events")}</NavLink>
+            <NavLink to="/about" className="flex justify-center xw-45 text-accent hover:text-red">{t("nav.about")}</NavLink>
 
         </nav>
     )
