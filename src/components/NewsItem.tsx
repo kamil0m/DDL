@@ -65,6 +65,12 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                             </span>
                         )}
 
+                        {item.isSoon && type === "event" && (
+                            <span className="bg-blue text-white font-medium px-2 py-1 rounded">
+                                {t("news.badges.soon")}
+                            </span>
+                        )}
+
                         {item.isNew ? (
                             <span className="bg-skyblue text-white font-medium px-2 py-1 rounded">
                                 {t("news.badges.new")}

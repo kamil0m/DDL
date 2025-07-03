@@ -95,8 +95,13 @@
             "new": "Nouveau",
             "important": "Important",
             "published": "Publié il y a",
-            "days": "jours"
+            "days": "jours",
+            "soon": ""
         },
-        "nodate": ""
+        "eventspage": {
+            "upcomingEvents": "",
+            "pastEvents": "",
+            "readArticles": ""
+        }
     }
 }
