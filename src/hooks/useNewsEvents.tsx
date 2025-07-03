@@ -18,8 +18,6 @@ type Entry = {
 
 const useNewsEvents = () => {
     const { currentLanguage } = useLanguage();
-    // const { data: events, loading: eventsLoading, error: eventsError } = useFetch(`events?populate=*&sort[0]=Data_wydarzenia:asc&pagination[limit]=100`);
-    // const { data: news, loading: newsLoading, error: newsError } = useFetch(`aktualnosci?populate=*sort[0]=Data_publikacji:desc&pagination[limit]=100`);
     const { data: events, loading: eventsLoading, error: eventsError } = useFetch(
         `events?populate=*&sort[0]=Data_wydarzenia:asc&pagination[limit]=100&locale=${currentLanguage}`
     );
