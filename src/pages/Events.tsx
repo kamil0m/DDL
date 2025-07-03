@@ -1,37 +1,33 @@
-import useFetch from '../hooks/useFetch';
-// import CardEvent from '../components/CardEvents';
-import homebackground from "../styles/images/homebackground.png";
-import ErrorBoundary from '../components/ErrorBoundary';
+import { useTranslation } from "react-i18next";
+import useNewsEvents from "../hooks/useNewsEvents";
+import Carousel from "../components/CarouselItems"
 
 export default function Events() {
-
-    const { data, loading, error } = useFetch('Events');
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error!</p>;
-
-    const today = new Date().toISOString().split("T")[0];
-    const futureEvents = data.data.filter(event => event.Date >= today);
-    const pastEvents = data.data.filter(event => event.Date < today);
+    const { t } = useTranslation();
+    const { upcomingEvents, pastEvents, sortedNews } = useNewsEvents();
 
     return (
-        <ErrorBoundary>
-            <div className="relative flex flex-col min-h-screen">
-                <div
-                    className="absolute inset-0 bg-fixed bg-center bg-cover before:content-[''] before:absolute before:inset-0 before:bg-white/50"
-                    style={{ backgroundImage: `url(${homebackground})` }}
-                ></div>
-                <div className="relative container mx-auto max-w-screen-lg pt-40 pb-16 text-white">
-                    <h2 className="card__title text-center width-full text-slate-900 text-2xl font-bold">Nadchodzace wydarzenia:</h2>
-                        {futureEvents.map((event: any) => (
-                            <div key={event.id}>{ < CardEvent key={event.id} content={event} /> }</div>
-                        ))}
-                    <h2 className="card__title text-center width-full text-slate-900 text-2xl font-bold">Minione wydarzenia:</h2>
-                    {pastEvents.map((event: any) => (
-                        <div key={event.id}>{ < CardEvent key={event.id} content={event} /> }</div>
-                    ))}
+        <section className="flex flex-col justify-between items-center mt-40 gap-10">
+            <div className="shortItems max-w-4/5">
+                <div className="text-left">
+                    <h6 className="mb-4">{t("news.eventspage.upcomingEvents")}</h6>
                 </div>
+                <Carousel items={upcomingEvents} t={t} />
             </div>
-        </ErrorBoundary>
-    )
+
+            <div className="shortItems max-w-4/5 py-20">
+                <div className="text-left ">
+                    <h6 className="mb-4">{t("news.eventspage.readArticles")}</h6>
+                </div>
+                <Carousel items={sortedNews} t={t} />
+            </div>
+
+            <div className="shortItems max-w-4/5 pb-15">
+                <div className="text-left">
+                    <h6 className="mb-4">{t("news.eventspage.pastEvents")}</h6>
+                </div>
+                <Carousel items={pastEvents} t={t} />
+            </div>
+        </section>
+    );
 }

@@ -10,11 +10,11 @@ import NewsPage from './pages/NewsPage';
 import { LanguageProvider } from './contexts/LanguageContext';
 import {
   BrowserRouter,
-  Route, 
+  Route,
   Routes
 } from "react-router-dom";
 
-export default function Router(){
+export default function Router() {
   return (
     <BrowserRouter>
       <LanguageProvider>

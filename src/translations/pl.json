@@ -96,8 +96,13 @@
             "new": "Nowe",
             "important": "Ważne",
             "published": "Opublikowano",
-            "days": "dni temu"
+            "days": "dni temu",
+            "soon": "Wkrótce"
         },
-        "nodate": "Brak daty"
+        "eventspage": {
+            "upcomingEvents": "Nadchodzące wydarzenia",
+            "pastEvents": "Minione wydarzenia",
+            "readArticles": "Przeczytaj nasze artykuły"
+        }
     }
 }
