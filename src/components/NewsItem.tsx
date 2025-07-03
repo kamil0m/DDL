@@ -73,6 +73,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                     alt="News"
                     className="w-full h-full object-cover"
                 />
+                <span>test</span>
                 <div className="absolute top-2 left-2 flex gap-2 flex-wrap">
                     {type === "news" && (
                         <span className="bg-white text-accent text-l font-semibold px-2 py-1 rounded">
@@ -105,7 +106,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                         ) : (
                             < PublishedBadge daysAgo={item.publishedDaysAgo} />
                         )}
-                        
+
                     </div>
 
                     <div className="text-darkgrey text-xl font-medium px-2 py-1">
