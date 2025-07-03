@@ -42,7 +42,8 @@
                 "success": "Le mail à été envoyé !",
                 "error": "Une erreur est survenue lors de l'envoi.",
                 "apiError": "Erreur : {{message}}"
-            }
+            },
+            "explain": ""
         }
     },
     "error": {

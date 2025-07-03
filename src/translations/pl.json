@@ -42,7 +42,8 @@
                 "success": "Wiadomość została wysłana!",
                 "error": "Wystąpił błąd podczas wysyłania wiadomości.",
                 "apiError": "Błąd: {{message}}"
-            }
+            },
+            "explain": "Pole wymagane"
         }
     },
     "error": {
