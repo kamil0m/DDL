@@ -58,3 +58,66 @@ export default function Carousel({ items, t }: CarouselProps) {
         </div>
     );
 }
+
+
+// import { useState } from "react";
+// import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+// import NewsItem from "./NewsItem";
+
+// type CarouselProps = {
+//     items: any[];
+//     t: (key: string) => string;
+// };
+
+// export default function Carousel({ items, t }: CarouselProps) {
+//     const [startIndex, setStartIndex] = useState(0);
+//     const maxVisible = 3;
+
+//     const canGoLeft = startIndex > 0;
+//     const canGoRight = startIndex + maxVisible < items.length;
+
+//     const handleLeft = () => {
+//         if (canGoLeft) setStartIndex(startIndex - 1);
+//     };
+
+//     const handleRight = () => {
+//         if (canGoRight) setStartIndex(startIndex + 1);
+//     };
+
+//     const visibleItems = items.slice(startIndex, startIndex + maxVisible);
+
+//     return (
+//         <div className="relative w-full flex items-center">
+//             {/* Left Button */}
+//             {items.length > maxVisible && (
+//                 <button
+//                     onClick={handleLeft}
+//                     disabled={!canGoLeft}
+//                     className={`p-2 bg-white rounded-full shadow ${!canGoLeft ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"} z-10`}
+//                     aria-label={t("news.carousel.prev")}
+//                 >
+//                     <HiChevronLeft size={30} />
+//                 </button>
+//             )}
+
+//             {/* Carousel Items */}
+//             <div className="flex gap-8 overflow-x-auto flex-grow">
+//                 {visibleItems.map((item, index) => (
+//                     <NewsItem key={item.id || index} item={item} index={index} t={t} />
+//                 ))}
+//             </div>
+
+//             {/* Right Button */}
+//             {items.length > maxVisible && (
+//                 <button
+//                     onClick={handleRight}
+//                     disabled={!canGoRight}
+//                     className={`p-2 bg-white rounded-full shadow ${!canGoRight ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"} z-10`}
+//                     aria-label={t("news.carousel.next")}
+//                 >
+//                     <HiChevronRight size={30} />
+//                 </button>
+//             )}
+//         </div>
+//     );
+// }
