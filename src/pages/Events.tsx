@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import useNewsEvents from "../hooks/useNewsEvents";
-import Carousel from "../components/CarouselItems"
+import Carousel from "../components/CarouselItems";
 
 export default function Events() {
     const { t } = useTranslation();
