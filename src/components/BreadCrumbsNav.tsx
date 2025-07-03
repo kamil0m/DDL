@@ -62,9 +62,9 @@ export default function BreadCrumbsNav({data}: any) {
                                     }
                                 })()}
                                 className={({ isActive }) => 
-                                    `flex flex-row items-center gap-2 transition-colors ${isActive 
+                                    `flex flex-row items-center gap-2 font-light transition-colors ${isActive 
                                         ? 'text-accent font-semibold' 
-                                        : 'text-darkgrey hover:text-accent/80'
+                                        : 'text-black hover:text-accent/80'
                                     }`
                                 }
                             >

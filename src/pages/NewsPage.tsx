@@ -5,12 +5,12 @@ import RenderRichText from '../components/RenderRichText';
 import useFetch from '../hooks/useFetch';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../contexts/LanguageContext';
-import { PiHouseLight } from "react-icons/pi";
-import { NavLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+// import { PiHouseLight } from "react-icons/pi";
+// import { NavLink } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import StrapiFetchedData from '../models/interfaces/StrapiFetchedData';
 import { BlocksContent } from '@strapi/blocks-react-renderer';
-import { SlArrowRight } from "react-icons/sl";
+// import { SlArrowRight } from "react-icons/sl";
 import BreadCrumbsNav from '../components/BreadCrumbsNav';
 
 
@@ -31,46 +31,16 @@ interface ContentData extends StrapiFetchedData {
 
 export default function NewsPage() {
     const { id, type } = useParams<{ id: string; type: string }>();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     // const [item, setItem] = useState<NewsItem | null>(null);
     const { t } = useTranslation();
     const { currentLanguage } = useLanguage(); // Use the language context
 
     const { data, loading, error } = useFetch(type === 'event' ? `events/${id}?populate=*&locale=${currentLanguage}` : `aktualnosci/${id}?populate=*&locale=${currentLanguage}`) as { data: ContentData, loading: boolean, error: any };
-    const [breadcrumbs, setBreadcrumbs] = useState<string[]>([]);
-    const location = useLocation();
+    // const location = useLocation();
 
 
-    useEffect(() => {
-        const createBreadcrumbs = () => {
-            const pathSegments = location.pathname.split('/').filter(segment => segment !== '');
-            const breadcrumbArray = ['Home'];
-            
-            pathSegments.forEach((segment, index) => {
-                switch(segment) {
-                    case 'news':
-                        breadcrumbArray.push('News');
-                        break;
-                    case 'event':
-                        breadcrumbArray.push('Events');
-                        break;
-                    default:
-                        // For IDs, you could show the actual title if available
-                        if (index === pathSegments.length - 1 && data?.Tytul) {
-                            breadcrumbArray.push(data.Tytul);
-                        } else {
-                            breadcrumbArray.push(segment);
-                        }
-                }
-            });
-            
-            return breadcrumbArray;
-        };
-        const breadcrumbArray = createBreadcrumbs();
-        setBreadcrumbs(breadcrumbArray);
-        console.log('Page breadcrumb:', breadcrumbArray);
-        
-}, [location.pathname, data]);
+    
 
     if (loading) {
         return (
@@ -94,12 +64,14 @@ export default function NewsPage() {
         : "/src/styles/images/logo.jpg";
 
     const publishDate = new Date(data.Data_publikacji).toLocaleDateString("fr-FR");
+
+    console.log(data);
     
     return (
         <>
             {data && (<BreadCrumbsNav data={data} />)}
 
-            <div className="flex flex-col items-center mt-7 min-h-screen bg-linear-to-b from-white to-grey w-full">
+            <div className="flex flex-col items-center gap-2 mt-7 min-h-screen bg-linear-to-b from-white to-grey w-full">
                 {/* Header image */}
                 <div className="relative h-96 w-2/3 rounded-xl shadow-lg overflow-hidden">
                     <img
@@ -122,43 +94,46 @@ export default function NewsPage() {
                     </div>
                 </div>
 
-                <div className="w-2/3 px-4 py-8">
+                <div className="w-2/3 bg-white rounded-xl shadow-lg overflow-hidden p-6">
                     
                     {/* Main content */}
-                    <article className="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <article className="flex flex-col w-full gap-9 ">
+                        
+                        {/* Type and title */}
+                        <div className="flex flex-col gap-8 text-center">
+                            <h2>{type === "event" ? t("news.tags.event") : t("news.tags.news") }</h2>
+                            <h1 className="text-center">{title}</h1>
+                        </div>
+
+                        <div className="h-[1px] w-full bg-accent"></div>
+
+
+                        <div className="flex items-center gap-4 text-darkgrey">
+                            <span className="text-lg">{t("news.publishedOn")} {publishDate}</span>
+                        </div>
+
+                        {data.Wazne && type === "news" && (
+                            <span className="bg-orange text-white font-medium px-3 py-1 rounded-lg">
+                                {t("news.badges.important")}
+                            </span>
+                        )}
+                        {/* Event date if applicable */}
+                        {data.Data_wydarzenia && (
+                            <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                                <p className="text-lg text-darkgrey">
+                                    <strong>{t("news.dateLabel")}</strong> {data.Data_wydarzenia}
+                                </p>
+                            </div>
+                        )}
 
                         {/* Content */}
-                        <div className="p-8">
-                            {/* Title and date */}
-                            <div className="mb-6">
-                                <h1 className="text-3xl font-bold text-gray-900 mb-4">{title}</h1>
-                                <div className="flex items-center gap-4 text-darkgrey">
-                                    <span className="text-lg">{t("news.publishedOn")} {publishDate}</span>
-                                    {data.Wazne && type === "news" && (
-                                        <span className="bg-orange text-white font-medium px-3 py-1 rounded-lg">
-                                            {t("news.badges.important")}
-                                        </span>
-                                    )}
-                                </div>
-                            </div>
-
-                            {/* Event date if applicable */}
-                            {data.Data_wydarzenia && (
-                                <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                                    <p className="text-lg text-darkgrey">
-                                        <strong>{t("news.dateLabel")}</strong> {data.Data_wydarzenia}
-                                    </p>
-                                </div>
-                            )}
-
-                            {/* Content */}
-                            <div className="prose prose-lg max-w-none">
-                                <RenderRichText
-                                    content={data.Tresc}
-                                    pClasses="text-lg text-gray-700 leading-relaxed mb-4"
-                                />
-                            </div>
+                        <div className="prose prose-lg max-w-none">
+                            <RenderRichText
+                                content={data.Tresc}
+                                pClasses="text-lg text-gray-700 leading-relaxed mb-4"
+                            />
                         </div>
+
                     </article>
                 </div>
             </div>
