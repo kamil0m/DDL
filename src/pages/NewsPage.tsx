@@ -107,11 +107,16 @@ export default function NewsPage() {
 
                         <div className="h-[1px] w-full bg-accent"></div>
 
-
                         <div className="flex items-center gap-4 text-darkgrey">
                             <span className="text-lg">{t("news.publishedOn")} {publishDate}</span>
                         </div>
 
+                        {/* badges, meta info, buttons */}
+                        <div className="flex flex-row">
+                            {/* {type === "event" && data.Data_wydarzenia  (
+
+                            )} */}
+                        </div>
                         {data.Wazne && type === "news" && (
                             <span className="bg-orange text-white font-medium px-3 py-1 rounded-lg">
                                 {t("news.badges.important")}

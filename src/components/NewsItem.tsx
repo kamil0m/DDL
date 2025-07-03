@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineNewspaper } from "react-icons/hi2";
 import RenderRichText from "./RenderRichText";
+import { ImportantBadge, NewBadge, PublishedBadge, SoonBadge } from "./Badges"; // Assuming you have a separate Badges component
 
 type NewsItemProps = {
     item: any;
@@ -90,27 +91,21 @@ export default function NewsItem({ item, t }: NewsItemProps) {
             <div className="flex flex-col gap-3 p-4 flex-grow">
                 <div className="flex justify-between items-center flex-wrap text-sm">
                     <div className="flex flex-wrap gap-2">
+
                         {item.isImportant && type === "news" && (
-                            <span className="bg-orange text-white font-medium px-2 py-1 rounded">
-                                {t("news.badges.important")}
-                            </span>
+                            < ImportantBadge />
                         )}
 
                         {item.isSoon && type === "event" && (
-                            <span className="bg-blue text-white font-medium px-2 py-1 rounded">
-                                {t("news.badges.soon")}
-                            </span>
+                            < SoonBadge />
                         )}
 
                         {item.isNew ? (
-                            <span className="bg-skyblue text-white font-medium px-2 py-1 rounded">
-                                {t("news.badges.new")}
-                            </span>
+                            < NewBadge />
                         ) : (
-                            <span className="bg-green text-white font-medium px-2 py-1 rounded">
-                                {t("news.badges.published")} {item.publishedDaysAgo} {t("news.badges.days")}
-                            </span>
+                            < PublishedBadge daysAgo={item.publishedDaysAgo} />
                         )}
+                        
                     </div>
 
                     <div className="text-darkgrey text-xl font-medium px-2 py-1">
