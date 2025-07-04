@@ -1,0 +1,201 @@
+{
+    "id": 18,
+    "documentId": "uiuf5ci6fwzv4370odr8a2ca",
+    "Tytul": "🇵🇱Niezapomniany wieczór z Mistrzem Kina! Dziękujemy, Lille!",
+    "Tresc": [
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "Wczorajszy wieczór w UGC Ciné Cité Lille to był prawdziwy festiwal emocji, który na długo pozostanie w naszej pamięci! Stowarzyszenie Dzien dobry Lille - Bonjour Lille z dumą zorganizowało wyjątkowe spotkanie z legendarnym reżyserem Krzysztofem Zanussim oraz projekcję jego najnowszego, niezwykle głębokiego filmu \"Liczba Doskonała\".",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "Przybyło Was ponad 170 osób! Ogromnie dziękujemy za tak liczne przybycie i stworzenie niesamowitej atmosfery. Film, poruszający fundamentalne pytania o sens życia, naukę, wiary i ludzkie dylematy, wywołał prawdziwą burzę uczuć – od intensywnych refleksji po wzruszenie, a nawet łzy. To świadczy o jego niezwykłej sile i uniwersalnym przesłaniu.",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "Spotkanie z samym Mistrzem Zanussim było zaś wisienką na torcie! Mieliście okazję zadać mu pytania, a reżyser, w swoim charakterystycznym stylu, podzielił się z nami niezliczonymi anegdotami i fascynującymi spostrzeżeniami ze swojego bogatego życia i twórczości. Każda odpowiedź była inspiracją, każda historia – bezcenną lekcją. To była prawdziwa przyjemność posłuchać Go na żywo!",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "Jako stowarzyszenie Dzien Dobry Lille, którego celem jest budowanie mostów kulturowych i prezentowanie bogactwa polskiej tradycji i współczesności francuskiej publiczności w regionie Hauts-de-France, jesteśmy niezwykle dumni, że mogliśmy Wam zapewnić to wyjątkowe doświadczenie.",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "Ten sukces nie byłby możliwy bez zaangażowania fantastycznych ludzi, którzy tworzą Dzien Dobry Lille! Szczególne podziękowania kierujemy do:",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "Agnieszki, Bartka, Agaty i Kamili, którzy z pasją prowadzili ten projekt.",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "Olgi i Magdaleny, które z elegancją poprowadziły spotkanie tego wieczoru.",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "Agnieszki M., Mai, Ewy, Beaty, Małgorzaty, Tomka, Arka i Piotra, którzy wspierali nas na każdym kroku, dbając o to, aby ten wieczór był naprawdę miły i niezapomniany.",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "Dziękujemy wszystkim, którzy byli z nami! Mamy nadzieję, że ten wieczór zainspirował Was tak samo, jak nas. Śledźcie nasze profile, bo już wkrótce kolejne wydarzenia! Polacy w Lille i Métropole - Dzien Dobry Lille ",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "text": "",
+                    "type": "text"
+                }
+            ]
+        }
+    ],
+    "Data_publikacji": "2025-06-27",
+    "Miejsce_wydarzenia": "Lille",
+    "Link_do_Facebook": "https://facebook.com",
+    "Podpis": "Test",
+    "Data_wydarzenia": "2025-07-01",
+    "createdAt": "2025-06-26T21:08:18.560Z",
+    "updatedAt": "2025-06-27T13:44:09.260Z",
+    "publishedAt": "2025-06-27T13:44:09.284Z",
+    "locale": "pl",
+    "Zdjecie": [
+        {
+            "id": 1,
+            "documentId": "ss0oly4kt2n4310r6cgopzsv",
+            "name": "UGC.jpg",
+            "alternativeText": null,
+            "caption": null,
+            "width": 1331,
+            "height": 2048,
+            "formats": {
+                "large": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/daqj3iucx/image/upload/v1750945079/large_UGC_d65c0256bc.jpg",
+                    "hash": "large_UGC_d65c0256bc",
+                    "mime": "image/jpeg",
+                    "name": "large_UGC.jpg",
+                    "path": null,
+                    "size": 83.28,
+                    "width": 650,
+                    "height": 1000,
+                    "sizeInBytes": 83281,
+                    "provider_metadata": {
+                        "public_id": "large_UGC_d65c0256bc",
+                        "resource_type": "image"
+                    }
+                },
+                "small": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/daqj3iucx/image/upload/v1750945079/small_UGC_d65c0256bc.jpg",
+                    "hash": "small_UGC_d65c0256bc",
+                    "mime": "image/jpeg",
+                    "name": "small_UGC.jpg",
+                    "path": null,
+                    "size": 29.95,
+                    "width": 325,
+                    "height": 500,
+                    "sizeInBytes": 29949,
+                    "provider_metadata": {
+                        "public_id": "small_UGC_d65c0256bc",
+                        "resource_type": "image"
+                    }
+                },
+                "medium": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/daqj3iucx/image/upload/v1750945079/medium_UGC_d65c0256bc.jpg",
+                    "hash": "medium_UGC_d65c0256bc",
+                    "mime": "image/jpeg",
+                    "name": "medium_UGC.jpg",
+                    "path": null,
+                    "size": 54.42,
+                    "width": 487,
+                    "height": 750,
+                    "sizeInBytes": 54416,
+                    "provider_metadata": {
+                        "public_id": "medium_UGC_d65c0256bc",
+                        "resource_type": "image"
+                    }
+                },
+                "thumbnail": {
+                    "ext": ".jpg",
+                    "url": "https://res.cloudinary.com/daqj3iucx/image/upload/v1750945079/thumbnail_UGC_d65c0256bc.jpg",
+                    "hash": "thumbnail_UGC_d65c0256bc",
+                    "mime": "image/jpeg",
+                    "name": "thumbnail_UGC.jpg",
+                    "path": null,
+                    "size": 5.3,
+                    "width": 101,
+                    "height": 156,
+                    "sizeInBytes": 5301,
+                    "provider_metadata": {
+                        "public_id": "thumbnail_UGC_d65c0256bc",
+                        "resource_type": "image"
+                    }
+                }
+            },
+            "hash": "UGC_d65c0256bc",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 217.88,
+            "url": "https://res.cloudinary.com/daqj3iucx/image/upload/v1750945079/UGC_d65c0256bc.jpg",
+            "previewUrl": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+                "public_id": "UGC_d65c0256bc",
+                "resource_type": "image"
+            },
+            "createdAt": "2025-06-26T13:37:59.979Z",
+            "updatedAt": "2025-06-26T13:37:59.979Z",
+            "publishedAt": "2025-06-26T13:37:59.979Z"
+        }
+    ],
+    "localizations": [],
+    "type": "event",
+    "isNew": false,
+    "publishedDaysAgo": 2
+}
