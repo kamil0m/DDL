@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineNewspaper } from "react-icons/hi2";
-import RenderRichText from "./RenderRichText";
 import { ImportantBadge, NewBadge, PublishedBadge, SoonBadge } from "./Badges"; // Assuming you have a separate Badges component
 
 type NewsItemProps = {
@@ -73,7 +72,6 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                     alt="News"
                     className="w-full h-full object-cover"
                 />
-                <span>test</span>
                 <div className="absolute top-2 left-2 flex gap-2 flex-wrap">
                     {type === "news" && (
                         <span className="bg-white text-accent text-l font-semibold px-2 py-1 rounded">
@@ -112,7 +110,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                     <div className="text-darkgrey text-xl font-medium px-2 py-1">
                         {item.publishedDaysAgo === 0
                             ? t("news.date.today")
-                            : new Date(item.Data_publikacji).toLocaleDateString("en-GB")}
+                            : new Date(item.Data_publikacji).toLocaleDateString("fr-FR")}
                     </div>
                 </div>
 
