@@ -1,7 +1,6 @@
-import homebackground from "../assets/images/IMG_8472.jpeg";
+import homebackground from "../assets/images/homebackground.jpeg";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Credits from "./Credits";
 
 
 export default function Greeting() {
@@ -14,7 +13,6 @@ export default function Greeting() {
                 backgroundImage: `url(${homebackground})`,
             }}
         >
-            < Credits content="Photo: Bernadeta Bardo" />
 
             <div className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white flex flex-col items-center">
 
