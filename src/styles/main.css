@@ -188,7 +188,7 @@ main {
         left: 0;
         width: 150px;
         height: 130px;
-        transform: translate(-30%, 250%);
+        transform: translate(-30%, 260%);
         background-image: radial-gradient(circle, var(--color-green) 3px, transparent 0px);
         background-position: bottom left;
         background-repeat: round;

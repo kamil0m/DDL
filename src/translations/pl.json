@@ -41,7 +41,13 @@
                 "sending": "Wysyłanie...",
                 "success": "Wiadomość została wysłana!",
                 "error": "Wystąpił błąd podczas wysyłania wiadomości.",
-                "apiError": "Błąd: {{message}}"
+                "apiError": "Błąd: {{message}}",
+                "fillAllRequired": "Proszę wypełnić wszystkie wymagane pola"
+            },
+            "explain": "Pole wymagane",
+            "validation": {
+                "errorMail": "Niepoprawny adres e-mail",
+                "errorBox": "Pole jest wymagane"
             }
         }
     },
