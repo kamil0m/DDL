@@ -7,7 +7,7 @@ export default function Events() {
     const { upcomingEvents, pastEvents, sortedNews } = useNewsEvents();
 
     return (
-        <section className="flex flex-col justify-between items-center mt-40 gap-10">
+        <section className="flex flex-col justify-between items-center mt-40 gap-10 bg-linear-to-b from-white to-grey">
             <div className="shortItems max-w-4/5">
                 <div className="text-left">
                     <h6 className="mb-4">{t("news.eventspage.upcomingEvents")}</h6>
