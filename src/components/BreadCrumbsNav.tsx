@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { SlArrowRight } from "react-icons/sl";
 import { useLocation } from 'react-router-dom';
 
-export default function BreadCrumbsNav({data}: any) {
+export default function BreadCrumbsNav({ data }: any) {
     const { t } = useTranslation();
     const location = useLocation();
     const [breadcrumbs, setBreadcrumbs] = useState<string[]>([]);
@@ -14,9 +14,9 @@ export default function BreadCrumbsNav({data}: any) {
 
         const pathSegments = location.pathname.split('/').filter(segment => segment !== '');
         const breadcrumbsArray = ['Home'];
-        
+
         pathSegments.forEach((segment, index) => {
-            switch(segment) {
+            switch (segment) {
                 case 'news':
                     breadcrumbsArray.push('News');
                     break;
@@ -52,18 +52,18 @@ export default function BreadCrumbsNav({data}: any) {
                             </span>
                         ) : (
                             // Not last item - render as NavLink (clickable)
-                            <NavLink 
+                            <NavLink
                                 to={(() => {
-                                    switch(crumb) {
+                                    switch (crumb) {
                                         case 'News': return '/news';
                                         case 'Events': return '/events';
                                         case 'Home': return '/';
                                         default: return '/'; // Fallback to home
                                     }
                                 })()}
-                                className={({ isActive }) => 
-                                    `flex flex-row items-center gap-2 font-light transition-colors ${isActive 
-                                        ? 'text-accent font-semibold' 
+                                className={({ isActive }) =>
+                                    `flex flex-row items-center gap-2 font-light transition-colors ${isActive
+                                        ? 'text-accent font-semibold'
                                         : 'text-black hover:text-accent/80'
                                     }`
                                 }
@@ -72,18 +72,18 @@ export default function BreadCrumbsNav({data}: any) {
                                 {crumb === 'Events' && t("nav.events")}
                                 {crumb === 'Home' && (
                                     <>
-                                        <PiHouseLight className="text-2xl"/> {t("nav.home")}
+                                        <PiHouseLight className="text-2xl" /> {t("nav.home")}
                                     </>
                                 )}
-                                </NavLink>
-                            )}
-                            
+                            </NavLink>
+                        )}
+
                         {/* Separator */}
                         {index < breadcrumbs.length - 1 && (
                             <span className="mx-2 text-darkgrey">
-                                <SlArrowRight/>
+                                <SlArrowRight />
                             </span>
-                            
+
                         )}
                     </div>
                 ))}
