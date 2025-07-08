@@ -30,8 +30,8 @@ export default function LanguageToggle({ onLanguageChange }: LanguageToggleProps
             }`}
         >
             <div className={`z-1 absolute flex justify-center items-center left-1 top-1 h-8/10 w-[2.2em] rounded-full bg-white transition-transform duration-300 ease-in-out ${i18n.language === "fr" ? "translate-x-0" : "translate-x-[2.3em]"}`}></div>
-            <span className={`switch ${i18n.language === "fr" ? "text-accent" : ""} transition-colors duration-300 ease-in-out`}>FR</span>
-            <span className={`switch ${i18n.language === "pl" ? "text-accent" : ""} transition-colors duration-300 ease-in-out`}>PL</span>
+            <span className={`z-10 switch ${i18n.language === "fr" ? "text-red" : ""} transition-colors duration-300 ease-in-out`}>FR</span>
+            <span className={`z-10 switch ${i18n.language === "pl" ? "text-red" : ""} transition-colors duration-300 ease-in-out`}>PL</span>
         </label>
     )
 }

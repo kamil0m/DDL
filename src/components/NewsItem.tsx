@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HiOutlineNewspaper } from "react-icons/hi2";
-import RenderRichText from "./RenderRichText";
+import { ImportantBadge, NewBadge, PublishedBadge, SoonBadge } from "./Badges"; // Assuming you have a separate Badges component
 
 type NewsItemProps = {
     item: any;
@@ -9,9 +10,32 @@ type NewsItemProps = {
 };
 
 export default function NewsItem({ item, t }: NewsItemProps) {
-    const [expanded, setExpanded] = useState(false);
+    useEffect(() => {
+        // Log the item to see its structure
+        // console.log("NewsItem:", item);
+    }, [item]);
+    const navigate = useNavigate();
+    const [isHovered, setIsHovered] = useState(false);
 
-    const toggleDescription = () => setExpanded(prev => !prev);
+    const handleReadMore = (e: React.MouseEvent) => {
+        // Prevent navigation if user is selecting text
+        const selection = window.getSelection();
+        if (selection && selection.toString().length > 0) {
+            return;
+        }
+
+        const type = item.type || "news";
+        navigate(`/${type}/${item.documentId}`);
+    };
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
     const truncate = (text: string, length = 100) =>
         text.length > length ? text.substring(0, length) + "..." : text;
 
@@ -34,7 +58,14 @@ export default function NewsItem({ item, t }: NewsItemProps) {
     const type = item.type || "news";
 
     return (
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+        <div 
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave}
+            onClick={(e) => {
+                e.stopPropagation()
+                handleReadMore(e);}
+            }
+            className="bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden flex flex-col cursor-pointer">
             <div className="relative h-75 w-full">
                 <img
                     src={image}
@@ -59,27 +90,21 @@ export default function NewsItem({ item, t }: NewsItemProps) {
             <div className="flex flex-col gap-3 p-4 flex-grow">
                 <div className="flex justify-between items-center flex-wrap text-sm">
                     <div className="flex flex-wrap gap-2">
+
                         {item.isImportant && type === "news" && (
-                            <span className="bg-orange text-white font-medium px-2 py-1 rounded">
-                                {t("news.badges.important")}
-                            </span>
+                            < ImportantBadge />
                         )}
 
                         {item.isSoon && type === "event" && (
-                            <span className="bg-blue text-white font-medium px-2 py-1 rounded">
-                                {t("news.badges.soon")}
-                            </span>
+                            < SoonBadge />
                         )}
 
                         {item.isNew ? (
-                            <span className="bg-skyblue text-white font-medium px-2 py-1 rounded">
-                                {t("news.badges.new")}
-                            </span>
+                            < NewBadge />
                         ) : (
-                            <span className="bg-green text-white font-medium px-2 py-1 rounded">
-                                {t("news.badges.published")} {item.publishedDaysAgo} {t("news.badges.days")}
-                            </span>
+                            < PublishedBadge daysAgo={item.publishedDaysAgo} />
                         )}
+
                     </div>
 
                     <div className="text-darkgrey text-xl font-medium px-2 py-1">
@@ -95,20 +120,12 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                         {t("news.dateLabel")} {item.Data_wydarzenia}
                     </p>
                 )}
-                {expanded ? (
-                    <RenderRichText
-                        content={descriptionBlocks}
-                        pClasses="text-l text-darkgrey"
-                    />
-                ) : (
-                    <p className="text-l text-darkgrey">{truncatedDescription}</p>
-                )}
+                <p className="text-l text-darkgrey">{truncatedDescription}</p>
                 <button
-                    onClick={toggleDescription}
-                    className="underline text-darkgrey text-xl mt-1 self-start"
+                    onClick={handleReadMore}
+                    className={`underline text-xl mt-1 self-start ${isHovered ? "text-black" : "text-darkgrey"} transition-colors cursor-pointer`}
                 >
-                    {/* TODO change to redirect */}
-                    {expanded ? t("news.readLess") : t("news.readMore")}
+                    {t("news.readMore")}
                 </button>
             </div>
         </div>

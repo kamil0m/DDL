@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import logo from "../assets/images/DDL_logo_poziome.png";
 
 interface LogoProps {
@@ -7,6 +8,8 @@ interface LogoProps {
 export default function Logo({ size }: LogoProps) {
     
     return (
-        <img src={logo} alt="Logo" className={size} />
+        <NavLink to="/" className="">
+            <img src={logo} alt="Logo" className={`${size} flex-shrink-0`} />
+        </NavLink>
     )
 }
