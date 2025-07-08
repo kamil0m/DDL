@@ -55,7 +55,7 @@ export default function BreadCrumbsNav({ data }: any) {
                             <NavLink
                                 to={(() => {
                                     switch (crumb) {
-                                        case 'News': return '/news';
+                                        case 'News': return '/new';
                                         case 'Events': return '/events';
                                         case 'Home': return '/';
                                         default: return '/'; // Fallback to home
