@@ -58,12 +58,13 @@ export default function NewsItem({ item, t }: NewsItemProps) {
     const type = item.type || "news";
 
     return (
-        <div 
-            onMouseEnter={handleMouseEnter} 
+        <div
+            onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={(e) => {
                 e.stopPropagation()
-                handleReadMore(e);}
+                handleReadMore(e);
+            }
             }
             className="bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden flex flex-col cursor-pointer">
             <div className="relative h-75 w-full">

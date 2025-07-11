@@ -37,7 +37,7 @@ export default function NewsPage() {
         : "/src/styles/images/logo.jpg";
 
     console.log(data);
-    
+
     return (
         <>
             {data && (<BreadCrumbsNav data={data} />)}
@@ -70,7 +70,7 @@ export default function NewsPage() {
 
                     {/* Type and title */}
                     <div className="flex flex-col gap-8 text-center">
-                        <h2>{type === "event" ? t("news.tags.event") : t("news.tags.news") }</h2>
+                        <h2>{type === "event" ? t("news.tags.event") : t("news.tags.news")}</h2>
                         <h1 className="text-center">{title}</h1>
                     </div>
 

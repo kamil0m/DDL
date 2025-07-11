@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import useLatestCombined from "../hooks/LatestNews";
 import NewsItem from "./NewsItem";
 
-export default function News() {
+export default function NewsSection() {
     const { t } = useTranslation();
     const { latest } = useLatestCombined();
 

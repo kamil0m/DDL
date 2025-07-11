@@ -2,6 +2,7 @@
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Events from './pages/Events';
+import News from './pages/News';
 import Contact from "./pages/Contact";
 import JoinUs from "./pages/JoinUs";
 import StylesTester from "./pages/StylesTester";
@@ -22,10 +23,9 @@ export default function Router() {
           <Route path="/" element={<Mainlayout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<AboutUs />} />
-            {/* <Route path="news" element={<News />} /> */}
-            <Route path=":type/:id" element={<NewsPage />} />
+            <Route path="new" element={<News />} />
             <Route path="events" element={<Events />} />
-            {/* <Route path=":type/:id" element={<NewsPage />} /> */}
+            <Route path=":type/:id" element={<NewsPage />} />
             <Route path="joinus" element={<JoinUs />} />
             <Route path="contact" element={<Contact />} />
             <Route path="styles" element={<StylesTester />} />
