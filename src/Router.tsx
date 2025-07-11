@@ -24,7 +24,6 @@ export default function Router() {
             <Route index element={<Home />} />
             <Route path="about" element={<AboutUs />} />
             <Route path="new" element={<News />} />
-            <Route path=":type/:id" element={<NewsPage />} />
             <Route path="events" element={<Events />} />
             <Route path=":type/:id" element={<NewsPage />} />
             <Route path="joinus" element={<JoinUs />} />
