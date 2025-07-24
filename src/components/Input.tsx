@@ -2,11 +2,11 @@ import React from 'react';
 import FormInputProps from '../models/interfaces/FormInputProps';
 import validateFormInput from './validateFormInput';
 
-export default function Input({ label, type, id, placeholder, value, onChange }: FormInputProps) {
+export default function Input({ label, type, id, placeholder, value, onChange, t }: FormInputProps) {
     const [errorMessage, setErrorMessage] = React.useState('');
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setErrorMessage(validateFormInput(e.target.value, type));
+        setErrorMessage(validateFormInput(e.target.value, type, t));
     };
 
     const commonProps = {
@@ -16,7 +16,7 @@ export default function Input({ label, type, id, placeholder, value, onChange }:
         onChange,
         onBlur: handleBlur,
         placeholder,
-        required: true,
+        required: id !== 'phone',
         className: "w-full px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 my-1.5",
     };
 

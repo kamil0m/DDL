@@ -25,6 +25,10 @@ export default function ContactForm() {
         const messageInput = (e.currentTarget as HTMLElement).querySelector<HTMLTextAreaElement>('#message')!.value;
         const phoneInput = (e.currentTarget as HTMLElement).querySelector<HTMLTextAreaElement>('#phone')!.value;
 
+        if (!nameInput || !emailInput || !titleInput || !messageInput) {
+            setStatus(t("contact.form.status.fillAllRequired"));
+            return;
+        }
 
         const form = {
             name: nameInput,
@@ -78,30 +82,36 @@ export default function ContactForm() {
                     <Input
                         type="text"
                         id="name"
-                        placeholder={t("contact.form.name.placeholder")}
+                        placeholder={`${t("contact.form.name.placeholder")}*`}
+                        t={t}
 
                     />
                     <Input
                         type="email"
                         id="email"
-                        placeholder={t("contact.form.email.placeholder")}
+                        placeholder={`${t("contact.form.email.placeholder")}*`}
+                        t={t}
                     />
                     <Input
                         type="text"
                         id="title"
-                        placeholder={t("contact.form.title.placeholder")}
+                        placeholder={`${t("contact.form.title.placeholder")}*`}
+                        t={t}
                     />
                     <Input
-                        type="text"
+                        type="tel"
                         id="phone"
                         placeholder={t("contact.form.phone.placeholder")}
+                        t={t}
 
                     />
                     <Input
                         type="textarea"
                         id="message"
-                        placeholder={t("contact.form.message.placeholder")}
+                        placeholder={`${t("contact.form.message.placeholder")}*`}
+                        t={t}
                     />
+                    <p className="text-sm italic text-green text-left">*{t("contact.form.explain")}</p>
                     <button
                         type="submit"
                         className="button button-blue size-fit px-6 py-3 text-xl font-light w-full mt-2"

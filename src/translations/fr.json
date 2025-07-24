@@ -41,7 +41,13 @@
                 "sending": "Envoi en cours...",
                 "success": "Le mail à été envoyé !",
                 "error": "Une erreur est survenue lors de l'envoi.",
-                "apiError": "Erreur : {{message}}"
+                "apiError": "Erreur : {{message}}",
+                "fillAllRequired": ""
+            },
+            "explain": "",
+            "validation": {
+                "errorMail": "",
+                "errorBox": ""
             }
         }
     },
