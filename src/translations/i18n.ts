@@ -5,19 +5,18 @@ import fr from "./fr.json";
 import pl from "./pl.json";
 
 i18n
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-        resources: {
-            fr: { translation: fr },
-            pl: { translation: pl }
-        },
-        lng: "pl",
-        fallbackLng: "pl",
-        interpolation: {
-            escapeValue: false
-        },
-        debug: false,
-    });
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources: {
+      fr: { translation: fr },
+      pl: { translation: pl },
+    },
+    fallbackLng: "pl",
+    interpolation: {
+      escapeValue: false,
+    },
+    debug: false,
+  });
 
 export default i18n;
