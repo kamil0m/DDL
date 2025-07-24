@@ -1,6 +1,7 @@
 import useFetch from '../hooks/useFetch';
 import RenderRichText from '../components/RenderRichText.tsx';
 import Motto from '../components/Motto.tsx';
+import People from '../components/People.tsx';
 import logo from '../assets/images/logo.jpg';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -50,8 +51,8 @@ export default function AboutUs() {
             />
             
           </section>
-          <section className="flex"></section>
           
+          <People />
         </div>
       </div>
       

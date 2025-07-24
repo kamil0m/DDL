@@ -77,7 +77,11 @@
         "home": "Accueil",
         "about": "Qui sommes-nous ?",
         "events": "Évènements",
-        "news": "Actualités"
+        "news": "Actualités",
+        "carrousel": {
+            "prev": "Précédent",
+            "next": "Suivant"
+        }
     },
     "news": {
         "heading": "Actualités récentes",
