@@ -42,7 +42,6 @@ const useLatestCombined = () => {
             return;
         }
 
-        // console.log("Processing data:", news);
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
@@ -82,6 +81,7 @@ const useLatestCombined = () => {
             .sort((a, b) => new Date(b.Data_publikacji).getTime() - new Date(a.Data_publikacji).getTime());
 
         setLatest(sorted.slice(0, 3));
+        // console.log(latest[0]);
     }, [events, news]);
 
     return {

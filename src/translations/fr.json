@@ -66,7 +66,7 @@
         "statute": "Règlement"
     },
     "greetings": {
-        "greetings": "Bienvenue sur la page de l'association « Dzień Dobry Lille! »",
+        "greetings": "Bienvenue sur la page de l'association « Dzien Dobry Lille! »",
         "more": "Plus d'infos"
     },
     "header": {
@@ -82,7 +82,8 @@
     "nav": {
         "home": "Accueil",
         "about": "Qui sommes-nous ?",
-        "events": "Évènements"
+        "events": "Évènements",
+        "news": "Actualités"
     },
     "news": {
         "heading": "Actualités récentes",

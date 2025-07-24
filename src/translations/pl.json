@@ -66,7 +66,7 @@
         "statute": "Regulamin"
     },
     "greetings": {
-        "greetings": "Witamy na stronie stowarzyszenia Dzień Dobry Lille!",
+        "greetings": "Witamy na stronie stowarzyszenia \"Dzien Dobry Lille!\"",
         "more": "Więcej informacji"
     },
     "header": {
@@ -82,7 +82,8 @@
     "nav": {
         "home": "Strona główna",
         "about": "O nas",
-        "events": "Wydarzenia"
+        "events": "Wydarzenia",
+        "news": "Aktualności"
     },
     "news": {
         "heading": "Najnowsze wiadomości",

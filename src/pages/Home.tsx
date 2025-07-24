@@ -4,7 +4,7 @@ import Greeting from "../components/Greeting";
 import InfoBar from "../components/InfoBar";
 import About from "../components/About";
 import ContactSection from "../components/ContactSection";
-import News from "../components/News";
+import NewsSection from "../components/NewsSection";
 
 const Home: React.FC = () => {
     const location = useLocation();
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
 
                 <div className="container">
                     < Greeting />
-                    < News />
+                    < NewsSection />
                     < About />
                     < ContactSection />
                 </div>
