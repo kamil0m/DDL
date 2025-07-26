@@ -51,7 +51,7 @@ export default function About() {
                 <NavLink to="/about" className="text-xl font-light text-darkgrey hover:text-black"> 
                     <span className="underline">{t("about.seeMore")}</span>
                     <span className=""> ➜</span></NavLink>
-                <a href="" className="button button-blue size-fit px-6 py-3 text-xl font-light">{t("about.button")}</a>
+                <a href="https://www.facebook.com/p/Dzien-dobry-Lille-Bonjour-Lille-61559848594019/" className="button button-blue size-fit px-6 py-3 text-xl font-light">{t("about.button")}</a>
             </div>
         </section>
     )
