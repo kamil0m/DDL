@@ -3,10 +3,10 @@ import { useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 type CarouselProps = {
-    dataArray: any[];
+    dataArray: object[];
     item: React.ReactElement;
     t: (key: string) => string;
-    maxVisible?: number;
+    maxVisible: number;
 };
 
 export default function Carousel({ dataArray, item, t, maxVisible }: CarouselProps) {
