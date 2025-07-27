@@ -6,13 +6,12 @@ type CarouselProps = {
     dataArray: any[];
     item: React.ReactElement;
     t: (key: string) => string;
+    maxVisible?: number;
 };
 
-export default function Carousel({ dataArray, item, t }: CarouselProps) {
+export default function Carousel({ dataArray, item, t, maxVisible }: CarouselProps) {
     const [startIndex, setStartIndex] = useState(0);
-    const maxVisible = 3;
-
-    console.log("Carousel items:", dataArray);
+    // maxVisible = maxVisible || 3;
 
     const canGoLeft = startIndex > 0;
     const canGoRight = startIndex + maxVisible < dataArray.length;
@@ -41,7 +40,7 @@ export default function Carousel({ dataArray, item, t }: CarouselProps) {
                 </button>
             )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex-grow">
+            <div className="flex flex-row justify-between flex-grow">
                 {visibleItems.map((dataItem, index) => (
                     <div key={index} className="flex justify-center">
                         {cloneElement(item, { data: dataItem, key: index })}
