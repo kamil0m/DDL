@@ -9,7 +9,7 @@ export default function Logo({ size }: LogoProps) {
     
     return (
         <NavLink to="/" className="">
-            <img src={logo} alt="Logo" className={`${size} flex-shrink-0`} />
+            <img src={logo} alt="Logo" className={`${size} flex-shrink-0 object-contain`} />
         </NavLink>
     )
 }
