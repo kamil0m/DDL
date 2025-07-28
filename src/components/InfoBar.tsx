@@ -11,9 +11,9 @@ export default function InfoBar() {
     ...sortedNews.filter(n => n.isImportant).map(n => n.Tytul)
   ];
 
-  if (importantTitles.length === 0) return null;
+  if (importantTitles.length === 0) return null; // No bar if there are no important events
 
-  const scrollingTitles = [...importantTitles, ...importantTitles];
+  const scrollingTitles = [...importantTitles, ...importantTitles]; // Duplicate titles for continuous scrolling effect
 
   return (
     <div className="whitespace-nowrap w-full overflow-x-hidden bg-accent group">
