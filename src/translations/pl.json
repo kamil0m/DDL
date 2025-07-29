@@ -83,7 +83,11 @@
         "home": "Strona główna",
         "about": "O nas",
         "events": "Wydarzenia",
-        "news": "Aktualności"
+        "news": "Aktualności",
+        "carrousel": {
+            "prev": "Poprzedni",
+            "next": "Następny"
+        }
     },
     "news": {
         "heading": "Najnowsze wiadomości",
