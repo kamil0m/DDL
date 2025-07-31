@@ -47,7 +47,7 @@ export default function About() {
             <div className="flex flex-col justify-center w-1/2 gap-6">
                 <h2>{t("about.title")}</h2>
                 <h3>{t("about.aboutUsSubTitle")}</h3>
-                <p>{t("about.aboutUsParagraph")}</p>
+                <p className="">{t("about.aboutUsParagraph")}</p>
                 <NavLink to="/about" className="text-xl font-light text-darkgrey hover:text-black"> 
                     <span className="underline">{t("about.seeMore")}</span>
                     <span className=""> ➜</span></NavLink>

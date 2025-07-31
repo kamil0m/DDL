@@ -13,8 +13,6 @@ export default function People() {
   
   const { data, loading, error } = useFetch(`ludzies?populate=*&locale=${currentLanguage}`);
   const peopleData = data as any;
-
-  // console.log(data);
   
   if (loading) return <p>{t("admin.loading")}</p>;
   if (error) return <p>{t("admin.error")}</p>;

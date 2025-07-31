@@ -1,4 +1,3 @@
-import React from 'react'
 import RenderRichText from './RenderRichText';
 
 type PersonItemProps = {
@@ -6,7 +5,6 @@ type PersonItemProps = {
 };
 
 export default function PersonItem({ data }: PersonItemProps) {
-  console.log("PersonItem data:", data);
   
   return (
     <div className="flex flex-col justify-start items-center gap-8 text-accent">

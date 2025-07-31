@@ -115,5 +115,8 @@
             "pastEvents": "Minione wydarzenia",
             "readArticles": "Przeczytaj nasze artykuły"
         }
+    },
+    "privacyPolicy": {
+        "title": "Polityka prywatności"
     }
 }
