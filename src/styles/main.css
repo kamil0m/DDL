@@ -125,6 +125,18 @@ main {
         @apply bg-transparent text-accent border-3 border-accent hover:bg-accent hover:text-white;
     }
 
+    .button-carousel {
+        @apply absolute top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow z-10;
+    }
+
+      .button-carousel-disabled {
+    @apply opacity-30 cursor-not-allowed;
+  }
+
+  .button-carousel-enabled:hover {
+    @apply bg-gray-100;
+  }
+
   .media-box {
     @apply h-[320px] w-[270px] rounded-lg overflow-hidden relative bg-slate-500;
   }

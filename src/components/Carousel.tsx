@@ -32,8 +32,8 @@ export default function Carousel({ dataArray, item, t, maxVisible }: CarouselPro
                 <button
                     onClick={handleLeft}
                     disabled={!canGoLeft}
-                    className={`absolute left-[-75px] top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${!canGoLeft ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
-                        } z-10`}
+                    className={`button-carousel left-[-75px] ${!canGoLeft ? "button-carousel-disabled" : "button-carousel-enabled:hover"
+                        }`}
                     aria-label={t("nav.carousel.prev")}
                 >
                     <HiChevronLeft size={30} />
@@ -52,8 +52,8 @@ export default function Carousel({ dataArray, item, t, maxVisible }: CarouselPro
                 <button
                     onClick={handleRight}
                     disabled={!canGoRight}
-                    className={`absolute right-[-75px] top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${!canGoRight ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
-                        } z-10`}
+                    className={`button-carousel right-[-75px] ${!canGoRight ? "button-carousel-disabled" : "button-carousel-enabled:hover"
+                        }`}
                     aria-label={t("nav.carousel.next")}
                 >
                     <HiChevronRight size={30} />
