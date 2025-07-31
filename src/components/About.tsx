@@ -10,18 +10,18 @@ export default function About() {
         <section className="flex flex-row justify-center items-between mt-40 gap-6">
             <div className="flex flex-row items-center w-1/2 gap-8">
                 <div className="flex flex-col gap-8">
-                    <div className="h-[320px] w-[270px] rounded-lg overflow-hidden relative bg-slate-500">
+                    <div className="media-box">
                         <img 
                             src={teatr} 
                             alt="teatr" 
-                            className="min-w-[270px] object-cover absolute bottom-0"
+                            className="media-img bottom-0"
                         />
                     </div>
-                    <div className="h-[320px] w-[270px] rounded-lg overflow-hidden relative bg-slate-500">
+                    <div className="media-box">
                         <img 
                             src={kino} 
                             alt="kino" 
-                            className="min-w-[270px] object-cover absolute top-0 translate-y-[-5%]"
+                            className="media-img top-0 translate-y-[-5%]"
                         />
                     </div>
                 </div>
@@ -29,7 +29,7 @@ export default function About() {
                     {/* <div className="relative h-[400px] w-[270px] z-index-30 rounded-lg bg-slate-500"></div> */}
                     <video 
                         id="video" 
-                        className="relative h-[400px] w-[270px] z-index-30 rounded-lg object-cover"
+                        className="media-box-large z-index-30 object-cover"
                         // controls
                         autoPlay
                         muted

@@ -125,6 +125,18 @@ main {
         @apply bg-transparent text-accent border-3 border-accent hover:bg-accent hover:text-white;
     }
 
+  .media-box {
+    @apply h-[320px] w-[270px] rounded-lg overflow-hidden relative bg-slate-500;
+  }
+
+  .media-box-large {
+    @apply h-[400px] w-[270px] rounded-lg overflow-hidden relative;
+  }
+
+   .media-img {
+    @apply min-w-[270px] object-cover absolute;
+  }
+ 
     .switch {
         @apply relative inline-flex justify-center items-center h-[2em] aspect-square cursor-pointer text-white transition-transform duration-2000 ease-in-out z-10;
     }
