@@ -11,10 +11,9 @@ import ErrorBoundary from '../components/ErrorBoundary';
 export default function AboutUs() {
 
   const { t } = useTranslation();
-  const { currentLanguage } = useLanguage(); // Use the language context
+  const { currentLanguage } = useLanguage();
   
   const { data, loading, error } = useFetch(`about-us-page?locale=${currentLanguage}`);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const aboutData = data as any;
   
   if (loading) return <p>{t("admin.loading")}</p>;

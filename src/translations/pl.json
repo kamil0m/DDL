@@ -4,8 +4,6 @@
         "button": "Dołącz do nas na Facebooku!",
         "history": "Nasza historia",
         "goals": "Nasze cele",
-        "aboutUsSubTitle": "Razem promujemy język, kulturę i wspólnotę polską w sercu Lille.",
-        "aboutUsParagraph": "Stowarzyszenie DDLille to miejsce spotkań, dialogu i współpracy dla wszystkich, którym bliska jest kultura i język polski. Naszym celem jest promowanie dziedzictwa polskiego we Francji, wspieranie integracji Polaków w regionie Lille oraz budowanie mostów międzykulturowych. Organizujemy wydarzenia kulturalne, warsztaty językowe i inicjatywy społeczne, które łączą ludzi, inspirują do działania i umacniają więzi w polonijnej wspólnocie. DDLille to przestrzeń otwarta, różnorodna i zaangażowana – dołącz do nas i twórz ją razem z nami!",
         "seeMore": "Zobacz więcej",
         "people": "Ludzie"
     },
@@ -61,6 +59,7 @@
         "mainpage": "Strona główna",
         "pages": "Strony",
         "events": "Wydarzenia",
+        "news": "Aktualności",
         "aboutus": "O nas",
         "conditions": "Warunki",
         "GDPR": "Polityka prywatności",
@@ -74,6 +73,10 @@
         "joinus": "Dołącz do nas",
         "contact": "Kontakt",
         "search": "Szukaj ..."
+    },
+    "home": {
+        "photoGenericAlt": "Zdjęcie z wydarzenia",
+        "videoNotSupported": "Twój przeglądarka nie obsługuje tagu wideo."
     },
     "joinus": {
         "statute": "Regulamin",

@@ -16,26 +16,6 @@ const useFetch = (urlExtention: string) => {
             .finally(() => {setLoading(false)});
     }, [urlExtention]);
         
-
-
-    //     const fetchData = async () => {
-    //         setLoading(true);
-
-    //         try {
-    //             const url = "https://ddlille-9b0a6ce9f6c7.herokuapp.com/api/" + urlExtention;
-    //             const res = await axios.get(url)
-
-    //             // const json = await res.json();
-
-    //             setData(res.data);
-    //             setLoading(false);
-    //         } catch (error) {
-    //             setError(error);
-    //             setLoading(false);
-    //         }
-    //     }
-    //     fetchData();
-    // }, [urlExtention]);
     return { data, loading, error };
 }
 
