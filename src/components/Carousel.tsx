@@ -11,10 +11,15 @@ type CarouselProps = {
 
 export default function Carousel({ dataArray, item, t, maxVisible }: CarouselProps) {
     const [startIndex, setStartIndex] = useState(0);
-    // maxVisible = maxVisible || 3;
 
     const canGoLeft = startIndex > 0;
     const canGoRight = startIndex + maxVisible < dataArray.length;
+
+    // TO DO
+    // Jump to next maxVisibleItems
+    // Solution idea to examine :
+    // const lastRemainingItemIndex = dataArray.length - 1;
+    // const canGoGroupRight = (startIndex + maxVisible - 1) % maxVisible < lastRemainingItemIndex % maxVisible;
 
     const handleLeft = () => {
         if (canGoLeft) setStartIndex(startIndex - 1);
@@ -32,7 +37,7 @@ export default function Carousel({ dataArray, item, t, maxVisible }: CarouselPro
                 <button
                     onClick={handleLeft}
                     disabled={!canGoLeft}
-                    className={`absolute left-[-75px] top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${!canGoLeft ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
+                    className={`absolute -left-16 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${!canGoLeft ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
                         } z-10`}
                     aria-label={t("nav.carousel.prev")}
                 >
@@ -52,7 +57,7 @@ export default function Carousel({ dataArray, item, t, maxVisible }: CarouselPro
                 <button
                     onClick={handleRight}
                     disabled={!canGoRight}
-                    className={`absolute right-[-75px] top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${!canGoRight ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
+                    className={`absolute -right-16 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${!canGoRight ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
                         } z-10`}
                     aria-label={t("nav.carousel.next")}
                 >

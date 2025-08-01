@@ -8,7 +8,7 @@ export default function FooterConditions() {
     <div className="flex flex-col">
       <h5>{t("footer.conditions")}</h5>
       <nav className="flex flex-col mt-10 gap-4">
-        <NavLink to="/" className="hover:text-black">{t("footer.GDPR")}</NavLink>
+        <NavLink to="/privacy" className="hover:text-black">{t("footer.GDPR")}</NavLink>
         <NavLink to="/" className="hover:text-black">{t("footer.statute")}</NavLink>
       </nav>
     </div>
