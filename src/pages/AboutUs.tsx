@@ -16,7 +16,6 @@ export default function AboutUs() {
   const { data, loading, error } = useFetch(`about-us-page?locale=${currentLanguage}`);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const aboutData = data as any;
-  console.log(aboutData.Cele);
   
   if (loading) return <p>{t("admin.loading")}</p>;
   if (error) return <p>{t("admin.error")}</p>;

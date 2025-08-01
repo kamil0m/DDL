@@ -11,10 +11,15 @@ type CarouselProps = {
 
 export default function Carousel({ dataArray, item, t, maxVisible }: CarouselProps) {
     const [startIndex, setStartIndex] = useState(0);
-    // maxVisible = maxVisible || 3;
 
     const canGoLeft = startIndex > 0;
     const canGoRight = startIndex + maxVisible < dataArray.length;
+
+    // TO DO
+    // Jump to next maxVisibleItems
+    // Solution idea to examine :
+    // const lastRemainingItemIndex = dataArray.length - 1;
+    // const canGoGroupRight = (startIndex + maxVisible - 1) % maxVisible < lastRemainingItemIndex % maxVisible;
 
     const handleLeft = () => {
         if (canGoLeft) setStartIndex(startIndex - 1);
@@ -32,7 +37,7 @@ export default function Carousel({ dataArray, item, t, maxVisible }: CarouselPro
                 <button
                     onClick={handleLeft}
                     disabled={!canGoLeft}
-                    className={`button-carousel left-[-75px] ${!canGoLeft ? "button-carousel-disabled" : "button-carousel-enabled:hover"
+                    className={`button-carousel -left-16 ${!canGoLeft ? "button-carousel-disabled" : "button-carousel-enabled:hover"
                         }`}
                     aria-label={t("nav.carousel.prev")}
                 >
@@ -52,7 +57,7 @@ export default function Carousel({ dataArray, item, t, maxVisible }: CarouselPro
                 <button
                     onClick={handleRight}
                     disabled={!canGoRight}
-                    className={`button-carousel right-[-75px] ${!canGoRight ? "button-carousel-disabled" : "button-carousel-enabled:hover"
+                    className={`button-carousel -right-16 ${!canGoRight ? "button-carousel-disabled" : "button-carousel-enabled:hover"
                         }`}
                     aria-label={t("nav.carousel.next")}
                 >

@@ -44,7 +44,7 @@ main {
     }
 
     p {
-        @apply text-xl text-darkgrey font-light mt-5;
+        @apply text-xl font-light mt-5;
     }
 }
 
