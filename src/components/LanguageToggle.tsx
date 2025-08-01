@@ -13,7 +13,6 @@ export default function LanguageToggle({ onLanguageChange }: LanguageToggleProps
         const newLang = i18n.language === "pl" ? "fr" : "pl";
         changeLanguage(newLang);
         
-        // Call the callback if provided
         if (onLanguageChange) {
             onLanguageChange(newLang);
         }
@@ -25,7 +24,7 @@ export default function LanguageToggle({ onLanguageChange }: LanguageToggleProps
         <label
             onClick={switchLanguage}
             id="toggle"
-            className={`relative flex flex-row justify-between items-center gap-1.5 h-[2.5em] bg-accent rounded-full text-sm px-1 py-3 cursor-pointer ${
+            className={`relative flex flex-row justify-between items-center gap-1.5 h-[2.5em] bg-accent rounded-full text-sm px-1 py-3 cursor-pointer font-black ${
                 isLanguageChanging ? 'opacity-50 cursor-not-allowed' : ''
             }`}
         >
