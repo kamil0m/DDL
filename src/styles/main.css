@@ -141,6 +141,20 @@ main {
     @apply relative w-full overflow-visible flex items-center;
   }
 
+  .fb-box {
+  @apply flex items-center gap-4;
+}
+..fb-icon-wrapper {
+  @apply bg-zinc-200 p-5 rounded-lg;
+}
+.fb-icon-wrapper {
+  @apply bg-zinc-200 p-5 rounded-lg;
+}
+.fb-title {
+  @apply font-semibold underline text-black text-xl;
+}
+
+
   .media-box {
     @apply h-[320px] w-[270px] rounded-lg overflow-hidden relative bg-slate-500;
   }
