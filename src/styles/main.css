@@ -158,6 +158,9 @@ main {
     @apply flex flex-col;
 }
 
+ .language-toggle-label {
+    @apply transition-colors duration-300 ease-in-out;
+  }
   .media-box {
     @apply h-[320px] w-[270px] rounded-lg overflow-hidden relative bg-slate-500;
   }
