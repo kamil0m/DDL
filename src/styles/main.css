@@ -154,6 +154,9 @@ main {
   @apply font-semibold underline text-black text-xl;
 }
 
+.footer-col {
+    @apply flex flex-col;
+}
 
   .media-box {
     @apply h-[320px] w-[270px] rounded-lg overflow-hidden relative bg-slate-500;

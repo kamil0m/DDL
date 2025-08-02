@@ -13,7 +13,7 @@ export default function Footer() {
     <div className="container flex flex-row justify-between h-[250px] my-20 text-darkgrey text-lg font-light bg-dots">
       <div className="flex flex-row xmax-w-1/2 gap-15">
 
-        <div className="flex flex-col justify-between xmax-w-3/5 gap-6">
+        <div className="footer-col justify-between xmax-w-3/5 gap-6">
           < Logo size="h-[8rem]" />
           <p className="max-w-[20rem]">
             Sed ut perspiciatis undmnis is iste
@@ -28,7 +28,7 @@ export default function Footer() {
         </div>
 
       </div>
-      <div className="flex flex-col">
+      <div className="footer-col">
         <h5>{t("footer.followus")}</h5>
         <div className="flex flex-col mt-10 gap-4">
           <a target="_blank" href="https://www.facebook.com/p/Dzien-dobry-Lille-Bonjour-Lille-61559848594019/" className="button-blue w-[2rem] h-[2rem] inline-flex items-center justify-center rounded-full">
