@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 
-export default function Greeting() {
+export default function Greeting({data}: {data: any}) {
     const { t } = useTranslation();
 
     return (
@@ -17,8 +17,9 @@ export default function Greeting() {
             <div className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white flex flex-col items-center">
 
                 <h1 className="[text-shadow:7px_7px_6px_rgba(0,0,0,0.8)]">
-                    <span className="">Dzień Dobry Lille! </span>
-                    <span className="">Bonjour Lille !</span>
+                    {/* <span className="">Dzień Dobry Lille! </span>
+                    <span className="">Bonjour Lille !</span> */}
+                    {data.Tytul}
                 </h1>
 
             </div>
