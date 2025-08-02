@@ -137,6 +137,10 @@ main {
     @apply bg-gray-100;
   }
 
+.carousel-container {
+    @apply relative w-full overflow-visible flex items-center;
+  }
+
   .media-box {
     @apply h-[320px] w-[270px] rounded-lg overflow-hidden relative bg-slate-500;
   }

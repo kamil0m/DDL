@@ -25,7 +25,7 @@ export default function Carousel({ items, t }: CarouselProps) {
     const visibleItems = items.slice(startIndex, startIndex + maxVisible);
 
     return (
-        <div className="relative w-full overflow-visible flex items-center">
+        <div className="carousel-container">
             {items.length > maxVisible && (
                 <button
                     onClick={handleLeft}

@@ -32,7 +32,7 @@ export default function Carousel({ dataArray, item, t, maxVisible }: CarouselPro
     const visibleItems = dataArray.slice(startIndex, startIndex + maxVisible);
 
     return (
-        <div className="relative w-full overflow-visible flex items-center">
+        <div className="carousel-container">
             {dataArray.length > maxVisible && (
                 <button
                     onClick={handleLeft}
