@@ -1,5 +1,4 @@
 import Logo from "./Logo"
-import { BsTelephone } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import FooterNav from "./FooterNav";
 import FooterConditions from "./FooterConditions";

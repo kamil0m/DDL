@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineNewspaper } from "react-icons/hi2";
 import { ImportantBadge, NewBadge, PublishedBadge, SoonBadge } from "./Badges"; // Assuming you have a separate Badges component
+import { FaFacebookF } from "react-icons/fa";
 
 type NewsItemProps = {
     item: any;
@@ -21,6 +22,10 @@ export default function NewsItem({ item, t }: NewsItemProps) {
         // Prevent navigation if user is selecting text
         const selection = window.getSelection();
         if (selection && selection.toString().length > 0) {
+            return;
+        }
+        // Prevent navigation if user is clicking on the Facebook link
+        if ((e.target as HTMLElement).closest("a")) {
             return;
         }
 
@@ -117,12 +122,19 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                     </p>
                 )}
                 <p className="text-l text-darkgrey">{truncatedDescription}</p>
-                <button
-                    onClick={handleReadMore}
-                    className={`underline text-xl mt-1 self-start ${isHovered ? "text-black" : "text-darkgrey"} transition-colors cursor-pointer`}
-                >
-                    {t("news.readMore")}
-                </button>
+                <div className="flex justify-between">
+                    <button
+                        onClick={handleReadMore}
+                        className={`underline text-xl mt-1 self-start ${isHovered ? "text-black" : "text-darkgrey"} transition-colors cursor-pointer`}
+                    >
+                        {t("news.readMore")}
+                    </button>
+                    {item.Link_do_Facebook && (
+                        <a target="_blank" href={item.Link_do_Facebook} className="button-blue w-[2rem] h-[2rem] inline-flex items-center justify-center rounded-full">
+                            <FaFacebookF className="shade-xl"/>
+                        </a>
+                    )}
+                </div>
             </div>
         </div>
     );
