@@ -28,6 +28,17 @@ export default function StylesTester() {
             <div className="size-15 flex items-center justify-center bg-darkgrey">darkgrey</div>
             <div className="size-15 flex items-center justify-center bg-white">white</div>
         </div>
+        <div className="flex flex-col gap-2">
+            <span className={"text-sm font-black"}>Text sm black</span>
+            <span className={"text-sm font-extrabold"}>Text sm extrabold</span>
+            <span className={"text-sm font-bold"}>Text sm bold</span>
+            <span className={"text-sm font-semibold"}>Text sm semibold</span>
+            <span className={"text-sm font-medium"}>Text sm medium</span>
+            <span className={"text-sm font-normal"}>Text sm normal</span>
+            <span className={"text-sm font-light"}>Text sm light</span>            
+            <span className={"text-sm font-extralight"}>Text sm extralight</span>
+            <span className={"text-sm font-thin"}>Text sm thin</span>
+        </div>
     </div>
   )
 }

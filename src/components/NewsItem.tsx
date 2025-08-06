@@ -12,7 +12,7 @@ type NewsItemProps = {
 export default function NewsItem({ item, t }: NewsItemProps) {
     useEffect(() => {
         // Log the item to see its structure
-        // console.log("NewsItem:", item);
+        console.log("NewsItem:", item);
     }, [item]);
     const navigate = useNavigate();
     const [isHovered, setIsHovered] = useState(false);
@@ -51,10 +51,6 @@ export default function NewsItem({ item, t }: NewsItemProps) {
 
     const truncatedDescription = truncate(descriptionText);
 
-    const image = item.Zdjecie && item.Zdjecie.length > 0
-        ? item.Zdjecie[0].url
-        : "/src/styles/images/logo.jpg";
-
     const type = item.type || "news";
 
     return (
@@ -62,14 +58,13 @@ export default function NewsItem({ item, t }: NewsItemProps) {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={(e) => {
-                e.stopPropagation()
+                e.stopPropagation();
                 handleReadMore(e);
-            }
-            }
+            }}
             className="bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden flex flex-col cursor-pointer">
             <div className="relative h-75 w-full">
                 <img
-                    src={image}
+                    src={item?.Zdjecie?.url || "/src/styles/images/logo.jpg"}
                     alt="News"
                     className="w-full h-full object-cover"
                 />

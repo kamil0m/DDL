@@ -1,9 +1,16 @@
 @import "tailwindcss";
-/* @import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
-@import "tailwindcss/utilities.css" layer(utilities); */
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../assets/fonts/roboto-variablefont_wdthwght-webfont.woff2') format('woff2'),
+         url('../assets/fonts/roboto-variablefont_wdthwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
+    /* TO DO : change font to localy stored */
+    /* font-family: "robotoregular", sans-serif; */
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
 }
@@ -55,7 +62,7 @@ main {
 
     --spacing: 4px;
 
-    --font-display: "Roboto", sans-serif;
+    /* --font-display: "Roboto", sans-serif; */
 
     /* --color-main: rgba(243, 233, 227, 1); */
     --color-accent: rgba(0, 25, 179, 1);
