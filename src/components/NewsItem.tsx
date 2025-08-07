@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineNewspaper } from "react-icons/hi2";
+import { isSoon, isNew, publishedDaysAgo } from '../components/FilteringMethods';
 import { ImportantBadge, NewBadge, PublishedBadge, SoonBadge } from "./Badges"; // Assuming you have a separate Badges component
 import { FaFacebookF } from "react-icons/fa";
 
@@ -29,6 +30,8 @@ export default function NewsItem({ item, t }: NewsItemProps) {
         const type = item.type || "news";
         navigate(`/${type}/${item.documentId}`);
     };
+
+    console.log(item);
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -76,7 +79,6 @@ export default function NewsItem({ item, t }: NewsItemProps) {
             className="bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden flex flex-col cursor-pointer">
             <div className="relative h-75 w-full">
                 <img
-                    // src={item?.Zdjecie?.url || "/src/styles/images/logo.jpg"}
                     src={getPhotoUrl(item)}
                     alt="News"
                     className="w-full h-full object-cover"
@@ -100,18 +102,18 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                 <div className="flex justify-between items-center flex-wrap text-sm">
                     <div className="flex flex-wrap gap-2">
 
-                        {item.isImportant && type === "news" && (
+                        {item.Wazne && type === "news" && (
                             < ImportantBadge />
                         )}
 
-                        {item.isSoon && type === "event" && (
+                        {isSoon(item) && type === "event" && (
                             < SoonBadge />
                         )}
 
-                        {item.isNew ? (
+                        {isNew(item) ? (
                             < NewBadge />
                         ) : (
-                            < PublishedBadge daysAgo={item.publishedDaysAgo} />
+                            < PublishedBadge daysAgo={publishedDaysAgo(item)} />
                         )}
 
                     </div>

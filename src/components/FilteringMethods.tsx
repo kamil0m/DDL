@@ -18,15 +18,15 @@ export function isSoon(item: EventNews): boolean {
 }
 
 export function isNew(item: EventNews): boolean {
-    const daysThreshold = 1;
+    const daysThreshold = 3;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    if (!item.Data_wydarzenia) {
+    if (!item.Data_publikacji) {
         return false;
     }
 
-    const eventDate = new Date(item.Data_wydarzenia);
+    const eventDate = new Date(item.Data_publikacji);
     eventDate.setHours(0, 0, 0, 0);
     const diffTime = today.getTime() - eventDate.getTime();
     const diffDays = diffTime / (1000 * 60 * 60 * 24);
