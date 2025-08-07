@@ -116,7 +116,8 @@
         "eventspage": {
             "upcomingEvents": "",
             "pastEvents": "",
-            "readArticles": ""
+            "readArticles": "",
+            "cityAdverb": "à"
         }
     },
     "privacyPolicy": {

@@ -15,6 +15,16 @@ export default function NewsPage() {
     const { currentLanguage } = useLanguage(); // Use the language context
     const { data, loading, error } = useFetch(type === 'event' ? `events/${id}?populate=*&locale=${currentLanguage}` : `aktualnosci/${id}?populate=*&locale=${currentLanguage}`) as { data: EventNews, loading: boolean, error: any };
 
+    const formatDateToFullFormat = (dateString: string): string => {
+        if (!dateString) return '';
+        const date = new Date(dateString);
+        return date.toLocaleDateString(currentLanguage === 'fr' ? 'fr-FR' : 'pl-PL', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    };
+
     if (loading) {
         return (
             <div className="min-h-screen bg-linear-to-b from-white to-grey w-full flex items-center justify-center">
@@ -36,8 +46,6 @@ export default function NewsPage() {
         ? data.Zdjecie[0].url
         : "/src/styles/images/logo.jpg";
 
-    console.log(data);
-
     return (
         <>
             {data && (<BreadCrumbsNav data={data} />)}
@@ -58,10 +66,13 @@ export default function NewsPage() {
                             </span>
                         )}
                         {type === "event" && (
-                            <span className="bg-accent text-white text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
-                                ★ {t("news.tags.event")}
-                            </span>
+                            <>
+                                <span className="bg-accent text-white text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
+                                    ★ {t("news.tags.event")}
+                                </span>
+                            </>
                         )}
+
                     </div>
                 </div>
 
@@ -70,7 +81,12 @@ export default function NewsPage() {
 
                     {/* Type and title */}
                     <div className="flex flex-col gap-8 text-center">
-                        <h2>{type === "event" ? t("news.tags.event") : t("news.tags.news")}</h2>
+                        <div className="flex justify-center">
+                            <div className="flex flex-col">
+                                {/* <h2>{type === "event" ? t("news.tags.event") : t("news.tags.news")}{type === "event" && " " + formatDateToFullFormat(data.Data_wydarzenia) + ` ${t("news.eventspage.cityAdverb")} ` + data.Miejsce_wydarzenia}</h2> */}
+                                <h2>{type === "news" && t("news.tags.news")}{type === "event" && " " + formatDateToFullFormat(data.Data_wydarzenia) + ` ${t("news.eventspage.cityAdverb")} ` + data.Miejsce_wydarzenia}</h2>
+                            </div>
+                        </div>
                         <h1 className="text-center">{title}</h1>
                     </div>
 

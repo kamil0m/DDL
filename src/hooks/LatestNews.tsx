@@ -17,7 +17,7 @@ type Entry = {
 const useLatestCombined = () => {
     const { currentLanguage } = useLanguage();
     const { data: events, loading: eventsLoading, error: eventsError } = useFetch(`events?populate=*&sort[0]=Data_publikacji:desc&pagination[limit]=3&locale=${currentLanguage}`);
-    const { data: news, loading: newsLoading, error: newsError } = useFetch(`aktualnosci?populate=*sort[0]=Data_publikacji:desc&pagination[limit]=3&locale=${currentLanguage}`);
+    const { data: news, loading: newsLoading, error: newsError } = useFetch(`aktualnosci?populate=*&sort[0]=Data_publikacji:desc&pagination[limit]=3&locale=${currentLanguage}`);
     const [latest, setLatest] = useState<Entry[]>([]);
 
     const loading = newsLoading || eventsLoading;
@@ -81,7 +81,6 @@ const useLatestCombined = () => {
             .sort((a, b) => new Date(b.Data_publikacji).getTime() - new Date(a.Data_publikacji).getTime());
 
         setLatest(sorted.slice(0, 3));
-        // console.log(latest[0]);
     }, [events, news]);
 
     return {
@@ -90,8 +89,6 @@ const useLatestCombined = () => {
         error,
         hasData: !!Object.keys(news).length
     };
-
-
 
 };
 

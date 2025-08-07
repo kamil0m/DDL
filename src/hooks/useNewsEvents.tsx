@@ -13,7 +13,7 @@ type Entry = {
     isNew?: boolean;
     publishedDaysAgo?: number;
     isSoon?: boolean;
-    [key: string]: unknown;
+    [key: string]: unknown | unknown[];
 };
 
 const useNewsEvents = () => {
