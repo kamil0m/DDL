@@ -9,6 +9,7 @@ import StylesTester from "./pages/StylesTester";
 import Mainlayout from "./layouts/Mainlayout";
 import NewsPage from './pages/NewsPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
 import { LanguageProvider } from './contexts/LanguageContext';
 import {
   BrowserRouter,
@@ -30,6 +31,7 @@ export default function Router() {
             <Route path="joinus" element={<JoinUs />} />
             <Route path="contact" element={<Contact />} />
             <Route path="privacy" element={<PrivacyPolicy />} />
+            <Route path="terms" element={<TermsAndConditions />} />
             <Route path="styles" element={<StylesTester />} />
           </Route>
         </Routes>

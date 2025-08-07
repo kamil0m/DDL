@@ -122,5 +122,8 @@
     },
     "privacyPolicy": {
         "title": "Polityka prywatności"
+    },
+    "termsAndConditions": {
+        "title": "Regulamin"
     }
 }

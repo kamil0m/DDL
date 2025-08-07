@@ -9,7 +9,7 @@ export default function FooterConditions() {
       <h5>{t("footer.conditions")}</h5>
       <nav className="flex flex-col mt-10 gap-4">
         <NavLink to="/privacy" className="hover:text-black">{t("footer.GDPR")}</NavLink>
-        <NavLink to="/" className="hover:text-black">{t("footer.statute")}</NavLink>
+        <NavLink to="/terms" className="hover:text-black">{t("footer.statute")}</NavLink>
       </nav>
     </div>
   )

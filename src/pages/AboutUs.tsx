@@ -25,34 +25,37 @@ export default function AboutUs() {
   return (
     < ErrorBoundary >
 
-      <div className="flex flex-col gap-20 mt-20">
-        <img src={logo} alt="logo" className="absolute h-full -translate-2/7 z-0 opacity-10"/>
-        <div className="container max-w-3/5 mx-auto px-4 z-10">
-          <section className="flex flex-col">
-            <h4>{t("about.history")}</h4>
-            <RenderRichText 
-              content={aboutData.Historia} 
-              pClasses="text-black"
+      <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey pb-10">
+        <div className="flex flex-col gap-20 mt-20">
+          <img src={logo} alt="logo" className="absolute h-full -translate-2/7 z-0 opacity-10"/>
+          <div className="container max-w-3/5 mx-auto px-4 z-10">
+            <section className="flex flex-col">
+              <h4>{t("about.history")}</h4>
+              <RenderRichText 
+                content={aboutData.Historia} 
+                pClasses="text-black"
+                />
+            </section>
+          </div>
+
+          <Motto motto={motto} />
+
+          <div className="container max-w-3/5 mx-auto px-4 z-10">
+            <section className="flex flex-col gap-4">
+              <h4>{t("about.goals")}</h4>
+              <RenderRichText 
+                content={aboutData.Cele} 
+                olClasses="centered-list" 
+                liClasses="square-markers"
               />
-          </section>
-        </div>
-
-        <Motto motto={motto} />
-
-        <div className="container max-w-3/5 mx-auto px-4 z-10">
-          <section className="flex flex-col gap-4">
-            <h4>{t("about.goals")}</h4>
-            <RenderRichText 
-              content={aboutData.Cele} 
-              olClasses="centered-list" 
-              liClasses="square-markers"
-            />
+              
+            </section>
             
-          </section>
-          
-          <People />
+            <People />
+          </div>
         </div>
       </div>
+
       
     </ ErrorBoundary >
   )

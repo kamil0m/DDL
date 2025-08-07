@@ -19,30 +19,32 @@ export default function JoinUs() {
 
 
     return (
-        <div className="w-3/5">
-            <section className="flex flex-col mt-20">
-                <div className="flex flex-col gap-8">
-                    <div className="flex flex-col gap-2">
-                        <h4>{t("joinus.howToBecomeAMemeber")}</h4>
-                        {<RenderRichText content={joinData.Jak_zostac_czlonkiem} />}
-                    </div>
-                    <div className="flex flex-col gap-2">
-                        <h4>{t("joinus.whyJoinUs")}</h4>
-                        {<RenderRichText content={joinData.Dlaczego_do_nas_dolaczyc} />}
-                    </div>
-                    <div className="flex flex-col gap-2">
-                        <h4>{t("joinus.statute")}</h4>
-                        <div className="h-[200px] overflow-y-auto border-darkgrey border-1 px-4">
-                            {<RenderRichText content={joinData.Regulamin} />}
+        <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey">
+            <div className="w-3/5">
+                <section className="flex flex-col mt-20">
+                    <div className="flex flex-col gap-8">
+                        <div className="flex flex-col gap-2">
+                            <h4>{t("joinus.howToBecomeAMemeber")}</h4>
+                            {<RenderRichText content={joinData.Jak_zostac_czlonkiem} />}
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <h4>{t("joinus.whyJoinUs")}</h4>
+                            {<RenderRichText content={joinData.Dlaczego_do_nas_dolaczyc} />}
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <h4>{t("joinus.statute")}</h4>
+                            <div className="h-[200px] overflow-y-auto border-darkgrey border-1 p-4 bg-stone-50">
+                                {<RenderRichText content={joinData.Regulamin} pClasses="text-black text-xs mt-0" liClasses="text-xs ml-10 list-disc font-light" h2Classes="text-black text-xs" />}
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <h4>HelloAsso</h4>
+                            {<RenderRichText content={joinData.Hello_Asso} />}
+                            <a href="https://www.helloasso.com/associations/dzien-dobry-lille/adhesions/adhesion" target="_blank" className="button button-accent w-[250px] py-3 m-10 self-center animate-bounce text-3xl">☞ HelloAsso</a>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-2">
-                        <h4>HelloAsso</h4>
-                        {<RenderRichText content={joinData.Hello_Asso} />}
-                        <a href="https://www.helloasso.com/associations/dzien-dobry-lille/adhesions/adhesion" target="_blank" className="button button-accent w-[250px] py-3 mt-10 self-center animate-bounce text-3xl">☞ HelloAsso</a>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     )
 }
