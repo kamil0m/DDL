@@ -115,6 +115,7 @@
         },
         "eventspage": {
             "upcomingEvents": "Nadchodzące wydarzenia",
+            "noUpcomingEvents": "Obecnie nie ma zaplanowanych wydarzeń. Gdy tylko jakieś wydarzenie zostanie zaplanowane, znajdziesz je tutaj.",
             "pastEvents": "Minione wydarzenia",
             "readArticles": "Przeczytaj nasze artykuły",
             "cityAdverb": "w"

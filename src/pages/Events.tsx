@@ -15,7 +15,13 @@ export default function Events() {
                     <div className="text-left">
                         <h6 className="mb-4">{t("news.eventspage.upcomingEvents")}</h6>
                     </div>
-                    <Carousel items={upcomingEvents} t={t} />
+                    {upcomingEvents.length === 0 ? (
+                        <p className="text-center text-gray-500">
+                            {t("news.eventspage.noUpcomingEvents")}
+                        </p>
+                    ) : (
+                        <Carousel items={upcomingEvents} t={t} />
+                    )}
                 </div>
 
                 <div className="shortItems max-w-4/5 pb-15">

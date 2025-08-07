@@ -31,8 +31,6 @@ export default function NewsItem({ item, t }: NewsItemProps) {
         navigate(`/${type}/${item.documentId}`);
     };
 
-    console.log(item);
-
     const handleMouseEnter = () => {
         setIsHovered(true);
     };

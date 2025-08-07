@@ -115,6 +115,7 @@
         },
         "eventspage": {
             "upcomingEvents": "",
+            "noUpcomingEvents": "À l’heure actuelle, aucun évènement n’est prévu. Lorsqu’un évènement sera planifié, vous pourrez le retrouver ici",
             "pastEvents": "",
             "readArticles": "",
             "cityAdverb": "à"

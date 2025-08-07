@@ -39,6 +39,8 @@ export default function BreadCrumbsNav({ data }: any) {
         return null; // No breadcrumbs to display
     }
 
+    console.log("Breadcrumbs:", breadcrumbs);
+
     return (
         <nav className="flex justify-center items-center bg-white z-10 h-20 w-full shadow-xl text-xl">
             {/* Breadcrumb Navigation */}
@@ -48,25 +50,31 @@ export default function BreadCrumbsNav({ data }: any) {
                         {index === breadcrumbs.length - 1 ? (
                             // Last item - render as span (current page, not clickable)
                             <span className="text-accent font-medium truncate max-w-xs">
-                                {crumb}
+                                {(() => {
+                                    switch (crumb) {
+                                        case 'News':
+                                            return t("nav.news");
+                                        case 'Events':
+                                            return t("nav.events");
+                                        case 'Home':
+                                            return t("nav.home");
+                                        default:
+                                            return crumb;
+                                    }
+                                })()}
                             </span>
                         ) : (
                             // Not last item - render as NavLink (clickable)
                             <NavLink
                                 to={(() => {
                                     switch (crumb) {
-                                        case 'News': return '/new';
+                                        case 'News': return '/news';
                                         case 'Events': return '/events';
                                         case 'Home': return '/';
                                         default: return '/'; // Fallback to home
                                     }
                                 })()}
-                                className={({ isActive }) =>
-                                    `flex flex-row items-center gap-2 font-light transition-colors ${isActive
-                                        ? 'text-accent font-semibold'
-                                        : 'text-black hover:text-accent/80'
-                                    }`
-                                }
+                                className={"flex flex-row items-center gap-2 font-light transition-colors hover:text-accent"}
                             >
                                 {crumb === 'News' && t("nav.news")}
                                 {crumb === 'Events' && t("nav.events")}
