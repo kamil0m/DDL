@@ -14,25 +14,31 @@ export default function Header() {
     console.log('Language changed to:', newLang);
     // + if needed additional logic for example: localStorage updates, etc.
   };
-  
+
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      const elementPosition = contactElement.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - 100;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
 
     if (location.pathname === '/') {
-      // Already on home page, just scroll to contact
-      const contactElement = document.getElementById('contact');
-      if (contactElement) {
-        contactElement.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Already on home page, just scroll to a little higher than contact section
+      scrollToContact();
     } else {
-      // Navigate to home page and then scroll to contact
       navigate('/');
       setTimeout(() => {
-        const contactElement = document.getElementById('contact');
-        if (contactElement) {
-          contactElement.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+        scrollToContact();
+      }, 1000);
     }
   };
 
