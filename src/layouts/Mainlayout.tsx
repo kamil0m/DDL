@@ -10,7 +10,9 @@ export default function mainlayout() {
       < Header />
 
       <ErrorBoundary>
-        <Outlet />
+        <div className="w-full pt-23">
+          <Outlet />
+        </div>
       </ErrorBoundary>
 
       < Footer />

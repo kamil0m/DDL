@@ -37,7 +37,7 @@ export default function Header() {
   };
 
   return (
-    <header className="flex justify-center bg-white z-20 w-full shadow-sm">
+    <header className="fixed flex justify-center bg-white z-20 w-full shadow-sm">
       <div className="container flex flex-row justify-between items-center w-full py-4 text-xl">
         <div className="flex flex-row items-center gap-10">
           < Logo size="h-[4rem] w-auto" />
