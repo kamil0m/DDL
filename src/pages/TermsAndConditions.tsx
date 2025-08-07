@@ -14,11 +14,9 @@ export default function PrivacyPolicy() {
   if (!data) return <p>No data available</p>;
 
   return (
-    <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey">
-      <div className=" container max-w-3/5 flex flex-col mt-20 text-sm text-black font-light">
-        <h3>{t("privacyPolicy.title")}</h3>
-        <RenderRichText content={data?.Polityka} pClasses="text-black text-sm" liClasses="ml-10 list-disc" h2Classes="text-black mt-8" />
-      </div>
+    <div className=" container max-w-3/5 flex flex-col text-black mt-20 text-xl text-darkgrey font-light">
+      <h3>{t("privacyPolicy.title")}</h3>
+      <RenderRichText content={data?.Polityka} liClasses="ml-10 list-disc" />
     </div>
   )
 }
