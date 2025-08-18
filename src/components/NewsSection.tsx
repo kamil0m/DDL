@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import useLatestCombined from "../hooks/LatestNews";
 import NewsItem from "./NewsItem";
+import { EventNews } from "../models/interfaces/EventNews";
 
 export default function NewsSection() {
     const { t } = useTranslation();
@@ -16,7 +17,7 @@ export default function NewsSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                     {latest.map((item, index) => (
-                        <NewsItem key={item.id || index} item={item} index={index} t={t} />
+                        <NewsItem key={item.id || index} item={item as EventNews} index={index} t={t} />
                     ))}
                 </div>
             </div>

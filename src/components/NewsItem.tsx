@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { HiOutlineNewspaper } from "react-icons/hi2";
 import { isSoon, isNew, publishedDaysAgo } from '../components/FilteringMethods';
 import { ImportantBadge, NewBadge, PublishedBadge, SoonBadge } from "./Badges"; // Assuming you have a separate Badges component
+import { EventNews } from '../models/interfaces/EventNews';
 import { FaFacebookF } from "react-icons/fa";
 
 type NewsItemProps = {
-    item: any;
+    item: EventNews;
     index: number;
     t: (key: string) => string;
 };
@@ -56,13 +57,12 @@ export default function NewsItem({ item, t }: NewsItemProps) {
 
     const type = item.type || "news";
 
-    const getPhotoUrl = (item: Object) => {
-        if (item.type === "event" && item.Zdjecie?.[0]?.url) {
-            return item.Zdjecie[0].url;
-        }
-        else if (item.type === "news" && item.Zdjecie?.url) {
-            return item.Zdjecie.url;
-        }
+    const getPhotoUrl = (item: EventNews) => {
+        if (item.type === "event" && Array.isArray(item.Zdjecie) && item.Zdjecie[0]?.url) {
+        return item.Zdjecie[0].url;
+    } else if (item.type === "news" && item.Zdjecie && 'url' in item.Zdjecie) {
+        return (item.Zdjecie as { url: string }).url;
+    }
         return "/src/styles/images/logo.jpg";
     };
 
