@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineNewspaper } from "react-icons/hi2";
 import { isSoon, isNew, publishedDaysAgo } from '../components/FilteringMethods';
