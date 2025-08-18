@@ -39,8 +39,6 @@ export default function BreadCrumbsNav({ data }: any) {
         return null; // No breadcrumbs to display
     }
 
-    console.log("Breadcrumbs:", breadcrumbs);
-
     return (
         <nav className="flex justify-center items-center bg-white z-10 h-20 w-full shadow-xl text-xl">
             {/* Breadcrumb Navigation */}

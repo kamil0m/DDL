@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function StylesTester() {
   return (
     <div className="flex flex-row gap-2">

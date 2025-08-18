@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const useFetch = (urlExtention: string) => {
-    const [data, setData] = useState({});
+    const [data, setData] = useState<any>({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 

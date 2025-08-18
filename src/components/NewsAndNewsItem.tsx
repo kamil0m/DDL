@@ -2,11 +2,9 @@ import { useState } from "react";
 import { HiOutlineNewspaper } from "react-icons/hi2";
 import useLatestCombined from "../hooks/LatestNews";
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '../contexts/LanguageContext';
 
 export default function News() {
     const { t } = useTranslation();
-    const { currentLanguage } = useLanguage();
 
     const { latest } = useLatestCombined();
     console.log("Latest news:", latest);

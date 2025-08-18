@@ -9,7 +9,7 @@ export interface EventNews extends StrapiFetchedData {
     Link_do_Facebook?: string;
     Podpis?: string;
     Data_wydarzenia?: string;
-    Zdjecie: null | { url: string }[];
+    Zdjecie: { url: string }[] | { url: string } | null;
     Wazne?: boolean;
     type?: 'news' | 'event';
     [key: string]: unknown; // Allow additional properties

@@ -21,7 +21,7 @@ export default function People() {
   return (
     <section className='flex flex-col mt-15 gap-8'>
       <h4>{t("about.people")}</h4>
-      <Carousel dataArray={peopleData} item={<PersonItem />} t={t} maxVisible={4} />
+      <Carousel dataArray={peopleData} item={<PersonItem />} maxVisible={4} />
     </section>
   )
 }

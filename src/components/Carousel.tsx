@@ -1,16 +1,23 @@
 import { cloneElement } from 'react';
 import { useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { useTranslation } from "react-i18next";
+
+type ItemProps = {
+    data: object;
+};
 
 type CarouselProps = {
     dataArray: object[];
-    item: React.ReactElement;
+    item: React.ReactElement<ItemProps>;
     t: (key: string) => string;
     maxVisible: number;
 };
 
-export default function Carousel({ dataArray, item, t, maxVisible }: CarouselProps) {
+export default function Carousel({ dataArray, item, maxVisible }: CarouselProps) {
     const [startIndex, setStartIndex] = useState(0);
+
+    const { t } = useTranslation();
 
     const canGoLeft = startIndex > 0;
     const canGoRight = startIndex + maxVisible < dataArray.length;
@@ -44,7 +51,6 @@ export default function Carousel({ dataArray, item, t, maxVisible }: CarouselPro
                     <HiChevronLeft size={30} />
                 </button>
             )}
-
             <div className="flex flex-row justify-between flex-grow">
                 {visibleItems.map((dataItem, index) => (
                     <div key={index} className="flex justify-center">

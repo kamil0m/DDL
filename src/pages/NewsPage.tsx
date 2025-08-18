@@ -8,6 +8,7 @@ import { EventNews } from '../models/interfaces/EventNews';
 import BreadCrumbsNav from '../components/BreadCrumbsNav';
 import { ImportantBadge, SoonBadge, NewBadge, PublishedBadge } from '../components/Badges';
 import { isSoon, isNew, publishedDaysAgo } from '../components/FilteringMethods';
+import getImageUrl from '../utils/getImageUrl';
 
 export default function NewsPage() {
     const { id, type } = useParams<{ id: string; type: string }>();
@@ -42,9 +43,7 @@ export default function NewsPage() {
     }
 
     const title = data.Tytul;
-    const image = data.Zdjecie && data.Zdjecie.length > 0
-        ? data.Zdjecie[0].url
-        : "/src/styles/images/logo.jpg";
+    const image = getImageUrl(data);
 
     return (
         <>
@@ -84,7 +83,10 @@ export default function NewsPage() {
                         <div className="flex justify-center">
                             <div className="flex flex-col">
                                 {/* <h2>{type === "event" ? t("news.tags.event") : t("news.tags.news")}{type === "event" && " " + formatDateToFullFormat(data.Data_wydarzenia) + ` ${t("news.eventspage.cityAdverb")} ` + data.Miejsce_wydarzenia}</h2> */}
-                                <h2>{type === "news" && t("news.tags.news")}{type === "event" && " " + formatDateToFullFormat(data.Data_wydarzenia) + ` ${t("news.eventspage.cityAdverb")} ` + data.Miejsce_wydarzenia}</h2>
+                                <h2>
+                                    {type === "news" && t("news.tags.news")}
+                                    {type === "event" && " " + formatDateToFullFormat(data.Data_wydarzenia ?? '') + ` ${t("news.eventspage.cityAdverb")} ` + data.Miejsce_wydarzenia}
+                                </h2>
                             </div>
                         </div>
                         <h1 className="text-center">{title}</h1>
