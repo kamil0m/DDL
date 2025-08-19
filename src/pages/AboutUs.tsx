@@ -47,8 +47,9 @@ export default function AboutUs() {
               <h4>{t("about.goals")}</h4>
               <RenderRichText 
                 content={aboutData.Cele} 
-                olClasses="centered-list" 
-                liClasses="square-markers"
+                olClasses="centered-list text-xl" 
+                liClasses="square-markers font-light text-xl"
+                ulClasses="ml-30 list-disc"
               />
               
             </section>
