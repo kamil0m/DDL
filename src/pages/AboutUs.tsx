@@ -34,6 +34,8 @@ export default function AboutUs() {
               <RenderRichText 
                 content={aboutData.Historia} 
                 pClasses="text-black"
+                ulClasses="list-disc pl-5"
+                liClasses="font-light text-xl"
                 />
             </section>
           </div>
