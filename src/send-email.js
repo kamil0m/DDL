@@ -19,12 +19,16 @@ app.use(bodyParser.json());
 
 const transporter = nodemailer.createTransport({
     host: "smtp.mail.ovh.net", //ssl0.ovh.net
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
     },
+     tls: {
+        // ciphers: "SSLv3",
+    rejectUnauthorized: false, 
+  },
 });
 
 app.post('/send-email', (req, res) => {
