@@ -65,7 +65,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
     }
         return "/src/styles/images/logo.jpg";
     };
-
+    
     return (
         <div
             onMouseEnter={handleMouseEnter}
