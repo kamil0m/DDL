@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FaBars } from "react-icons/fa6";
+import LanguageToggle from "./LanguageToggle";
 
 
 
@@ -29,19 +30,11 @@ export default function HamburgerMenu() {
             animate-fade-in-down flex flex-col items-center justify-center absolute left-0 top-0 w-full bg-white h-screen z-10 uppercase font-semibold text-2xl"
             onClick={() => toggleMenu()} 
             >
-
                 <NavLink to="/" className="flex justify-center xw-45 text-accent hover:text-red">{t("nav.home")}</NavLink>
                 <NavLink to="/events" className="flex justify-center xw-45 text-accent hover:text-red">{t("nav.events")}</NavLink>
                 <NavLink to="/news" className="flex justify-center Xw-45 text-accent hover:text-red">{t("nav.news")}</NavLink>
                 <NavLink to="/about" className="flex justify-center xw-45 text-accent hover:text-red">{t("nav.about")}</NavLink>
-
-                {/* <NavLink to="/" className="my-3 tablet:my-0 aria-[current=page]:text-accent">About me</NavLink>
-
-                <NavLink to="/cv" className="my-3 tablet:my-0 aria-[current=page]:text-accent">CV</NavLink>
-
-                <NavLink to="/projects" className="my-3 tablet:my-0 aria-[current=page]:text-accent">My projects</NavLink>   
-
-                <NavLink className="my-3 tablet:my-0 aria-[current=page]:text-accent" to="/contact" >Contact</NavLink> */}
+                <LanguageToggle />
         </nav>
 
     </>

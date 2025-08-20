@@ -14,8 +14,8 @@ export default function Header() {
   return (
     <header className="lg:fixed flex justify-center bg-white z-20 w-full shadow-sm">
       <div className="container flex flex-row justify-between items-center w-full py-4 text-xl">
-        <div className="flex flex-row justify-between items-center gap-10 w-full">
-          < Logo size="h-[4rem] w-auto" />
+        <div className="flex flex-row justify-between lg:justify-start items-center gap-10 w-full">
+          < Logo size="h-[3rem] lg:h-[4rem] w-auto" />
           <div className="lg:hidden flex">
             <HamburgerMenu />
           </div>
