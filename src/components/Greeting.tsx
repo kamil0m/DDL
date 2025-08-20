@@ -8,7 +8,7 @@ export default function Greeting({data}: {data: any}) {
 
     return (
         <div
-            className="relative w-full bg-cover bg-bottom lg:mt-10 lg:rounded-4xl aspect-2/1"
+            className="relative w-full bg-cover bg-bottom mt-4 lg:mt-10 lg:rounded-4xl aspect-3/2 lg:aspect-2/1"
             style={{
                 backgroundImage: `url(${homebackground})`,
             }}
