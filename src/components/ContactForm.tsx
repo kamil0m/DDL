@@ -27,9 +27,9 @@ export default function ContactForm() {
     }
 
     setStatus(t("contact.form.status.sending"));
-const API_URL = import.meta.env.VITE_API_URL;
+    const API_URL = import.meta.env.VITE_API_URL;
     try {
-            // const response = await fetch("http://localhost:5000/src/send-email", {
+      // const response = await fetch("http://localhost:5000/src/send-email", {
       const response = await fetch(`${API_URL}/src/send-email`, {
         method: "POST",
         headers: {
@@ -86,10 +86,10 @@ const API_URL = import.meta.env.VITE_API_URL;
             label=""
             placeholder={`${t("contact.form.email.placeholder")}*`}
             t={t}
-             value={formData.email}
-                        onChange={(e) =>
-                            setFormData({ ...formData, email: e.target.value })
-                        }
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
           />
           <Input
             type="text"
@@ -98,9 +98,9 @@ const API_URL = import.meta.env.VITE_API_URL;
             placeholder={`${t("contact.form.title.placeholder")}*`}
             t={t}
             value={formData.title}
-                        onChange={(e) =>
-                            setFormData({ ...formData, title: e.target.value })
-                        }
+            onChange={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
           />
           <Input
             type="tel"
@@ -109,9 +109,9 @@ const API_URL = import.meta.env.VITE_API_URL;
             placeholder={t("contact.form.phone.placeholder")}
             t={t}
             value={formData.phone}
-                        onChange={(e) =>
-                            setFormData({ ...formData, phone: e.target.value })
-                        }
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
           />
           <Input
             type="textarea"
@@ -120,9 +120,9 @@ const API_URL = import.meta.env.VITE_API_URL;
             placeholder={`${t("contact.form.message.placeholder")}*`}
             t={t}
             value={formData.message}
-                        onChange={(e) =>
-                            setFormData({ ...formData, message: e.target.value })
-                        }
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
           />
           <p className="text-sm italic text-green text-left">
             *{t("contact.form.explain")}
