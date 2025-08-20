@@ -1,61 +1,32 @@
 import LanguageToggle from "./LanguageToggle";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-// import SearchBar from "./SearchBar";
-import { useTranslation } from "react-i18next";
+import HeaderButtons from "./HeaderButtons";
+import HamburgerMenu from "./HamburgerMenu";
 
 export default function Header() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { t } = useTranslation();
   
   const handleLanguageChange = (newLang: string) => {
     console.log('Language changed to:', newLang);
     // + if needed additional logic for example: localStorage updates, etc.
   };
 
-  const scrollToContact = () => {
-    const contactElement = document.getElementById('contact');
-    if (contactElement) {
-      const elementPosition = contactElement.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - 100;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const handleContactClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-
-    if (location.pathname === '/') {
-      // Already on home page, just scroll to a little higher than contact section
-      scrollToContact();
-    } else {
-      navigate('/');
-      setTimeout(() => {
-        scrollToContact();
-      }, 1000);
-    }
-  };
-
   return (
-    <header className="fixed flex justify-center bg-white z-20 w-full shadow-sm">
+    <header className="lg:fixed flex justify-center bg-white z-20 w-full shadow-sm">
       <div className="container flex flex-row justify-between items-center w-full py-4 text-xl">
-        <div className="flex flex-row items-center gap-10">
+        <div className="flex flex-row justify-between items-center gap-10 w-full">
           < Logo size="h-[4rem] w-auto" />
-          < NavBar />
+          <div className="lg:hidden flex">
+            <HamburgerMenu />
+          </div>
+          <div className="hidden lg:block">
+            < NavBar />
+          </div>
           {/* < SearchBar /> */}
         </div>
-        <div className="flex flex-row justify-between items-center min-w-[30rem]">
+        <div className="hidden lg:flex lg:flex-row lg:justify-between lg:items-center lg:min-w-[30rem]">
           <LanguageToggle onLanguageChange={handleLanguageChange} />
-          <div className="flex justify-end gap-4">
-            <button onClick={handleContactClick} className="button button-transparent hover:button-accent px-8 py-2transition-colors duration-300 ease-out">{t("header.contact")}</button>
-            <NavLink to="/joinus" className="button button-accent hover:button-transparent px-8 py-2 transition-colors duration-300 ease-out">{t("header.joinus")}</NavLink>
-          </div>
+          <HeaderButtons />
         </div>
       </div>
     </header>
