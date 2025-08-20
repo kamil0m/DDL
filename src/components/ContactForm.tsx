@@ -29,7 +29,8 @@ export default function ContactForm() {
     setStatus(t("contact.form.status.sending"));
 
     try {
-      const response = await fetch("http://localhost:5000/send-email", {
+      const response = await fetch("http://localhost:5000/src/send-email", {
+      //  const response = await fetch("/src/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

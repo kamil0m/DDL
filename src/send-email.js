@@ -26,12 +26,12 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASS,
     },
      tls: {
-        // ciphers: "SSLv3",
+       
     rejectUnauthorized: false, 
   },
 });
 
-app.post('/send-email', (req, res) => {
+app.post('/src/send-email', (req, res) => {
     const { name, title, email, message } = req.body;
 
     const mailOptions = {
