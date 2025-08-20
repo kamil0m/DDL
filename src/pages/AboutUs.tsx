@@ -34,6 +34,8 @@ export default function AboutUs() {
               <RenderRichText 
                 content={aboutData.Historia} 
                 pClasses="text-black"
+                ulClasses="list-disc pl-5"
+                liClasses="font-light text-xl"
                 />
             </section>
           </div>
@@ -45,8 +47,9 @@ export default function AboutUs() {
               <h4>{t("about.goals")}</h4>
               <RenderRichText 
                 content={aboutData.Cele} 
-                olClasses="centered-list" 
-                liClasses="square-markers"
+                olClasses="centered-list text-xl" 
+                liClasses="square-markers font-light text-xl"
+                ulClasses="ml-30 list-disc"
               />
               
             </section>

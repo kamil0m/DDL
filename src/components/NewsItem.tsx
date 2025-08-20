@@ -5,6 +5,7 @@ import { isSoon, isNew, publishedDaysAgo } from '../components/FilteringMethods'
 import { ImportantBadge, NewBadge, PublishedBadge, SoonBadge } from "./Badges"; // Assuming you have a separate Badges component
 import { EventNews } from '../models/interfaces/EventNews';
 import { FaFacebookF } from "react-icons/fa";
+import logo from '../assets/images/logo.jpg'; // Adjust the path as necessary
 
 type NewsItemProps = {
     item: EventNews;
@@ -63,7 +64,8 @@ export default function NewsItem({ item, t }: NewsItemProps) {
     } else if (item.type === "news" && item.Zdjecie && 'url' in item.Zdjecie) {
         return (item.Zdjecie as { url: string }).url;
     }
-        return "/src/styles/images/logo.jpg";
+        // return "/src/styles/images/logo.jpg";
+        return logo;
     };
     
     return (

@@ -140,11 +140,11 @@ main {
         @apply rounded-full bg-white text-accent;
     }
 
-    .square-markers {
+    ol > li.square-markers {
         counter-increment: list-counter;
     }
 
-    .square-markers::before {
+    ol > li.square-markers::before {
         content: counter(list-counter);
         display: flex;
         align-items: center;
@@ -237,7 +237,7 @@ main {
         margin-bottom: 0.5rem;
     }
 
-    .centered-list .square-markers::before {
+    ol.centered-list > li.square-markers::before {
         content: counter(list-counter);
         display: flex;
         align-items: center;

@@ -31,7 +31,7 @@ export default function RenderRichText({
   h5Classes = '', 
   h6Classes = '', 
   olClasses = '', 
-  ulClasses = '', 
+  ulClasses = 'list-disc', 
   liClasses = '', 
   blockquoteClasses = '', 
   preClasses = '', 
