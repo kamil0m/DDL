@@ -19,10 +19,10 @@ export default function Footer() {
 
 
   return (
-    <div className="container flex flex-row justify-between h-[250px] my-20 text-darkgrey text-lg font-light bg-dots">
+    <div className="container px-2 lg:mx-0 flex flex-row justify-between h-[130px] lg:h-[250px] my-4 lg:my-20 text-darkgrey text-xs lg:text-lg font-light bg-dots">
       <div className="flex flex-row gap-15">
 
-        <div className="flex flex-col gap-2">
+        <div className="hidden lg:flex flex-col gap-2">
           < Logo size="h-[8rem]" />
           <p className="max-w-[20rem]">
             {data?.Motto?.[0]?.children?.[0]?.text}
@@ -37,7 +37,7 @@ export default function Footer() {
       </div>
       <div className="flex flex-col">
         <h5>{t("footer.followus")}</h5>
-        <div className="flex flex-col mt-10 gap-4">
+        <div className="flex flex-col mt-4 lg:mt-10 gap-4">
           <a target="_blank" href="https://www.facebook.com/p/Dzien-dobry-Lille-Bonjour-Lille-61559848594019/" className="button-blue w-[2rem] h-[2rem] inline-flex items-center justify-center rounded-full">
             <FaFacebookF />
           </a>

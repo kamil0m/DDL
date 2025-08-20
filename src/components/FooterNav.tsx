@@ -7,7 +7,7 @@ export default function FooterNav() {
   return (
     <div className="flex flex-col">
       <h5>{t("footer.pages")}</h5>
-      <div className="flex flex-col mt-10 gap-4">
+      <div className="flex flex-col mt-4 lg:mt-10 gap-1 lg:gap-4">
         <NavLink to="/" className="hover:text-black">{t("footer.mainpage")}</NavLink>
         <NavLink to="/events" className="hover:text-black">{t("footer.events")}</NavLink>
         <NavLink to="/news" className="hover:text-black">{t("footer.news")}</NavLink>
