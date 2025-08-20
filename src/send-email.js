@@ -1,9 +1,3 @@
-// const nodemailer = require('nodemailer');
-// const dotenv = require('dotenv');
-// const cors = require('cors');
-// const bodyParser = require('body-parser');
-// const express = require('express');
-
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -13,7 +7,7 @@ import express from "express";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT_MAIL || 5000;
+const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -45,15 +39,15 @@ app.post('/src/send-email', (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.error('Błąd podczas wysyłania:', error);
+            // console.error('Błąd podczas wysyłania:', error);
             res.status(500).send({ message: 'Błąd przy wysyłce wiadomości.' });
         } else {
-            console.log('Wiadomość wysłana: ' + info.response);
+            // console.log('Wiadomość wysłana: ' + info.response);
             res.status(200).send({ message: 'Wiadomość została wysłana pomyślnie!' });
         }
 
     });
 });
 app.listen(port, () => {
-    console.log(`Serwer działa na http://localhost:${port}`);
+    // console.log(`Serwer działa na http://localhost:${port}`);
 });
