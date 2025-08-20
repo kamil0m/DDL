@@ -61,9 +61,9 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex justify-center items-center p-12 relative overflow-hidden">
+    <div className="flex justify-center items-center p-4 lg:p-12 relative overflow-hidden">
       <div className="bg-polka-bl-green" />
-      <div className="absolute top-0 right-0 w-24 h-24 bg-blue rounded-tr-full z-0" />
+      <div className="hidden lg:block absolute top-0 right-0 w-24 h-24 bg-blue rounded-tr-full z-0" />
       <div className="bg-polka-br-green top-1/6 right-0" />
       <section
         id="contact"
@@ -126,12 +126,14 @@ export default function ContactForm() {
           <p className="text-sm italic text-green text-left">
             *{t("contact.form.explain")}
           </p>
-          <button
-            type="submit"
-            className="button button-blue size-fit px-6 py-3 text-xl font-light w-full mt-2"
-          >
-            {t("contact.form.submit")}
-          </button>
+          <div className="flex justify-center w-full">
+            <button
+              type="submit"
+              className="button button-blue size-fit px-2 lg:px-6 py-2 lg:py-3 text-sm lg:text-xl font-light lg:w-full mt-2"
+            >
+              {t("contact.form.submit")}
+            </button>
+          </div>
           {status && (
             <p
               className={`font-bold text-lg mt-4 ${

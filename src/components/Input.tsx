@@ -17,7 +17,7 @@ export default function Input({ label, type, id, placeholder, value, onChange, t
         onBlur: handleBlur,
         placeholder,
         required: id !== 'phone',
-        className: "w-full px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 my-1.5",
+        className: "w-full px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 my-1.5 text-sm text-xs lg:text-base",
     };
 
     return (

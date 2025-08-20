@@ -8,9 +8,9 @@ export default function About({data}: {data: any}) {
 
     return (
         <ErrorBoundary>
-            <section className="flex flex-row justify-center items-between mt-40 gap-6">
-                <div className="flex flex-row items-center w-1/2 gap-8">
-                    <div className="flex flex-col gap-8">
+            <section className="flex flex-col lg:flex-row justify-center items-between mt-10 lg:mt-40 gap-6 mx-4 lg:mx-0">
+                <div className="hidden lg:flex flex-row items-center lg:w-1/2 lg:gap-8 ml-4 lg:ml-0">
+                    <div className="flex flex-col gap-2 lg:gap-8">
                         <div className="h-[320px] w-[270px] rounded-lg overflow-hidden relative bg-slate-500">
                             <img 
                                 src={data?.Zdjecie1?.url} 
@@ -44,14 +44,17 @@ export default function About({data}: {data: any}) {
                         </video>
                     </div>
                 </div>
-                <div className="flex flex-col justify-center w-1/2 gap-6">
+                <div className="flex flex-col justify-center lg:w-1/2 gap-2 lg:gap-6">
                     <h2>{t("about.title")}</h2>
                     <h3>{data?.ONasPodtytul}</h3>
                     <RenderRichText content={data?.ONasTekst} />
-                    <NavLink to="/about" className="text-xl font-light text-darkgrey hover:text-black"> 
+                    <NavLink to="/about" className="text-sm lg:text-xl font-light text-darkgrey hover:text-black"> 
                         <span className="underline">{t("about.seeMore")}</span>
-                        <span className=""> ➜</span></NavLink>
-                    <a href="https://www.facebook.com/p/Dzien-dobry-Lille-Bonjour-Lille-61559848594019/" className="button button-blue size-fit px-6 py-3 text-xl font-light">{t("about.button")}</a>
+                        <span className=""> ➜</span>
+                    </NavLink>
+                    <div className="flex w-full justify-center lg:justify-start mt-4 lg:mt-0">
+                        <a href="https://www.facebook.com/p/Dzien-dobry-Lille-Bonjour-Lille-61559848594019/" className="button button-blue size-fit px-2 lg:px-6 py-2 lg:py-3 text-xs lg:text-xl font-light">{t("about.button")}</a>
+                    </div>
                 </div>
             </section>
         </ErrorBoundary>

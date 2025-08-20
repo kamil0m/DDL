@@ -25,33 +25,33 @@ main {
 
 @layer base {
     h1 {
-        @apply text-6xl font-bold;
+        @apply text-2xl lg:text-6xl font-bold;
     }
 
     h2 {
-        @apply text-xl font-bold text-blue
+        @apply text-sm lg:text-xl font-bold text-blue
     }
 
     h3 {
-        @apply text-5xl font-semibold
+        @apply text-2xl lg:text-5xl font-semibold
     }
 
 
     h4 {
-        @apply text-2xl font-semibold text-accent
+        @apply text-lg lg:text-2xl font-semibold text-accent
     }
 
 
     h5 {
-        @apply text-xl text-black font-semibold
+        @apply text-sm lg:text-xl text-black font-semibold
     }
 
     h6 {
-        @apply text-4xl text-black font-semibold
+        @apply text-xl lg:text-4xl text-black font-semibold
     }
 
     p {
-        @apply text-xl font-light mt-5;
+        @apply text-sm lg:text-xl font-light mt-3 lg:mt-5;
     }
 }
 

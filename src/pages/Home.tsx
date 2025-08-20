@@ -42,9 +42,9 @@ const Home: React.FC = () => {
             <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey">
 
                 <div className="container">
-                    < Greeting data={data}/>
+                    < Greeting data={data} />
                     < NewsSection />
-                    < About data={data}/>
+                    < About data={data} />
                     < ContactSection data={data} />
                 </div>
 
