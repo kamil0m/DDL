@@ -52,11 +52,10 @@ const useNewsEvents = () => {
             (Array.isArray(events) && events.length === 0) ||
             (Array.isArray(news) && news.length === 0)
         ) {
-
-            console.log("No data available yet");
-
             return;
         }
+
+        console.log("Events:", events);
 
         const today = new Date();
         today.setHours(0, 0, 0, 0);
@@ -142,4 +141,3 @@ const useNewsEvents = () => {
 };
 
 export default useNewsEvents;
-

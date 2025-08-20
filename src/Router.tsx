@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Events from './pages/Events';
 import News from './pages/News';
-import Contact from "./pages/Contact";
+// import Contact from "./pages/Contact";
 import JoinUs from "./pages/JoinUs";
 import StylesTester from "./pages/StylesTester";
 import Mainlayout from "./layouts/Mainlayout";
@@ -29,7 +29,7 @@ export default function Router() {
             <Route path="events" element={<Events />} />
             <Route path=":type/:id" element={<NewsPage />} />
             <Route path="joinus" element={<JoinUs />} />
-            <Route path="contact" element={<Contact />} />
+            {/* <Route path="contact" element={<Contact />} /> */}
             <Route path="privacy" element={<PrivacyPolicy />} />
             <Route path="terms" element={<TermsAndConditions />} />
             <Route path="styles" element={<StylesTester />} />
