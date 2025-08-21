@@ -8,7 +8,7 @@ export default function NewsSection() {
     const { latest } = useLatestCombined();
 
     return (
-        <section className="flex flex-col justify-between items-center mt-40 gap-10">
+        <section className="flex flex-col justify-between items-center mt-20 lg:mt-40 gap-10">
             <div className="shortItems max-w-screen-2xl">
                 <div className="text-center">
                     <h3 className="mb-4">{t("news.heading")}</h3>

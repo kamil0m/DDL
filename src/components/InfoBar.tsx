@@ -19,7 +19,7 @@ export default function InfoBar() {
 
   return (
     <div className="whitespace-nowrap w-full overflow-x-hidden bg-accent group">
-      <div className="flex flex-row items-center gap-4 animate-marquee h-[3em] text-xl text-white group-hover:[animation-play-state:paused] w-full">
+      <div className="flex flex-row items-center gap-4 animate-marquee h-[2em] lg:h-[3em] text-sm lg:text-xl text-white group-hover:[animation-play-state:paused] w-full">
         {scrollingTitles.map((title, index) => (
           <div key={index} className="flex items-center gap-2">
             <GrAnnounce className="h-6 w-6 text-white flex-shrink-0" />
