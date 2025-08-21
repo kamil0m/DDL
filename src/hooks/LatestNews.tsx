@@ -6,6 +6,7 @@ type Entry = {
     id: number;
     Tytul: string;
     Data_publikacji: string;
+    Data_wydarzenia?: string;
     Wazne?: boolean;
     type?: string;
     isImportant?: boolean;

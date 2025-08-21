@@ -108,7 +108,7 @@ const useNewsEvents = () => {
             .map(e => ({
                 ...e,
                 type: "event",
-                isNew: isTodayOrYesterday(e.Data_publikacji),
+                isNew: isTodayOrYesterday(e.Data_wydarzenia),
                 publishedDaysAgo: daysAgo(e.Data_publikacji),
             }))
             .sort((a, b) => new Date(b.Data_wydarzenia!).getTime() - new Date(a.Data_wydarzenia!).getTime());

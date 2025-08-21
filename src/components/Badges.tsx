@@ -15,9 +15,13 @@ export function SoonBadge() {
     const { t } = useTranslation();
 
     return (
-        <span className="bg-blue text-white font-medium px-2 py-1 rounded">
+        <>  <span className="bg-blue text-white font-medium px-2 py-1 rounded">
             {t("news.badges.soon")}
         </span>
+        <span className="mx-1/2 border-1 border-gray-300 h-7 inline-block"></span>
+        </>
+      
+        
     );
 }
 
