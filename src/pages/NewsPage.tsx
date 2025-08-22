@@ -111,12 +111,13 @@ export default function NewsPage() {
                                 < PublishedBadge daysAgo={publishedDaysAgo(data)} />
                             )}
                         </div>
-                        <div className="flex flex-row text-darkgrey gap-6">
+                        <div className="flex flex-row text-blue">
                             {data.Podpis && (
                                 <div className="">
                                     {data.Podpis}
                                 </div>
                             )}
+                            <span className="mx-2 text-2xl font-extrabold relative -translate-y-1.25">·</span>
                             <div>
                                 {t("news.badges.published")} {data.Data_publikacji && new Date(data.Data_publikacji).toLocaleDateString("fr-FR")}
                             </div>
