@@ -47,7 +47,7 @@ export default function About({data}: {data: any}) {
                 <div className="flex flex-col justify-center lg:w-1/2 gap-2 lg:gap-6">
                     <h2>{t("about.title")}</h2>
                     <h3>{data?.ONasPodtytul}</h3>
-                    <RenderRichText content={data?.ONasTekst} />
+                    <RenderRichText content={data?.ONasTekst} pClasses="x" />
                     <NavLink to="/about" className="text-sm lg:text-xl font-light text-darkgrey hover:text-black"> 
                         <span className="underline">{t("about.seeMore")}</span>
                         <span className=""> ➜</span>

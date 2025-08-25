@@ -118,7 +118,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
 
                     </div>
 
-                    <div className="text-darkgrey text-xl font-medium px-2 py-1">
+                    <div className="text-darkgrey text-medium font-semilight px-2 py-1">
                         {item.publishedDaysAgo === 0
                             ? t("news.date.today")
                             : new Date(item.Data_publikacji).toLocaleDateString("en-GB")}

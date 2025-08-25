@@ -39,7 +39,7 @@ const Home: React.FC = () => {
 
             <InfoBar />
 
-            <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey">
+            <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey pb-10">
 
                 <div className="container">
                     < Greeting data={data} />
