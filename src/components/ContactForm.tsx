@@ -27,10 +27,11 @@ export default function ContactForm() {
     }
 
     setStatus(t("contact.form.status.sending"));
-    const API_URL = import.meta.env.VITE_API_URL;
+    // const API_URL = import.meta.env.VITE_API_URL;
     try {
       // const response = await fetch("http://localhost:5000/src/send-email", {
-      const response = await fetch(`${API_URL}/src/send-email`, {
+      // const response = await fetch(`${API_URL}/src/send-email`, {
+      const response = await fetch("/src/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
