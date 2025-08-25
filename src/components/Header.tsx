@@ -17,6 +17,9 @@ export default function Header() {
         <div className="flex flex-row justify-between lg:justify-start items-center gap-10 w-full">
           < Logo size="h-[3rem] lg:h-[4rem] w-auto" />
           <div className="lg:hidden flex">
+            <LanguageToggle onLanguageChange={handleLanguageChange} />
+          </div>
+          <div className="lg:hidden flex">
             <HamburgerMenu />
           </div>
           <div className="hidden lg:block">

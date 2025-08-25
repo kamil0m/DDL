@@ -55,8 +55,6 @@ const useNewsEvents = () => {
             return;
         }
 
-        console.log("Events:", events);
-
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
