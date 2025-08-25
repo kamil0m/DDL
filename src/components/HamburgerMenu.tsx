@@ -7,6 +7,10 @@ export default function HamburgerMenu() {
     const toggleMenu = () => {
         const mobileMenu = document.getElementById('navbar__mobile');
         mobileMenu?.classList.toggle("hidden");
+        // prevent scrolling when menu is open
+
+        document.body.classList.toggle("overflow-hidden");
+        console.log(document.body.classList)
     }
 
   return (

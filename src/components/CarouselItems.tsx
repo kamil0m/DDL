@@ -10,7 +10,7 @@ type CarouselProps = {
 export default function Carousel({ items, t }: CarouselProps) {
     const [startIndex, setStartIndex] = useState(0);
 
-    console.log("Carousel items:", items);
+    // console.log("Carousel items:", items);
 
     const maxVisible = 3;
 
