@@ -8,7 +8,7 @@ interface LogoProps {
 export default function Logo({ size }: LogoProps) {
     
     return (
-        <NavLink to="/" className="">
+        <NavLink to="/" className="flex justify-center">
             <img src={logo} alt="Logo" className={`${size} flex-shrink-0 object-contain`} />
         </NavLink>
     )
