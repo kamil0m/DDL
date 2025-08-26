@@ -14,9 +14,12 @@ type NewsItemProps = {
 };
 
 export default function NewsItem({ item, t }: NewsItemProps) {
-
+    
     const navigate = useNavigate();
     const [isHovered, setIsHovered] = useState(false);
+    
+    const type = item.type || "news";
+    const linkUrl = `/${type}/${item.documentId}`;
 
     const handleReadMore = (e: React.MouseEvent) => {
         // Prevent navigation if user is selecting text
@@ -29,8 +32,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
             return;
         }
 
-        const type = item.type || "news";
-        navigate(`/${type}/${item.documentId}`);
+        navigate(linkUrl);
     };
 
     const handleMouseEnter = () => {
@@ -56,7 +58,6 @@ export default function NewsItem({ item, t }: NewsItemProps) {
 
     const truncatedDescription = truncate(descriptionText);
 
-    const type = item.type || "news";
 
     const getPhotoUrl = (item: EventNews) => {
         if (item.type === "event" && Array.isArray(item.Zdjecie) && item.Zdjecie[0]?.url) {
@@ -118,7 +119,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
 
                     </div>
 
-                    <div className="text-darkgrey text-medium font-semilight px-2 py-1">
+                    <div className="text-darkgrey text-xl font-medium px-2 py-1">
                         {item.publishedDaysAgo === 0
                             ? t("news.date.today")
                             : new Date(item.Data_publikacji).toLocaleDateString("en-GB")}
