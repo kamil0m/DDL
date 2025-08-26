@@ -65,7 +65,6 @@ export default function NewsItem({ item, t }: NewsItemProps) {
     } else if (item.type === "news" && item.Zdjecie && 'url' in item.Zdjecie) {
         return (item.Zdjecie as { url: string }).url;
     }
-        // return "/src/styles/images/logo.jpg";
         return logo;
     };
     
@@ -150,4 +149,3 @@ export default function NewsItem({ item, t }: NewsItemProps) {
         </div>
     );
 }
-

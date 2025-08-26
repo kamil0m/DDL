@@ -5,26 +5,25 @@ export default function InfoBar() {
   const { upcomingEvents, sortedNews, loading, error } = useNewsEvents();
 
   if (loading || error) return null;
-
-  const importantTitles = [
-    ...upcomingEvents.filter(e => e.Wazne).map(e => e.Tytul),
-    ...sortedNews.filter(n => n.isImportant).map(n => n.Tytul)
+  
+  const importantItems = [
+    ...upcomingEvents.filter(e => e.Wazne),
+    ...sortedNews.filter(n => n.isImportant)
   ];
-
-  if (importantTitles.length === 0) return null;
-
-
+  
+  if (importantItems.length === 0) return null;
+  
   const repeatCount = 10;
-  const scrollingTitles = Array.from({ length: repeatCount }, () => importantTitles).flat();
+  const scrollingItems = Array.from({ length: repeatCount }, () => importantItems).flat();
 
   return (
     <div className="whitespace-nowrap w-full overflow-x-hidden bg-accent group">
-      <div className="flex flex-row items-center gap-4 animate-marquee h-[2em] lg:h-[3em] text-sm lg:text-xl text-white group-hover:[animation-play-state:paused] w-full">
-        {scrollingTitles.map((title, index) => (
-          <div key={index} className="flex items-center gap-2">
+      <div className="flex flex-row items-center gap-14 animate-marquee h-[2em] lg:h-[3em] text-sm lg:text-xl text-white group-hover:[animation-play-state:paused] w-full">
+        {scrollingItems.map((item, index) => (
+          <a href={`/${item.type}/${item.documentId}`} key={index} className="flex items-center gap-2 cursor-pointer">
             <GrAnnounce className="h-6 w-6 text-white flex-shrink-0" />
-            <span className="h-[3em] flex items-center">{title}</span>
-          </div>
+            <span className="h-[3em] flex items-center">{item.Tytul}</span>
+          </a>
         ))}
       </div>
     </div>

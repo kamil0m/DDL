@@ -33,7 +33,7 @@ main {
     }
 
     h3 {
-        @apply text-2xl lg:text-5xl font-semibold
+        @apply text-xl lg:text-5xl font-semibold
     }
 
 
@@ -52,6 +52,10 @@ main {
 
     p {
         @apply text-sm lg:text-xl font-light mt-3 lg:mt-5;
+    }
+
+    li {
+        @apply text-sm lg:text-xl font-light mt-1 lg:mt-1;
     }
 }
 

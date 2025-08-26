@@ -25,40 +25,42 @@ export default function AboutUs() {
   return (
     < ErrorBoundary >
 
-      <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey pb-10">
-        <div className="flex flex-col gap-20 mt-20">
-          <img src={logo} alt="logo" className="absolute h-full -translate-2/7 z-0 opacity-10"/>
-          <div className="container max-w-3/5 mx-auto px-4 z-10">
-            <section className="flex flex-col">
-              <h4>{t("about.history")}</h4>
-              <RenderRichText 
-                content={aboutData.Historia} 
-                pClasses="text-black"
-                ulClasses="list-disc pl-5"
-                liClasses="font-light text-xl"
-                />
-            </section>
-          </div>
+      <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey pb-10 gap-8 lg:gap-20 mt-5 lg:mt-20">
 
-          <Motto motto={motto} />
+        <img src={logo} alt="logo" className="absolute w-full lg:w-3/4 -translate-x-1/4 lg:-translate-x-1/2 -translate-y-1/4 z-0 opacity-10"/>
+        
+        <div className="lg:max-w-3/5 mx-auto px-4 z-10">
 
-          <div className="container max-w-3/5 mx-auto px-4 z-10">
-            <section className="flex flex-col gap-4">
-              <h4>{t("about.goals")}</h4>
-              <RenderRichText 
-                content={aboutData.Cele} 
-                olClasses="centered-list text-xl" 
-                liClasses="square-markers font-light text-xl"
-                ulClasses="ml-30 list-disc"
+          <section className="flex flex-col">
+            <h4>{t("about.history")}</h4>
+            <RenderRichText 
+              content={aboutData.Historia} 
+              pClasses="text-black"
+              ulClasses="list-disc pl-5"
+              liClasses="font-light"
               />
-              
-            </section>
+          </section>
+
+        </div>
+
+        <Motto motto={motto} />
+
+        <div className="container lg:max-w-3/5 mx-auto px-4 z-10">
+
+          <section className="flex flex-col gap-4">
+            <h4>{t("about.goals")}</h4>
+            <RenderRichText 
+              content={aboutData.Cele} 
+              olClasses="centered-list text-xl" 
+              liClasses="square-markers font-light text-sm lg:text-xl"
+              ulClasses="ml-30 list-disc"
+            />
             
-            <People />
-          </div>
+          </section>
+          
+          <People />
         </div>
       </div>
-
       
     </ ErrorBoundary >
   )
