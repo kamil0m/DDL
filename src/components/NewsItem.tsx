@@ -77,7 +77,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                 handleReadMore(e);
             }}
             className="bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden flex flex-col cursor-pointer">
-            <div className="relative h-75 w-full">
+            <div className="relative h-32 md:h-75 w-full">
                 <img
                     src={getPhotoUrl(item)}
                     alt="News"
@@ -131,7 +131,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                         {t("news.dateLabel")} {item.Data_wydarzenia}
                     </p>
                 )}
-                <p className="text-l text-darkgrey">{truncatedDescription}</p>
+                <p className="text-l text-darkgrey hidden md:block">{truncatedDescription}</p>
                 <div className="flex justify-between">
                     <button
                         onClick={handleReadMore}
