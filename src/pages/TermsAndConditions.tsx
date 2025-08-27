@@ -15,7 +15,7 @@ export default function TermsAndConditions() {
 
   return (
     <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey">
-      <div className=" container max-w-3/5 flex flex-col mt-20 text-sm text-black font-light">
+      <div className="w-full max-w-3xl px-4 sm:px-6 lg:max-w-3/5 flex flex-col mt-20 text-sm text-black font-light">
         <h3>{t("termsAndConditions.title")}</h3>
         <RenderRichText content={data?.Regulamin} pClasses="text-black text-sm" liClasses="ml-10 list-disc" h2Classes="text-black mt-8" />
       </div>
