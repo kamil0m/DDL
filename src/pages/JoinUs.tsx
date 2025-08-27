@@ -20,7 +20,7 @@ export default function JoinUs() {
 
     return (
         <div className="flex flex-col items-center w-full bg-linear-to-b from-white to-grey">
-            <div className="w-3/5">
+            <div className="w-9/10 sm:w-4/5 lg:w-3/5">
                 <section className="flex flex-col mt-20">
                     <div className="flex flex-col gap-8">
                         <div className="flex flex-col gap-2">
