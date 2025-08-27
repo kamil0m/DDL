@@ -131,7 +131,7 @@ export default function ContactForm() {
               setFormData({ ...formData, message: e.target.value })
             }
           />
-          <p className="text-sm italic text-green text-left">
+          <p className="text-xs md:text-sm italic text-green text-left">
             *{t("contact.form.explain")}
           </p>
           <div className="flex justify-center w-full">
