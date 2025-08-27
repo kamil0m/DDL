@@ -111,7 +111,7 @@ export default function NewsPage() {
                                 < PublishedBadge daysAgo={publishedDaysAgo(data)} />
                             )}
                         </div>
-                        <div className="flex flex-row text-blue">
+                        <div className="flex flex-row text-darkgrey">
                             {data.Podpis && (
                                 <div className="">
                                     {data.Podpis}
