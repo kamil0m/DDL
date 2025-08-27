@@ -19,7 +19,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const { name, email, title, message, phone } = formData;
+    const { name, email, title, message } = formData;
 
     if (!name || !email || !title || !message) {
       setStatus(t("contact.form.status.fillAllRequired"));
@@ -27,22 +27,16 @@ export default function ContactForm() {
     }
 
     setStatus(t("contact.form.status.sending"));
-
+    // const API_URL = import.meta.env.VITE_API_URL;
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // const response = await fetch("http://localhost:5000/src/send-email", {
+      // const response = await fetch(`${API_URL}/src/send-email`, {
+      const response = await fetch("/src/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
-        body: JSON.stringify({
-          access_key: "72dca3bb-1c99-46d1-bad6-40dbca210eb8", 
-          name,
-          email,
-          phone,
-          title,
-          message,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
@@ -81,6 +75,7 @@ export default function ContactForm() {
           <Input
             type="text"
             id="name"
+            label=""
             placeholder={`${t("contact.form.name.placeholder")}*`}
             t={t}
             value={formData.name}
@@ -89,6 +84,7 @@ export default function ContactForm() {
           <Input
             type="email"
             id="email"
+            label=""
             placeholder={`${t("contact.form.email.placeholder")}*`}
             t={t}
             value={formData.email}
@@ -99,6 +95,7 @@ export default function ContactForm() {
           <Input
             type="text"
             id="title"
+            label=""
             placeholder={`${t("contact.form.title.placeholder")}*`}
             t={t}
             value={formData.title}
@@ -109,6 +106,7 @@ export default function ContactForm() {
           <Input
             type="tel"
             id="phone"
+            label=""
             placeholder={t("contact.form.phone.placeholder")}
             t={t}
             value={formData.phone}
@@ -119,6 +117,7 @@ export default function ContactForm() {
           <Input
             type="textarea"
             id="message"
+            label=""
             placeholder={`${t("contact.form.message.placeholder")}*`}
             t={t}
             value={formData.message}
