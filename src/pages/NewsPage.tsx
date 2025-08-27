@@ -51,24 +51,24 @@ export default function NewsPage() {
 
             <div className="flex flex-col items-center gap-2 mt-7 min-h-screen bg-linear-to-b from-white to-grey w-full">
                 {/* Header image */}
-                <div className="relative h-96 w-2/3 rounded-xl shadow-lg overflow-hidden">
+                <div className="relative h-48 w-full sm:h-64 md:h-96 md:w-2/3 rounded-xl shadow-lg overflow-hidden">
                     <img
                         src={image}
                         alt={title}
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-4 left-4 flex gap-2">
+                    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 flex gap-2">
                         {type === "news" && (
-                            <span className="bg-white text-accent text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
-                                <HiOutlineNewspaper className="inline-block mr-2 -scale-x-100 translate-y-[-2px]" size={20} />
-                                {t("news.tags.news")}
-                            </span>
+                            <span className="bg-white text-accent text-sm sm:text-base md:text-lg font-semibold px-2 py-1 sm:px-3 sm:py-2 rounded-lg shadow-md">
+        <HiOutlineNewspaper className="inline-block mr-1 sm:mr-2 -scale-x-100 translate-y-[-2px]" size={18} />
+        {t("news.tags.news")}
+      </span>
                         )}
                         {type === "event" && (
                             <>
-                                <span className="bg-accent text-white text-lg font-semibold px-3 py-2 rounded-lg shadow-md">
-                                    ★ {t("news.tags.event")}
-                                </span>
+                                <span className="bg-accent text-white text-sm sm:text-base md:text-lg font-semibold px-2 py-1 sm:px-3 sm:py-2 rounded-lg shadow-md">
+        ★ {t("news.tags.event")}
+      </span>
                             </>
                         )}
 
@@ -76,14 +76,14 @@ export default function NewsPage() {
                 </div>
 
                 {/* Main content */}
-                <div className="flex flex-col gap-9 w-2/3 bg-white rounded-xl shadow-lg overflow-hidden p-6 mb-20">
+                <div className="flex flex-col gap-6 sm:gap-8 w-full sm:w-5/6 md:w-2/3 bg-white rounded-xl shadow-lg overflow-hidden p-4 sm:p-6 mb-10 md:mb-20">
 
                     {/* Type and title */}
-                    <div className="flex flex-col gap-8 text-center">
+                    <div className="flex flex-col gap-4 sm:gap-8 text-center">
                         <div className="flex justify-center">
                             <div className="flex flex-col">
                                 {/* <h2>{type === "event" ? t("news.tags.event") : t("news.tags.news")}{type === "event" && " " + formatDateToFullFormat(data.Data_wydarzenia) + ` ${t("news.eventspage.cityAdverb")} ` + data.Miejsce_wydarzenia}</h2> */}
-                                <h2>
+                                <h2 className="text-sm sm:text-base md:text-lg">
                                     {type === "news" && t("news.tags.news")}
                                     {type === "event" && " " + formatDateToFullFormat(data.Data_wydarzenia ?? '') + ` ${t("news.eventspage.cityAdverb")} ` + data.Miejsce_wydarzenia}
                                 </h2>
@@ -111,7 +111,7 @@ export default function NewsPage() {
                                 < PublishedBadge daysAgo={publishedDaysAgo(data)} />
                             )}
                         </div>
-                        <div className="flex flex-row text-darkgrey">
+                        <div className="flex flex-row text-darkgrey text-sm sm:text-base">
                             {data.Podpis && (
                                 <div className="">
                                     {data.Podpis}
@@ -128,10 +128,10 @@ export default function NewsPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="prose prose-lg max-w-none">
+                    <div className=" text-sm sm:text-base max-w-none">
                         <RenderRichText
                             content={data.Tresc}
-                            pClasses="text-lg text-gray-700 leading-relaxed mb-4"
+                            pClasses="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4"
                         />
                     </div>
 

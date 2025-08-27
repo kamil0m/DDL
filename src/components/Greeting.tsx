@@ -28,7 +28,7 @@ export default function Greeting({data}: {data: any}) {
             text-center text-black bg-white rounded-2xl shadow-lg"
             >
 
-                <div className="flex flex-col justify-center gap-1 font-semilight">
+                <div className="flex flex-col justify-center gap-1 font-semilight ">
                     <p className="text-sm lg:text-2xl whitespace-nowrap mt-0">{t("greetings.greetings")}</p>
                 </div>
                 <NavLink to="/about" className="button button-accent text-xs lg:text-md lg:px-4 lg:py-2">{t("greetings.more")}</NavLink>
