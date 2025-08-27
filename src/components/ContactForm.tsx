@@ -81,6 +81,7 @@ export default function ContactForm() {
           <Input
             type="text"
             id="name"
+            label=""
             placeholder={`${t("contact.form.name.placeholder")}*`}
             t={t}
             value={formData.name}
@@ -89,6 +90,7 @@ export default function ContactForm() {
           <Input
             type="email"
             id="email"
+            label=""
             placeholder={`${t("contact.form.email.placeholder")}*`}
             t={t}
             value={formData.email}
@@ -99,6 +101,7 @@ export default function ContactForm() {
           <Input
             type="text"
             id="title"
+            label=""
             placeholder={`${t("contact.form.title.placeholder")}*`}
             t={t}
             value={formData.title}
@@ -109,6 +112,7 @@ export default function ContactForm() {
           <Input
             type="tel"
             id="phone"
+            label=""
             placeholder={t("contact.form.phone.placeholder")}
             t={t}
             value={formData.phone}
@@ -119,6 +123,7 @@ export default function ContactForm() {
           <Input
             type="textarea"
             id="message"
+            label=""
             placeholder={`${t("contact.form.message.placeholder")}*`}
             t={t}
             value={formData.message}

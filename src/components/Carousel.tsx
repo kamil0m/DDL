@@ -99,6 +99,7 @@ type ItemProps = {
 type CarouselProps = {
     dataArray: object[];
     item: React.ReactElement<ItemProps>;
+    t: (key: string) => string;
     maxVisible: number;
 };
 
