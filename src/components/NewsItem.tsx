@@ -118,7 +118,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
 
                     </div>
 
-                    <div className="text-darkgrey text-xl font-medium px-2 py-1">
+                    <div className="text-darkgrey text-base md:text-xl font-medium px-2 py-1">
                         {item.publishedDaysAgo === 0
                             ? t("news.date.today")
                             : new Date(item.Data_publikacji).toLocaleDateString("en-GB")}
@@ -135,7 +135,7 @@ export default function NewsItem({ item, t }: NewsItemProps) {
                 <div className="flex justify-between">
                     <button
                         onClick={handleReadMore}
-                        className={`underline text-xl mt-1 self-start ${isHovered ? "text-black" : "text-darkgrey"} transition-colors cursor-pointer`}
+                        className={`underline text-base md:text-xl mt-1 self-start ${isHovered ? "text-black" : "text-darkgrey"} transition-colors cursor-pointer`}
                     >
                         {t("news.readMore")}
                     </button>

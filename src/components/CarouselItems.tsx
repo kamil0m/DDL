@@ -1,4 +1,74 @@
-import { useState } from "react";
+// import { useState } from "react";
+// import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+// import NewsItem from "./NewsItem";
+
+// type CarouselProps = {
+//   items: any[];
+//   t: (key: string) => string;
+// };
+
+// export default function Carousel({ items, t }: CarouselProps) {
+//   const [startIndex, setStartIndex] = useState(0);
+//   const maxVisible = 3;
+//   const step = 3;
+
+//   const canGoLeft = startIndex > 0;
+//   const canGoRight = startIndex + maxVisible < items.length;
+
+//   const handleLeft = () => {
+//     setStartIndex((prev) => Math.max(0, prev - step));
+//   };
+
+//   const handleRight = () => {
+//     setStartIndex((prev) => {
+//       const nextIndex = prev + step;
+//       return nextIndex + maxVisible > items.length
+//         ? items.length - maxVisible
+//         : nextIndex;
+//     });
+//   };
+
+//   const visibleItems = items.slice(startIndex, startIndex + maxVisible);
+
+//   return (
+//     <div className="relative w-full overflow-visible flex items-center">
+//       {items.length > maxVisible && (
+//         <button
+//           onClick={handleLeft}
+//           disabled={!canGoLeft}
+//           className={`absolute -left-16 sm:-left-20 md:-left-24 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${
+//             !canGoLeft ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
+//           } z-10`}
+//           aria-label={t("news.carousel.prev")}
+//         >
+//           <HiChevronLeft size={30} />
+//         </button>
+//       )}
+
+//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex-grow">
+//         {visibleItems.map((item, index) => (
+//           <NewsItem key={item.id || index} item={item} index={index} t={t} />
+//         ))}
+//       </div>
+
+//       {items.length > maxVisible && (
+//         <button
+//           onClick={handleRight}
+//           disabled={!canGoRight}
+//           className={`absolute right-[-75px] top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${
+//             !canGoRight ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
+//           } z-10`}
+//           aria-label={t("news.carousel.next")}
+//         >
+//           <HiChevronRight size={30} />
+//         </button>
+//       )}
+//     </div>
+//   );
+// }
+
+
+import { useState, useEffect } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import NewsItem from "./NewsItem";
 
@@ -9,8 +79,25 @@ type CarouselProps = {
 
 export default function Carousel({ items, t }: CarouselProps) {
   const [startIndex, setStartIndex] = useState(0);
-  const maxVisible = 3;
-  const step = 3;
+  const [maxVisible, setMaxVisible] = useState(3);
+  const [step, setStep] = useState(3);
+
+    useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) { 
+        setMaxVisible(1);
+        setStep(1);
+      } else { 
+        setMaxVisible(3);
+        setStep(3);
+      }
+    };
+
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const canGoLeft = startIndex > 0;
   const canGoRight = startIndex + maxVisible < items.length;
@@ -36,7 +123,7 @@ export default function Carousel({ items, t }: CarouselProps) {
         <button
           onClick={handleLeft}
           disabled={!canGoLeft}
-          className={`absolute -left-16 sm:-left-20 md:-left-24 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${
+          className={`absolute -left-13 sm:-left-6 md:-left-24 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${
             !canGoLeft ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
           } z-10`}
           aria-label={t("news.carousel.prev")}
@@ -55,7 +142,7 @@ export default function Carousel({ items, t }: CarouselProps) {
         <button
           onClick={handleRight}
           disabled={!canGoRight}
-          className={`absolute right-[-75px] top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${
+          className={`absolute -right-13 sm:-right-6 md:-right-24 top-1/2 transform -translate-y-1/2 p-2 bg-white rounded-full shadow ${
             !canGoRight ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
           } z-10`}
           aria-label={t("news.carousel.next")}
