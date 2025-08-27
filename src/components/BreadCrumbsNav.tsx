@@ -24,9 +24,15 @@ export default function BreadCrumbsNav({ data }: any) {
                     breadcrumbsArray.push('Events');
                     break;
                 default:
-                    // For IDs, you could show the actual title if available
+                    // For IDs, show the actual title if available
                     if (index === pathSegments.length - 1 && data?.Tytul) {
-                        breadcrumbsArray.push(data.Tytul);
+                        // Adapt Tytul string length to the screen's width
+                        const truncate = (text: string) =>
+                            {
+                                const length: number = window.innerWidth < 1024 ? 18 : 100;
+                                return text.length > length ? text.substring(0, length) + "..." : text;
+                            }
+                        breadcrumbsArray.push(truncate(data.Tytul));
                     } else {
                         breadcrumbsArray.push(segment);
                     }
@@ -40,53 +46,56 @@ export default function BreadCrumbsNav({ data }: any) {
     }
 
     return (
-        <nav className="flex justify-center items-center bg-white z-10 h-20 w-full shadow-xl text-xl">
+        <nav className="flex justify-center items-center bg-white z-10 h-20 w-full shadow-xl text-sm lg:text-xl">
             {/* Breadcrumb Navigation */}
-            <div className="container flex justify-center items-center gap-2 px-4">
+            <div className="container flex justify-center items-center lg:gap-2 px-4">
                 {breadcrumbs.map((crumb, index) => (
                     <div key={index} className="flex items-center">
-                        {index === breadcrumbs.length - 1 ? (
+                        {index === breadcrumbs.length - 1 ?
                             // Last item - render as span (current page, not clickable)
-                            <span className="text-accent font-medium truncate max-w-xs">
-                                {(() => {
-                                    switch (crumb) {
-                                        case 'News':
-                                            return t("nav.news");
-                                        case 'Events':
-                                            return t("nav.events");
-                                        case 'Home':
-                                            return t("nav.home");
-                                        default:
-                                            return crumb;
-                                    }
-                                })()}
-                            </span>
-                        ) : (
+                            (
+                                <span className="text-accent font-medium truncate">
+                                    {(() => {
+                                        switch (crumb) {
+                                            case 'News':
+                                                return t("nav.news");
+                                            case 'Events':
+                                                return t("nav.events");
+                                            case 'Home':
+                                                return t("nav.home");
+                                            default:
+                                                return crumb;
+                                        }
+                                    })()}
+                                </span>
+                            ) : 
                             // Not last item - render as NavLink (clickable)
-                            <NavLink
-                                to={(() => {
-                                    switch (crumb) {
-                                        case 'News': return '/news';
-                                        case 'Events': return '/events';
-                                        case 'Home': return '/';
-                                        default: return '/'; // Fallback to home
-                                    }
-                                })()}
-                                className={"flex flex-row items-center gap-2 font-light transition-colors hover:text-accent"}
-                            >
-                                {crumb === 'News' && t("nav.news")}
-                                {crumb === 'Events' && t("nav.events")}
-                                {crumb === 'Home' && (
-                                    <>
-                                        <PiHouseLight className="text-2xl" /> {t("nav.home")}
-                                    </>
-                                )}
-                            </NavLink>
-                        )}
+                            (
+                                <NavLink
+                                    to={(() => {
+                                        switch (crumb) {
+                                            case 'News': return '/news';
+                                            case 'Events': return '/events';
+                                            case 'Home': return '/';
+                                            default: return '/'; // Fallback to home
+                                        }
+                                    })()}
+                                    className={"flex flex-row items-center gap-2 font-light transition-colors hover:text-accent"}
+                                >
+                                    {crumb === 'News' && t("nav.news")}
+                                    {crumb === 'Events' && t("nav.events")}
+                                    {crumb === 'Home' && (
+                                        <>
+                                            <PiHouseLight className="text-2xl" /> {t("nav.home")}
+                                        </>
+                                    )}
+                                </NavLink>
+                            )
+                        }
 
                         {/* Separator */}
                         {index < breadcrumbs.length - 1 && (
-                            <span className="mx-2 text-darkgrey">
+                            <span className="mx-1 lg:mx-2 text-darkgrey">
                                 <SlArrowRight />
                             </span>
 
