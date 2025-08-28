@@ -46,7 +46,7 @@ export default function BreadCrumbsNav({ data }: any) {
     }
 
     return (
-        <nav className="flex justify-center items-center bg-white z-10 h-20 w-full shadow-xl text-sm lg:text-xl">
+        <nav className="flex justify-center items-center bg-white z-10 h-20 w-full shadow-xl text-xs sm:text-sm lg:text-xl">
             {/* Breadcrumb Navigation */}
             <div className="container flex justify-center items-center lg:gap-2 px-4">
                 {breadcrumbs.map((crumb, index) => (

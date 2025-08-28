@@ -51,7 +51,7 @@ export default function NewsPage() {
 
             <div className="flex flex-col items-center gap-2 mt-7 min-h-screen bg-linear-to-b from-white to-grey w-full">
                 {/* Header image */}
-                <div className="relative h-48 w-full sm:h-64 md:h-96 md:w-2/3 rounded-xl shadow-lg overflow-hidden">
+                <div className="relative h-48 w-full sm:h-64 md:h-96 md:w-2/3 lg:rounded-xl shadow-lg overflow-hidden">
                     <img
                         src={image}
                         alt={title}
@@ -60,15 +60,15 @@ export default function NewsPage() {
                     <div className="absolute top-2 left-2 sm:top-4 sm:left-4 flex gap-2">
                         {type === "news" && (
                             <span className="bg-white text-accent text-sm sm:text-base md:text-lg font-semibold px-2 py-1 sm:px-3 sm:py-2 rounded-lg shadow-md">
-        <HiOutlineNewspaper className="inline-block mr-1 sm:mr-2 -scale-x-100 translate-y-[-2px]" size={18} />
-        {t("news.tags.news")}
-      </span>
+                            <HiOutlineNewspaper className="inline-block mr-1 sm:mr-2 -scale-x-100 translate-y-[-2px]" size={18} />
+                            {t("news.tags.news")}
+                        </span>
                         )}
                         {type === "event" && (
                             <>
                                 <span className="bg-accent text-white text-sm sm:text-base md:text-lg font-semibold px-2 py-1 sm:px-3 sm:py-2 rounded-lg shadow-md">
-        ★ {t("news.tags.event")}
-      </span>
+                                ★ {t("news.tags.event")}
+                                </span>
                             </>
                         )}
 
@@ -76,7 +76,7 @@ export default function NewsPage() {
                 </div>
 
                 {/* Main content */}
-                <div className="flex flex-col gap-6 sm:gap-8 w-full sm:w-5/6 md:w-2/3 bg-white rounded-xl shadow-lg overflow-hidden p-4 sm:p-6 mb-10 md:mb-20">
+                <div className="flex flex-col gap-3 sm:gap-8 w-full sm:w-5/6 md:w-2/3 bg-white rounded-xl shadow-lg overflow-hidden p-4 sm:p-6 mb-10 md:mb-20">
 
                     {/* Type and title */}
                     <div className="flex flex-col gap-4 sm:gap-8 text-center">
@@ -95,7 +95,7 @@ export default function NewsPage() {
                     {/* <div className="h-[1px] w-full bg-accent"></div> */} {/* Divider line */}
 
                     {/* badges, meta info, buttons */}
-                    <div className="flex flex-row justify-between gap-3">
+                    <div className="flex flex-col lg:flex-row justify-between gap-3">
                         <div className="flex flex-row gap-3">
                             {data.Wazne && type === "news" && (
                                 < ImportantBadge />
@@ -111,7 +111,7 @@ export default function NewsPage() {
                                 < PublishedBadge daysAgo={publishedDaysAgo(data)} />
                             )}
                         </div>
-                        <div className="flex flex-row text-darkgrey text-sm sm:text-base">
+                        <div className="flex flex-row justify-center text-darkgrey font-light lg:font-normal text-sm sm:text-base">
                             {data.Podpis && (
                                 <div className="">
                                     {data.Podpis}
@@ -131,7 +131,7 @@ export default function NewsPage() {
                     <div className=" text-sm sm:text-base max-w-none">
                         <RenderRichText
                             content={data.Tresc}
-                            pClasses="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4"
+                            pClasses="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4 mt-0"
                         />
                     </div>
 

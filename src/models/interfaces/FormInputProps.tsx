@@ -1,7 +1,7 @@
 import { TFunction } from "i18next";
 
 export default interface FormInputProps {
-    label: string
+    label?: string
     type: string
     id: string
     placeholder?: string
