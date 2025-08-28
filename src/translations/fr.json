@@ -41,12 +41,12 @@
                 "success": "Le mail à été envoyé !",
                 "error": "Une erreur est survenue lors de l'envoi.",
                 "apiError": "Erreur : {{message}}",
-                "fillAllRequired": ""
+                "fillAllRequired": "Veuillez remplir tous les champs requis"
             },
-            "explain": "",
+            "explain": "Champ requis",
             "validation": {
-                "errorMail": "",
-                "errorBox": ""
+                "errorMail": "Adresse e-mail invalide",
+                "errorBox": "Ce champ est requis"
             }
         }
     },
@@ -95,7 +95,7 @@
     },
     "news": {
         "heading": "Actualités récentes",
-        "subheading": "",
+        "subheading": "Restez à jour avec nos dernières nouvelles et événements",
         "dateLabel": "Date de l'évènement :",
         "readMore": "Plus",
         "readLess": "Réduire",
@@ -111,13 +111,13 @@
             "important": "Important",
             "published": "Publié il y a",
             "days": "jours",
-            "soon": ""
+            "soon": "Bientôt"
         },
         "eventspage": {
-            "upcomingEvents": "",
+            "upcomingEvents": "Évènements à venir",
             "noUpcomingEvents": "À l’heure actuelle, aucun évènement n’est prévu. Lorsqu’un évènement sera planifié, vous pourrez le retrouver ici",
-            "pastEvents": "",
-            "readArticles": "",
+            "pastEvents": "Évènements passés",
+            "readArticles": "Lire nos articles",
             "cityAdverb": "à"
         }
     },
