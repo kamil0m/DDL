@@ -1,22 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "../contexts/LanguageContext";
 
-interface LanguageToggleProps {
-    onLanguageChange?: (newLang: string) => void;
-}
-
-export default function LanguageToggle({ onLanguageChange }: LanguageToggleProps) {
+export default function LanguageToggle() {
     const { i18n } = useTranslation();
     const { changeLanguage, isLanguageChanging } = useLanguage();
 
     const switchLanguage = () => {
         const newLang = i18n.language === "pl" ? "fr" : "pl";
         changeLanguage(newLang);
-        
-        if (onLanguageChange) {
-            onLanguageChange(newLang);
-        }
-        
         return newLang;
     };
 

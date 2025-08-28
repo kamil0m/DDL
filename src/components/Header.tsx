@@ -5,11 +5,6 @@ import HeaderButtons from "./HeaderButtons";
 import HamburgerMenu from "./HamburgerMenu";
 
 export default function Header() {
-  
-  const handleLanguageChange = (newLang: string) => {
-    // console.log('Language changed to:', newLang);
-    // + if needed additional logic for example: localStorage updates, etc.
-  };
 
   return (
     <header className="lg:fixed flex justify-center bg-white z-20 w-full shadow-sm">
@@ -20,7 +15,7 @@ export default function Header() {
           </div>
           < Logo size="h-[3rem] lg:h-[4rem] w-auto max-w-5/6 lg:max-w-none" />
           <div className="lg:hidden flex">
-            <LanguageToggle onLanguageChange={handleLanguageChange} />
+            <LanguageToggle />
           </div>
           <div className="hidden lg:block">
             < NavBar />
@@ -28,7 +23,7 @@ export default function Header() {
           {/* < SearchBar /> */}
         </div>
         <div className="hidden lg:flex lg:flex-row lg:justify-between lg:items-center lg:min-w-[30rem]">
-          <LanguageToggle onLanguageChange={handleLanguageChange} />
+          <LanguageToggle />
           <HeaderButtons />
         </div>
       </div>
