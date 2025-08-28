@@ -7,7 +7,7 @@ import HamburgerMenu from "./HamburgerMenu";
 export default function Header() {
   
   const handleLanguageChange = (newLang: string) => {
-    console.log('Language changed to:', newLang);
+    // console.log('Language changed to:', newLang);
     // + if needed additional logic for example: localStorage updates, etc.
   };
 

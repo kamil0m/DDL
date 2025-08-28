@@ -11,7 +11,6 @@ export default function JoinUs() {
     const { data, loading, error } = useFetch(`join-us-page?locale=${currentLanguage}`);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const joinData = data as any;
-    // console.log(data);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error!</p>;

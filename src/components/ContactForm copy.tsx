@@ -57,7 +57,7 @@ export default function ContactForm() {
         );
       }
     } catch (error) {
-      console.error("Błąd:", error);
+      // console.error("Błąd:", error);
       setStatus(t("contact.form.status.error"));
     }
   };

@@ -38,7 +38,7 @@ const useLatestCombined = () => {
             (Array.isArray(news) && news.length === 0)
         ) {
 
-            console.log("No data available yet");
+            // console.log("No data available yet");
 
             return;
         }
